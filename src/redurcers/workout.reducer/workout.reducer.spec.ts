@@ -34,58 +34,45 @@ describe('Given workoutReducer', () => {
     };
     describe('When calling it whit action load with an array of Workout s', () => {
         test('Then it should return a new state witch the Products in the action payload', () => {
-            //Arrange
             const initialSate: Array<iWorkout> = [];
             const actionToTest = action.loadWorkoutsAction([mockWorkout]);
-            //Act
             const newState = workoutReducer(initialSate, actionToTest);
-            //Assert
             expect(newState).toHaveLength(1);
             expect(newState).toStrictEqual([mockWorkout]);
         });
     });
-    describe('When calling it whit action add product whit the new product as payload', () => {
-        test('Receive a new state with the old state and the new product', () => {
-            //Arrange
+    describe('When calling it whit action add workout whit the new workout as payload', () => {
+        test('Receive a new state with the old state and the new workout', () => {
             const initialState: Array<iWorkout> = [mockWorkout];
             const newWorkout = { ...mockWorkout, _id: '34' };
             const acctionToTest = action.addWorkoutAction(newWorkout);
-            //Act
             const newState = workoutReducer(initialState, acctionToTest);
-            //Assert
             expect(newState).toHaveLength(2);
             expect(newState).toStrictEqual([mockWorkout, newWorkout]);
         });
     });
     describe('When calling it with action update with the update Product as payload', () => {
         test('Then it should return a new state witch the products update', () => {
-            //Arrange
             const initialState: Array<iWorkout> = [mockWorkout, mockWorkout2];
-            const updatedWorkout = { ...mockWorkout, name: 'Alfonso' };
+            const updatedWorkout = { ...mockWorkout, title: 'Pierna' };
             const actionToTest = action.updateWorkoutAction(updatedWorkout);
-            //Act
             const newState = workoutReducer(initialState, actionToTest);
-            //Assert
             expect(newState).toHaveLength(2);
             expect(newState).toStrictEqual([updatedWorkout, mockWorkout2]);
         });
     });
     describe('When calling it with action delete for one product', () => {
         test('Then it should return a new state without this product', () => {
-            //Arrange
             const initialState: Array<iWorkout> = [mockWorkout];
             const actionToTest = action.deleteWorkoutAction(mockWorkout);
-            //Act
             const newState = workoutReducer(initialState, actionToTest);
-            //Assert
             expect(newState).toHaveLength(0);
         });
     });
     describe('When calling it with none of the above', () => {
-        test('The', () => {
+        test('Then it should return the same state', () => {
             const initialState: Array<iWorkout> = [mockWorkout];
             const newState = workoutReducer(initialState, {} as AnyAction);
-
             expect(newState).toStrictEqual(initialState);
         });
     });
