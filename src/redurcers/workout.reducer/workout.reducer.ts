@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { iWorkout } from '../../models/workout.model';
 
-import * as action from './action.creators';
+import * as action from './workout.action.creators';
 
 const initialState: Array<iWorkout> = [];
 

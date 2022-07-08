@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { iWorkout } from '../../models/workout.model';
 
-import { actionTypes } from './action.types';
+import { actionTypes } from './workout.action.types';
 
 export const loadWorkoutsAction = createAction<Array<iWorkout>>(
     actionTypes['workout@load']

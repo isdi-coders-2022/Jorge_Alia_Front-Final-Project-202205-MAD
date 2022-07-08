@@ -1,4 +1,4 @@
-import * as action from './action.creators';
+import * as action from './workout.action.creators';
 import { workoutReducer } from './workout.reducer';
 import { AnyAction } from '@reduxjs/toolkit';
 import { iWorkout } from '../../models/workout.model';
