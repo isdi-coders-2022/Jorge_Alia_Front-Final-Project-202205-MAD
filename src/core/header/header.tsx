@@ -7,7 +7,7 @@ export function Header({ options }: { options: aMenuItems }) {
     const template = (
         <>
             <div className="header">
-                <Link to="home">
+                <Link to="">
                     <img src="./img/logo.png" alt="" />
                 </Link>
 
