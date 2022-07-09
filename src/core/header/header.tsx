@@ -3,7 +3,7 @@ import { aMenuItems } from '../../models/menu.model';
 import { Menu } from '../menu/menu';
 import './header.css';
 
-export function Header({ options }: { options: aMenuItems }) {
+export function Header() {
     const template = (
         <>
             <div className="header">
@@ -12,8 +12,7 @@ export function Header({ options }: { options: aMenuItems }) {
                 </Link>
 
                 <div className="menu">
-                    {' '}
-                    <Menu options={options}></Menu>
+                    <Menu></Menu>
                 </div>
             </div>
         </>

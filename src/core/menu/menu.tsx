@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../models/menu.model';
-// import './menu.css';
+import WorkoutsPage from '../../pages/workoutsPage';
+import './menu.css';
 
-export function Menu({ options }: { options: aMenuItems }) {
+const optionsMenu: aMenuItems = [
+    {
+        path: 'workouts',
+        label: 'workouts',
+        page: <WorkoutsPage />,
+        title: 'workouts',
+    },
+];
+
+export function Menu() {
     return (
         <nav>
             <ul className="menu">
-                {options.map((item) => (
+                {optionsMenu.map((item) => (
                     <li className="menu__item" key={item.label}>
                         <Link to={item.path} className="menu__link">
                             <h3>{item.label}</h3>

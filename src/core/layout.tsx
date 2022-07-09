@@ -12,7 +12,7 @@ export function Layout({
 }) {
     return (
         <>
-            <Header options={options}></Header>
+            <Header></Header>
             <main>{children}</main>
             <Footer></Footer>
         </>
