@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { WorkoutList } from '../components/app/workout/listWorkouts';
+import { WorkoutList } from '../components/workout/listWorkouts';
 
 import { iState } from '../store/store';
 

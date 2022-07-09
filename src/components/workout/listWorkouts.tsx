@@ -1,4 +1,4 @@
-import { iWorkout } from '../../../models/workout.model';
+import { iWorkout } from '../../models/workout.model';
 import { Workout } from './workout';
 
 export function WorkoutList({ workouts }: { workouts: Array<iWorkout> }) {

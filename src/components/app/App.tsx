@@ -19,9 +19,16 @@ function App() {
     }, [apiWorkout, dispatcher]);
 
     const HomePage = React.lazy(() => import('../../pages/homePage'));
+    const DetailsPage = React.lazy(() => import('../../pages/detailsPage'));
 
     const options: aMenuItems = [
         { path: 'home', label: '', page: <HomePage /> },
+        {
+            path: 'details/:id',
+            label: '',
+            page: <DetailsPage />,
+            title: '',
+        },
     ];
 
     return (
