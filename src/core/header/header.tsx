@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../models/menu.model';
 import { Menu } from '../menu/menu';
-
-// import './header.css';
+import './header.css';
 
 export function Header({ options }: { options: aMenuItems }) {
     const template = (

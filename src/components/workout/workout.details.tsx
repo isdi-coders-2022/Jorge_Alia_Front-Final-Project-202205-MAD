@@ -16,8 +16,11 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                 ></iframe>
             </div>
             <div className="containerDetails__description">
-                <p>{workout.description}</p>
                 <p>Intensidad: {workout.intensity}</p>
+                <p>Duración: {workout.duration}</p>
+                <p>Material necesario: {workout.complementaryMaterial}</p>
+                <button>AÑADIR A MI RUTINA</button>
+                <p>{workout.description}</p>
             </div>
         </div>
     );
