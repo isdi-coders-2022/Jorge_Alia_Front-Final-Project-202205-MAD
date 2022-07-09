@@ -3,19 +3,20 @@ import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
-// import { loadWorkoutsAction } from '../../reducers/action.creators';
-// import { HttpStoreWorkouts } from '../../services/store.workouts';
+import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
+
+import { HttpStoreWorkouts } from '../../services/store.workouts';
 import './App.css';
 
 function App() {
-    // const dispatcher = useDispatch();
-    // const apiWorkout = useMemo(() => new HttpStoreWorkouts(), []);
+    const dispatcher = useDispatch();
+    const apiWorkout = useMemo(() => new HttpStoreWorkouts(), []);
 
-    // useEffect(() => {
-    //     apiWorkout
-    //         .getWorkouts()
-    //         .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
-    // }, [apiWorkout, dispatcher]);
+    useEffect(() => {
+        apiWorkout
+            .getWorkouts()
+            .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
+    }, [apiWorkout, dispatcher]);
 
     const HomePage = React.lazy(() => import('../../pages/homePage'));
 

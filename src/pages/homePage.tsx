@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-// import { WorkoutList } from '../components/workout/listWorkouts';
+import { WorkoutList } from '../components/app/workout/listWorkouts';
+
 import { iState } from '../store/store';
-// import './homePage.css';
 
 export function HomePage() {
-    // const workouts = useSelector((store: iState) => store.workouts);
+    const workouts = useSelector((store: iState) => store.workouts);
     const template = (
         <>
             <main>
@@ -31,7 +31,7 @@ export function HomePage() {
                         es para ti.
                     </p>
                 </div>
-                {/* <WorkoutList workouts={workouts}></WorkoutList> */}
+                <WorkoutList workouts={workouts}></WorkoutList>
             </main>
         </>
     );
