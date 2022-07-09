@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { aMenuItems } from '../models/menu.model';
+import { Header } from './header/header';
 
 export function Layout({
     options,
@@ -10,7 +11,7 @@ export function Layout({
 }) {
     return (
         <>
-            {/* <Header options={options}></Header> */}
+            <Header options={options}></Header>
             <main>{children}</main>
             {/* <Footer></Footer> */}
         </>
