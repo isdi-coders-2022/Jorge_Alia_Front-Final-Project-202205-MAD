@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { aMenuItems } from '../../models/menu.model';
 import { Menu } from '../menu/menu';
 import './header.css';
 

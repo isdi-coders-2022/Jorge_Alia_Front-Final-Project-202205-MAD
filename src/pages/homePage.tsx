@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { WorkoutList } from '../components/workout/listWorkouts';
-
 import { iState } from '../store/store';
+import './homePage.css';
 
 export function HomePage() {
     const workouts = useSelector((store: iState) => store.workouts);

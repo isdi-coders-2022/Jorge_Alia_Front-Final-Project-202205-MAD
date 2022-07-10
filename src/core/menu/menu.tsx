@@ -10,6 +10,18 @@ const optionsMenu: aMenuItems = [
         page: <WorkoutsPage />,
         title: 'workouts',
     },
+    {
+        path: 'workouts',
+        label: 'workouts',
+        page: <WorkoutsPage />,
+        title: 'workouts',
+    },
+    {
+        path: 'workouts',
+        label: 'workouts',
+        page: <WorkoutsPage />,
+        title: 'workouts',
+    },
 ];
 
 export function Menu() {
