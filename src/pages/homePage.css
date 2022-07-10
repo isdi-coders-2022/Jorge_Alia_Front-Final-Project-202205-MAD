@@ -1,0 +1,14 @@
+.wrapper__image {
+    display: flex;
+    margin-left: -2%;
+}
+.image__mar {
+    width: 65%;
+}
+.image__ana {
+    width: 37%;
+}
+
+.wrapper__text {
+    display: flex;
+}
