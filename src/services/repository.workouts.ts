@@ -1,3 +1,5 @@
+import { classicNameResolver } from 'typescript';
+import { iComment } from '../models/comment.model';
 import { iWorkout } from '../models/workout.model';
 
 export class HttpStoreWorkouts {
@@ -14,19 +16,19 @@ export class HttpStoreWorkouts {
         return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
     //COMPORBAR QUE ESTOS MÉTODOS DE COMENTARIOS ESTÁN BIEN HECHOS
-    addComment(workout: iWorkout): Promise<iWorkout> {
-        return fetch(this.url + `/addcomment/${workout._id}`, {
+    addComment(comment: iComment, id: string): Promise<iWorkout> {
+        return fetch(this.url + `/addcomment/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
+            body: JSON.stringify(comment),
             headers: {
                 'Content-Type': 'application/json',
             },
         }).then((resp) => resp.json());
     }
-    deleteComment(workout: iWorkout): Promise<iWorkout> {
-        return fetch(this.url + `/deletecomment/${workout._id}`, {
+    deleteComment(comment: iComment, id: string): Promise<iWorkout> {
+        return fetch(this.url + `/deletecomment/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
+            body: JSON.stringify(comment),
             headers: {
                 'Content-Type': 'application/json',
             },

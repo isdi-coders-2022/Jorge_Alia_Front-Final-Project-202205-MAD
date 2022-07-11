@@ -31,10 +31,9 @@ export class HttpStoreUser {
     }
     //COMPROBAR QUE ESTOS MÉTODOS ESTÁN BIEN
 
-    addToFavorites(workout: iWorkout) {
-        return fetch(this.url + `/addtofavorites/${workout._id}`, {
+    addToFavorites(id: string) {
+        return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }

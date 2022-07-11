@@ -28,6 +28,12 @@ const optionsMenu: aMenuItems = [
         page: <WorkoutsPage />,
         title: 'Contacto',
     },
+    {
+        path: 'Login',
+        label: 'Login',
+        page: <WorkoutsPage />,
+        title: 'Login',
+    },
 ];
 
 export function Menu() {
