@@ -1,34 +1,41 @@
-export function WorkoutPAge() {
+import './workoutsPage.css';
+
+export function WorkoutPage() {
     const template = (
         <>
             <h2>Selecciona modalidad</h2>
-            <section>
+            <section className="firstFilter">
                 <div role="button">
-                    <img src="./img/brazosyab.jpg" alt="" />
+                    <img className="image" src="./img/brazoyab.jpg" alt="" />
                 </div>
 
                 <div role="button">
-                    <img src="./img/gluteospiernas.jpg" alt="" />
+                    <img
+                        className="image"
+                        src="./img/gluteoypiernas.jpg"
+                        alt=""
+                    />
                 </div>
                 <div role="button">
-                    <img src="./img/totalbody.jpg" alt="" />
+                    <img className="image" src="./img/totalbody.jpg" alt="" />
                 </div>
             </section>
+
             <h2>Selecciona uso de material</h2>
-            <div>
+            <div className="secondFilter1">
                 <div role="button">
-                    <img src="./img/sinmaterial.jpg" alt="" />
+                    <img className="image" src="./img/sinmaterial.jpg" alt="" />
                 </div>
                 <div role="button">
-                    <img src="./img/goma.jpg" alt="" />
+                    <img className="image" src="./img/goma.jpg" alt="" />
                 </div>
             </div>
-            <div>
+            <div className="secondFilter2">
                 <div role="button">
-                    <img src="./img/macuernas.jpg" alt="" />
+                    <img className="image" src="./img/mancuernas.jpg" alt="" />
                 </div>
                 <div role="button">
-                    <img src="./img/softball.jpg" alt="" />
+                    <img className="image" src="./img/softball.jpg" alt="" />
                 </div>
             </div>
 
@@ -40,4 +47,4 @@ export function WorkoutPAge() {
     return template;
 }
 
-export default WorkoutPAge;
+export default WorkoutPage;

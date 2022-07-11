@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { iWorkout } from '../../models/workout.model';
+import './workout.css';
 
 export function Workout({ workout }: { workout: iWorkout }) {
     const template = (
