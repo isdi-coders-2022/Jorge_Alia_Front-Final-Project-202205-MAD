@@ -36,44 +36,5 @@ describe('Given HttpStoreWorkouts', () => {
                 expect(result._id).toBe('1');
             });
         });
-        describe('And we use method setWorkout', () => {
-            test('should first', async () => {
-                const workout = {
-                    _id: '62c3fa970a6339f727766546',
-                    title: 'ABDOMEN & GLÚTEOS con softball',
-                    image: 'totalbodysoftball.png',
-                    video: 'https://www.youtube.com/embed/wdqQmD874Fo',
-                    description:
-                        'Entrenamiento total body con intensidad alta enfocado en glúteo y fuerza abdominal.',
-                    category: 'Total body',
-                    complementaryMaterial: 'Sin material',
-                    favorite: false,
-                    duration: 10,
-                    intensity: 'Alta',
-                    comments: [],
-                };
-                global.fetch = jest.fn().mockResolvedValue({
-                    json: jest.fn().mockResolvedValue({
-                        _id: '62c3fa970a6339f727766546',
-                        title: 'ABDOMEN & GLÚTEOS con softball',
-                        image: 'totalbodysoftball.png',
-                        video: 'https://www.youtube.com/embed/wdqQmD874Fo',
-                        description:
-                            'Entrenamiento total body con intensidad alta enfocado en glúteo y fuerza abdominal.',
-                        category: 'Total body',
-                        complementaryMaterial: 'Sin material',
-                        favorite: false,
-                        duration: 10,
-                        intensity: 'Alta',
-                        comments: [],
-                    }),
-                });
-                const result = await new HttpStoreWorkouts().setWorkout(
-                    workout
-                );
-                expect(fetch).toBeCalled();
-                expect(result._id).toBe('62c3fa970a6339f727766546');
-            });
-        });
     });
 });
