@@ -7,3 +7,7 @@ export interface iUser {
     done: Array<string>;
     rol: string;
 }
+export interface iUserWithToken {
+    token: string;
+    user: iUser;
+}
