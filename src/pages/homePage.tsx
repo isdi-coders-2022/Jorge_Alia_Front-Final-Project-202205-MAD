@@ -17,11 +17,11 @@ export function HomePage() {
                     />
                 </div>
                 <div className="wrapper__text">
-                    <div className="wrapper__h2">
+                    <div className="wrapper__text1">
                         <p>Entrena, disfruta, vive.</p>
                         <h2>Diseña tu propio entrenamiento</h2>
                     </div>
-                    <p>
+                    <p className="wrapper__text2">
                         Si quieres transformar la manera de comunicarte con tu
                         cuerpo y empezar a escucharlo de una forma más
                         consciente. Si te gustaría fortalecer o tonificar la
@@ -32,6 +32,20 @@ export function HomePage() {
                     </p>
                 </div>
                 <WorkoutList workouts={workouts}></WorkoutList>
+
+                <section className="testimonials">
+                    <p className="testimonials__item">
+                        "BIENESTAR en toda la amplitud de la palabra"
+                    </p>
+                    <p className="testimonials__item">
+                        “Después de cada clase salgo NUEVA, consigo desconectar
+                        y me cambia la semana por completo"
+                    </p>
+                    <p className="testimonials__item">
+                        "Agradecida, feliz, encantada, no imaginas lo mucho que
+                        me inspiras"
+                    </p>
+                </section>
             </main>
         </>
     );
