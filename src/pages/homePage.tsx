@@ -35,8 +35,9 @@ export function HomePage() {
                         es para ti.
                     </p>
                 </div>
+                <p className="titleSection">Workouts recientes</p>
                 <WorkoutListThree workouts={workouts}></WorkoutListThree>
-                <h3>Testimonios</h3>
+                <p className="titleSection">Testimonios</p>
                 <section className="testimonials">
                     <p className="testimonials__item">
                         "BIENESTAR en toda la amplitud de la palabra"

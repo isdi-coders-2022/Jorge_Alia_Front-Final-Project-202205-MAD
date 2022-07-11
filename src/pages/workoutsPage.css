@@ -1,9 +1,39 @@
 .firstFilter {
     display: flex;
+    justify-content: space-around;
 }
 .secondFilter1 {
     display: flex;
+    justify-content: space-around;
+    justify-content: center;
 }
 .secondFilter2 {
     display: flex;
+    justify-content: space-around;
+    justify-content: center;
+}
+.imageFilter {
+    cursor: pointer;
+    width: 18%;
+}
+
+.imageFilter2 {
+    cursor: pointer;
+    width: 18%;
+    margin: 2rem;
+}
+
+.wrapperTitleWorkout {
+    text-align: center;
+}
+
+.titleWorkout {
+    font-size: 2.5em;
+}
+.wrapperTitleModality {
+    text-align: center;
+}
+
+.titleModality {
+    font-size: 1.5em;
 }

@@ -48,3 +48,9 @@ h2 {
     justify-content: center;
     align-items: center;
 }
+
+.titleSection {
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+}
