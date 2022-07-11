@@ -9,7 +9,7 @@ export function Footer() {
                     src="./img/logofooter.png"
                     alt="Logo Aguado pilates"
                 />
-                <div>
+                <div className="copyright">
                     <p>© AGUADO PILATES | 2022</p>
                     <p>Web Development by JORGE ALIA</p>
                 </div>
