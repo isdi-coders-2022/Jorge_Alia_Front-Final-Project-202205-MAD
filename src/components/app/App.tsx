@@ -21,6 +21,12 @@ function App() {
     const HomePage = React.lazy(() => import('../../pages/homePage'));
     const DetailsPage = React.lazy(() => import('../../pages/detailsPage'));
     const WorkoutsPage = React.lazy(() => import('../../pages/workoutsPage'));
+    const MySelectionPage = React.lazy(
+        () => import('../../pages/mySelectionPage')
+    );
+    const AboutMePage = React.lazy(() => import('../../pages/aboutMePage'));
+    const ContactPage = React.lazy(() => import('../../pages/contactPage'));
+    const LoginPage = React.lazy(() => import('../../pages/loginPage'));
 
     const options: aMenuItems = [
         { path: '', label: '', page: <HomePage /> },
@@ -35,6 +41,30 @@ function App() {
             label: 'workouts',
             page: <WorkoutsPage />,
             title: 'workouts',
+        },
+        {
+            path: 'mis selecciones',
+            label: 'mis selecciones',
+            page: <MySelectionPage />,
+            title: 'Mis selecciones',
+        },
+        {
+            path: 'sobre mí',
+            label: 'sobre mí',
+            page: <AboutMePage />,
+            title: 'Sobre mí',
+        },
+        {
+            path: 'contacto',
+            label: 'contacto',
+            page: <ContactPage />,
+            title: 'Contacto',
+        },
+        {
+            path: 'Login',
+            label: 'Login',
+            page: <LoginPage />,
+            title: 'Login',
         },
     ];
 
