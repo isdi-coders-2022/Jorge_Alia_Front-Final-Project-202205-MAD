@@ -11,16 +11,22 @@ const optionsMenu: aMenuItems = [
         title: 'workouts',
     },
     {
-        path: 'workouts',
-        label: 'workouts',
+        path: 'mis selecciones',
+        label: 'mis selecciones',
         page: <WorkoutsPage />,
-        title: 'workouts',
+        title: 'Mis selecciones',
     },
     {
-        path: 'workouts',
-        label: 'workouts',
+        path: 'sobre mí',
+        label: 'sobre mí',
         page: <WorkoutsPage />,
-        title: 'workouts',
+        title: 'Sobre mí',
+    },
+    {
+        path: 'contacto',
+        label: 'Contacto',
+        page: <WorkoutsPage />,
+        title: 'Contacto',
     },
 ];
 

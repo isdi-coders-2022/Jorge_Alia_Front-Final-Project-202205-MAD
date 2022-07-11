@@ -5,7 +5,7 @@ import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
 
-import { HttpStoreWorkouts } from '../../services/store.workouts';
+import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import './App.css';
 
 function App() {

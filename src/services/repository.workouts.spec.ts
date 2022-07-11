@@ -1,4 +1,4 @@
-import { HttpStoreWorkouts } from './store.workouts';
+import { HttpStoreWorkouts } from './repository.workouts';
 
 describe('Given HttpStoreWorkouts', () => {
     describe('When we instantiate', () => {
@@ -71,7 +71,6 @@ describe('Given HttpStoreWorkouts', () => {
                 const result = await new HttpStoreWorkouts().setWorkout(
                     workout
                 );
-                // assert
                 expect(fetch).toBeCalled();
                 expect(result._id).toBe('62c3fa970a6339f727766546');
             });
