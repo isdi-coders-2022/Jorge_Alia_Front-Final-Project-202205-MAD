@@ -22,6 +22,7 @@
 h2 {
     font-size: 3vw;
 }
+
 .wrapper__text1 {
     width: 50%;
 }
@@ -35,7 +36,6 @@ h2 {
     font-weight: bold;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 

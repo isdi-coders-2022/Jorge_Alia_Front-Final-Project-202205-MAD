@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { WorkoutList } from '../components/workout/listWorkouts';
+import { WorkoutListThree } from '../components/workout/listWorkoutsThree';
 import { iState } from '../store/store';
 import './homePage.css';
 
@@ -31,8 +31,8 @@ export function HomePage() {
                         es para ti.
                     </p>
                 </div>
-                <WorkoutList workouts={workouts}></WorkoutList>
-
+                <WorkoutListThree workouts={workouts}></WorkoutListThree>
+                <h3>Testimonios</h3>
                 <section className="testimonials">
                     <p className="testimonials__item">
                         "BIENESTAR en toda la amplitud de la palabra"
