@@ -40,7 +40,7 @@ export function WorkoutPage() {
             </div>
 
             <p>!! Busca y añade a tu rutina de ejercicos !!</p>
-            <button></button>
+            <button>BUSCAR</button>
         </>
     );
 

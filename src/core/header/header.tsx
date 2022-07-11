@@ -7,7 +7,11 @@ export function Header() {
         <>
             <div className="header">
                 <Link to="">
-                    <img src="./img/logo.png" alt="Logo Aguado Pilates" />
+                    <img
+                        className="logo"
+                        src="./img/logo.png"
+                        alt="Logo Aguado Pilates"
+                    />
                 </Link>
 
                 <div className="menu">
