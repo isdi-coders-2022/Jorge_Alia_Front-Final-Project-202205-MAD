@@ -1,5 +1,4 @@
 import { iUser } from '../models/user.model';
-import { iWorkout } from '../models/workout.model';
 
 export class HttpStoreUser {
     url: string;
@@ -29,7 +28,6 @@ export class HttpStoreUser {
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
-    //COMPROBAR QUE ESTOS MÉTODOS ESTÁN BIEN
 
     addToFavorites(id: string) {
         return fetch(this.url + `/addtofavorites/${id}`, {
@@ -37,25 +35,24 @@ export class HttpStoreUser {
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
-    deleteFavorites(workout: iWorkout) {
-        return fetch(this.url + `/deletefromfavorites/${workout._id}`, {
+
+    deleteFavorites(id: string) {
+        return fetch(this.url + `/deletefromfavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
 
-    addToDone(workout: iWorkout) {
-        return fetch(this.url + `/addtofavorites/${workout._id}`, {
+    addToDone(id: string) {
+        return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
+
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
-    deleteFromDone(workout: iWorkout) {
-        return fetch(this.url + `/deletefromfavorites/${workout._id}`, {
+    deleteFromDone(id: string) {
+        return fetch(this.url + `/deletefromfavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(workout),
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }

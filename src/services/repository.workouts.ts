@@ -1,4 +1,3 @@
-import { classicNameResolver } from 'typescript';
 import { iComment } from '../models/comment.model';
 import { iWorkout } from '../models/workout.model';
 
@@ -15,7 +14,7 @@ export class HttpStoreWorkouts {
     getWorkout(id: string): Promise<iWorkout> {
         return fetch(this.url + `/${id}`).then((resp) => resp.json());
     }
-    //COMPORBAR QUE ESTOS MÉTODOS DE COMENTARIOS ESTÁN BIEN HECHOS
+
     addComment(comment: iComment, id: string): Promise<iWorkout> {
         return fetch(this.url + `/addcomment/${id}`, {
             method: 'PATCH',
