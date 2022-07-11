@@ -5,13 +5,24 @@ import { useState } from 'react';
 import './listWorkoutsThree.css';
 
 export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
+    console.log(workouts);
     const [indexMarker, setIndexMarker] = useState(0);
     function handleOnClickNext() {
-        setIndexMarker(indexMarker + 3);
+        if (indexMarker === 9) {
+            setIndexMarker(indexMarker - 9);
+        }
+        if (indexMarker !== 9) {
+            setIndexMarker(indexMarker + 3);
+        }
     }
 
     function handleOnClickPrev() {
-        setIndexMarker(indexMarker - 3);
+        if (indexMarker === 0) {
+            setIndexMarker(indexMarker + 9);
+        }
+        if (indexMarker !== 0) {
+            setIndexMarker(indexMarker - 3);
+        }
     }
     return (
         <>
