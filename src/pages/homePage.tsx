@@ -9,11 +9,15 @@ export function HomePage() {
         <>
             <main>
                 <div className="wrapper__image">
-                    <img className="image__mar" src="./img/mar.jpg" alt="" />
+                    <img
+                        className="image__mar"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/portada%2Fmar.jpg?alt=media&token=a7c3043c-59a1-4782-b9e1-7b1cd767e52d"
+                        alt="Imagen mar tranquilo"
+                    />
                     <img
                         className="image__ana"
-                        src="./img/portada.jpg"
-                        alt=""
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/portada%2Fportada.jpg?alt=media&token=6dc9e07f-6642-453d-9e46-94105aa20a91"
+                        alt="Imagen estirando"
                     />
                 </div>
                 <div className="wrapper__text">
