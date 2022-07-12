@@ -32,6 +32,7 @@ const optionsMenu: aMenuItems = [
         page: <ContactPage />,
         title: 'Contacto',
     },
+
     {
         path: 'login',
         label: 'login',

@@ -57,7 +57,7 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    updateUser(user: iUser): Promise<iUser> {
+    updateUser(user: Partial<iUser>): Promise<iUser> {
         return fetch(this.url + `/${user._id}`, {
             method: 'PATCH',
             body: JSON.stringify(user),

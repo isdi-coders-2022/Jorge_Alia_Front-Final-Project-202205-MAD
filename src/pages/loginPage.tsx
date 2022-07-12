@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import LoginForm from '../components/form/loginForm';
+import ModifyForm from '../components/form/modifyForm';
 import { RegisterForm } from '../components/form/registerForm';
 import { iState } from '../store/store';
 import './loginPage.css';
@@ -36,7 +37,7 @@ export function LoginPage() {
                 <div className="wrapperLogin">
                     <div>
                         <h3>Modifica tus datos</h3>
-
+                        <ModifyForm></ModifyForm>
                         <h3 className="titleRegister">Baja de cuenta</h3>
                     </div>
 
