@@ -1,14 +1,12 @@
-import { SyntheticEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { iUserWithToken } from '../../models/user.model';
-import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
-import './loginForm.css';
+import { SyntheticEvent, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { iState } from '../../store/store';
+import { iUserWithToken } from '../../models/user.model';
 
-export function LoginForm() {
-    const dispatcher = useDispatch();
-    const navegate = useNavigate();
+export function EliminateForm() {
+    const user = useSelector((store: iState) => store.users);
+
     const [formData, setFormData] = useState({
         email: '',
         passwd: '',
@@ -19,18 +17,19 @@ export function LoginForm() {
         const loginUser: iUserWithToken = await new HttpStoreUser().loginUser(
             formData
         );
-        console.log(loginUser);
         if (loginUser.token) {
-            dispatcher(loadUsersAction(loginUser));
-            localStorage.setItem('loginUser', JSON.stringify(loginUser));
-            navegate('/');
+            const deleteUser = await new HttpStoreUser().deleteUser(
+                user.user._id as string
+            );
+            console.log(formData, 'FORMDATA');
+            console.log(deleteUser, 'UPDATEUSER');
         }
     }
-
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
         setFormData({ ...formData, [element.name]: element.value });
     }
+
     const template = (
         <>
             <form onSubmit={handleSubmit}>
@@ -54,7 +53,7 @@ export function LoginForm() {
                 />
                 <div>
                     <button className="buttonLogin" type="submit">
-                        Acceder
+                        Baja de cuenta
                     </button>
                 </div>
             </form>
@@ -62,4 +61,4 @@ export function LoginForm() {
     );
     return template;
 }
-export default LoginForm;
+export default EliminateForm;

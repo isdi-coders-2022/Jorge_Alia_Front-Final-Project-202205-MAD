@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../models/menu.model';
 import AboutMePage from '../../pages/aboutMePage';
@@ -5,6 +6,7 @@ import ContactPage from '../../pages/contactPage';
 import LoginPage from '../../pages/loginPage';
 import MySelectionPage from '../../pages/mySelectionPage';
 import WorkoutsPage from '../../pages/workoutsPage';
+import { iState } from '../../store/store';
 import './menu.css';
 
 const optionsMenu: aMenuItems = [
@@ -42,6 +44,15 @@ const optionsMenu: aMenuItems = [
 ];
 
 export function Menu() {
+    const user = useSelector((store: iState) => store.users);
+    if (user.token !== '') {
+        optionsMenu[4] = {
+            path: 'login',
+            label: 'Mi cuenta',
+            page: <LoginPage />,
+            title: 'Login',
+        };
+    }
     return (
         <nav>
             <ul className="menu">
