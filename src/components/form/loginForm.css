@@ -1,0 +1,15 @@
+.input {
+    border: none;
+    background-color: #c3c3c3;
+    width: 18rem;
+    height: 1.5rem;
+}
+.titleInput {
+    margin-bottom: 0;
+}
+.buttonLogin {
+    margin-top: 1rem;
+    font-family: 'MuseoModerno', cursive;
+    font-weight: bold;
+    background-color: #e2faa0;
+}

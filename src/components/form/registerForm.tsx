@@ -22,32 +22,38 @@ export function RegisterForm() {
     const template = (
         <>
             <form onSubmit={handleSubmit}>
-                <p>Nombre de usuario</p>
+                <p className="titleInput">Nombre de usuario</p>
                 <input
+                    className="input"
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
                 />
-                <p>Correo electrónico</p>
+                <p className="titleInput">Correo electrónico</p>
                 <input
+                    className="input"
                     type="text"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                 />
-                <p>Contraseña</p>
+                <p className="titleInput">Contraseña</p>
                 <input
+                    className="input"
                     type="text"
                     name="passwd"
                     value={formData.passwd}
                     onChange={handleChange}
                     required
                 />
-
-                <button type="submit">Registrarse</button>
+                <div>
+                    <button className="buttonLogin" type="submit">
+                        Registrarse
+                    </button>
+                </div>
             </form>
         </>
     );

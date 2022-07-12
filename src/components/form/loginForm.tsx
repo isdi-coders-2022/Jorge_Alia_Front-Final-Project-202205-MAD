@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { iUserWithToken } from '../../models/user.model';
 import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
+import './loginForm.css';
 
 export function LoginForm() {
     const dispatcher = useDispatch();
@@ -30,23 +31,29 @@ export function LoginForm() {
     const template = (
         <>
             <form onSubmit={handleSubmit}>
-                <p>Correo electrónico</p>
+                <p className="titleInput">Correo electrónico</p>
                 <input
+                    className="input"
                     type="text"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                 />
-                <p>Contraseña</p>
+                <p className="titleInput">Contraseña</p>
                 <input
+                    className="input"
                     type="text"
                     name="passwd"
                     value={formData.passwd}
                     onChange={handleChange}
                     required
                 />
-                <button type="submit">Acceder</button>
+                <div>
+                    <button className="buttonLogin" type="submit">
+                        Acceder
+                    </button>
+                </div>
             </form>
         </>
     );
