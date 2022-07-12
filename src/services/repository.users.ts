@@ -1,4 +1,4 @@
-import { iUser } from '../models/user.model';
+import { iUser, iUserWithToken } from '../models/user.model';
 
 export class HttpStoreUser {
     url: string;
@@ -21,7 +21,7 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    loginUser(user: Partial<iUser>): Promise<iUser> {
+    loginUser(user: Partial<iUser>): Promise<iUserWithToken> {
         return fetch(this.url + '/login', {
             method: 'POST',
             body: JSON.stringify(user),

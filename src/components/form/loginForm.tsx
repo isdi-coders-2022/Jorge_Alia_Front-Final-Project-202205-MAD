@@ -1,29 +1,35 @@
 import { SyntheticEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { iUserWithToken } from '../../models/user.model';
+import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
 
 export function LoginForm() {
+    const dispatcher = useDispatch();
     const [formData, setFormData] = useState({
-        name: '',
         email: '',
         passwd: '',
-        workouts: [],
-        done: [],
-        rol: 'User',
     });
 
-    function handleSubmit(ev: SyntheticEvent) {
+    async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        new HttpStoreUser().loginUser(formData);
+        const loginUser: iUserWithToken = await new HttpStoreUser().loginUser(
+            formData
+        );
+        console.log(loginUser);
+        if (loginUser.token) {
+            dispatcher(loadUsersAction(loginUser));
+            localStorage.setItem('loginUser', JSON.stringify(loginUser));
+        }
     }
 
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
         setFormData({ ...formData, [element.name]: element.value });
-        console.log(element);
     }
     const template = (
         <>
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <p>Correo electrónico</p>
                 <input
                     type="text"
