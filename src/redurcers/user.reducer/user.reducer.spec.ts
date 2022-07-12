@@ -16,18 +16,6 @@ describe('Given userReducer', () => {
             rol: 'user',
         },
     };
-    const mockUser2: iUserWithToken = {
-        token: 'jmds8sds8jds8',
-        user: {
-            _id: '3',
-            name: 'Sergio',
-            email: 'sergio@gmail.com',
-            passwd: '12345',
-            workouts: [],
-            done: [],
-            rol: 'user',
-        },
-    };
     describe('When calling it whit action load with an array of User s', () => {
         test('Then it should return a new state witch the User in the action payload', () => {
             const initialSate: iUserWithToken = {
