@@ -47,7 +47,6 @@ describe('Given HttpStoreUser', () => {
                     json: jest.fn().mockResolvedValue({ ...mockUser }),
                 });
                 const result = await new HttpStoreUser().registerUser(mockUser);
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result).toEqual(mockUser);
             });
@@ -64,7 +63,6 @@ describe('Given HttpStoreUser', () => {
                 const result = await new HttpStoreUser().loginUser(
                     mockLoginUser
                 );
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result).toEqual(mockLoginUser);
             });
@@ -95,7 +93,6 @@ describe('Given HttpStoreUser', () => {
                 const result = await new HttpStoreUser().addToFavorites(
                     mockWorkoutForFavorite._id
                 );
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result).toEqual({
                     ...mockUser,
@@ -139,7 +136,6 @@ describe('Given HttpStoreUser', () => {
                 const result = await new HttpStoreUser().deleteFavorites(
                     mockUserForDeleteWorkout.workouts[0]._id as string
                 );
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result.workouts).toHaveLength(0);
             });
@@ -170,7 +166,6 @@ describe('Given HttpStoreUser', () => {
                 const result = await new HttpStoreUser().addToDone(
                     mockWorkoutForFavorite._id
                 );
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result).toEqual({
                     ...mockUser,
@@ -214,9 +209,36 @@ describe('Given HttpStoreUser', () => {
                 const result = await new HttpStoreUser().deleteFromDone(
                     mockUserForDeleteDone.done[0]._id as string
                 );
-                console.log(result);
                 expect(fetch).toBeCalled();
                 expect(result.done).toHaveLength(0);
+            });
+        });
+        describe('And we use method updateUser', () => {
+            test('should first', async () => {
+                global.fetch = jest.fn().mockResolvedValue({
+                    json: jest
+                        .fn()
+                        .mockResolvedValue({ ...mockUser, name: 'test' }),
+                });
+                const result = await new HttpStoreUser().updateUser({
+                    ...mockUser,
+                    name: 'test',
+                });
+                expect(fetch).toBeCalled();
+                expect(result).toEqual({ ...mockUser, name: 'test' });
+            });
+        });
+        describe('And we use method deleteUser', () => {
+            test('should first', async () => {
+                global.fetch = jest.fn().mockResolvedValue({
+                    json: jest.fn().mockResolvedValue({}),
+                });
+                const result = await new HttpStoreUser().deleteUser(
+                    mockUser._id as string
+                );
+                console.log(result, 'ESTOY AQUIIIIII');
+                expect(fetch).toBeCalled();
+                expect(result).toEqual({});
             });
         });
     });

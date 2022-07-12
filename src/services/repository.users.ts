@@ -65,9 +65,9 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    deleteUser(user: iUser): Promise<number> {
-        return fetch(this.url + `/${user._id}`, {
+    deleteUser(id: string): Promise<number> {
+        return fetch(this.url + `/${id}`, {
             method: 'DELETE',
-        }).then((resp) => resp.status);
+        }).then((resp) => resp.json());
     }
 }
