@@ -5,7 +5,6 @@ import { useState } from 'react';
 import './listWorkoutsThree.css';
 
 export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
-    console.log(workouts);
     const [indexMarker, setIndexMarker] = useState(0);
     function handleOnClickNext() {
         if (indexMarker === 9) {
