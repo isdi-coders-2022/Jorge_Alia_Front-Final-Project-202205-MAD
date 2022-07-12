@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { iProperties } from '../../models/properties';
 import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
+import './workoutFilter.css';
 
 export function Filter({ properties }: { properties: iProperties }) {
     const workouts = useSelector((store: iState) => store.workouts);
@@ -13,11 +14,17 @@ export function Filter({ properties }: { properties: iProperties }) {
     console.log(filterWorkout);
     const template = (
         <>
-            {filterWorkout.map((item) => (
-                <Link to={'/details/' + item._id}>
-                    <img src={item.image} alt="" />
-                </Link>
-            ))}
+            <section className="ListImageFilter">
+                {filterWorkout.map((item) => (
+                    <Link to={'/details/' + item._id}>
+                        <img
+                            className="filteredImage"
+                            src={item.image}
+                            alt=""
+                        />
+                    </Link>
+                ))}
+            </section>
         </>
     );
     return template;

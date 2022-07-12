@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Filter from '../components/workout/filter';
+import Filter from '../components/workout/workoutFilter';
 import './workoutsPage.css';
 
 export function WorkoutPage() {
@@ -109,9 +109,7 @@ export function WorkoutPage() {
                 />
             </div>
             <div className="wrapperTitleModality">
-                <h3 className="titleModality">
-                    !! Busca y añade a tu rutina de ejercicos !!
-                </h3>
+                <h3 className="titleModality">!! Resultados de tu filtro !!</h3>
             </div>
             <Filter properties={properties}></Filter>
         </>

@@ -1,59 +1,16 @@
-import { log } from 'console';
-import { SyntheticEvent, useState } from 'react';
-import { HttpStoreUser } from '../services/repository.users';
+import LoginForm from '../components/form/loginForm';
+import { RegisterForm } from '../components/form/registerForm';
 
 export function LoginPage() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        passwd: '',
-        workouts: [],
-        done: [],
-        rol: 'User',
-    });
-    function handleSubmit(ev: SyntheticEvent) {
-        ev.preventDefault();
-        new HttpStoreUser().registerUser(formData);
-    }
-    function handleChange(ev: SyntheticEvent) {
-        const element = ev.target as HTMLFormElement;
-        setFormData({ ...formData, [element.name]: element.value });
-        console.log(element);
-    }
     const template = (
         <>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <p>Nombre de usuario</p>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                    <p>Correo electrónico</p>
-                    <input
-                        type="text"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    <p>Contraseña</p>
-                    <input
-                        type="text"
-                        name="passwd"
-                        value={formData.passwd}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <button type="submit">Registrarse</button>
-            </form>
+            <h3>Acceder</h3>
+            <LoginForm></LoginForm>
+            <h3>Registrase</h3>
+            <RegisterForm></RegisterForm>
         </>
     );
+
     return template;
 }
 
