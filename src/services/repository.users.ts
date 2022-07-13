@@ -1,4 +1,5 @@
 import { iUser, iUserWithToken } from '../models/user.model';
+import { getToken } from '../utils/token';
 
 export class HttpStoreUser {
     url: string;
@@ -32,7 +33,7 @@ export class HttpStoreUser {
     addToFavorites(id: string) {
         return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-            headers: { 'content-type': 'application/json' },
+            headers: { Authorization: `Bearer ${getToken()}` },
         }).then((resp) => resp.json());
     }
 
@@ -46,7 +47,6 @@ export class HttpStoreUser {
     addToDone(id: string) {
         return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
@@ -65,9 +65,10 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    deleteUser(id: string): Promise<number> {
-        return fetch(this.url + `/${id}`, {
+    deleteUser(token: string, id: string): Promise<number> {
+        return fetch(this.url + `/delete/${id}`, {
             method: 'DELETE',
+            headers: { authorization: `Bearer ` + { token } },
         }).then((resp) => resp.json());
     }
 }

@@ -22,7 +22,7 @@ export function LoginForm() {
         console.log(loginUser);
         if (loginUser.token) {
             dispatcher(loadUsersAction(loginUser));
-            localStorage.setItem('loginUser', JSON.stringify(loginUser));
+            localStorage.setItem('token', loginUser.token);
             navegate('/');
         }
     }
@@ -46,7 +46,7 @@ export function LoginForm() {
                 <p className="titleInput">Contraseña</p>
                 <input
                     className="input"
-                    type="text"
+                    type="password"
                     name="passwd"
                     value={formData.passwd}
                     onChange={handleChange}

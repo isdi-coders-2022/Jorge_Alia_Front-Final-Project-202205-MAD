@@ -10,14 +10,15 @@ export function RegisterForm() {
         done: [],
         rol: 'User',
     });
-    function handleSubmit(ev: SyntheticEvent) {
+    async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        new HttpStoreUser().registerUser(formData);
+        const newUser = await new HttpStoreUser().registerUser(formData);
+        console.log(formData);
+        console.log(newUser, 'NEWWW USEEEER');
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
         setFormData({ ...formData, [element.name]: element.value });
-        console.log(element);
     }
     const template = (
         <>
@@ -43,7 +44,7 @@ export function RegisterForm() {
                 <p className="titleInput">Contraseña</p>
                 <input
                     className="input"
-                    type="text"
+                    type="password"
                     name="passwd"
                     value={formData.passwd}
                     onChange={handleChange}

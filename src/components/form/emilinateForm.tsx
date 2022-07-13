@@ -7,33 +7,19 @@ import { iUserWithToken } from '../../models/user.model';
 export function EliminateForm() {
     const user = useSelector((store: iState) => store.users);
 
-    const [formData, setFormData] = useState({
-        email: '',
-        passwd: '',
-    });
-
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        const loginUser: iUserWithToken = await new HttpStoreUser().loginUser(
-            formData
+        console.log(user.user._id);
+        const deleteUser = await new HttpStoreUser().deleteUser(
+            user.token,
+            user.user._id as string
         );
-        if (loginUser.token) {
-            const deleteUser = await new HttpStoreUser().deleteUser(
-                user.user._id as string
-            );
-            console.log(formData, 'FORMDATA');
-            console.log(deleteUser, 'UPDATEUSER');
-        }
-    }
-    function handleChange(ev: SyntheticEvent) {
-        const element = ev.target as HTMLFormElement;
-        setFormData({ ...formData, [element.name]: element.value });
     }
 
     const template = (
         <>
             <form onSubmit={handleSubmit}>
-                <p className="titleInput">Correo electrónico</p>
+                {/* <p className="titleInput">Correo electrónico</p>
                 <input
                     className="input"
                     type="text"
@@ -50,7 +36,7 @@ export function EliminateForm() {
                     value={formData.passwd}
                     onChange={handleChange}
                     required
-                />
+                /> */}
                 <div>
                     <button className="buttonLogin" type="submit">
                         Baja de cuenta
