@@ -7,6 +7,4 @@ export const loadUsersAction = createAction<iUserWithToken>(
     actionTypes['user@load']
 );
 
-export const updateUserAction = createAction<iUserWithToken>(
-    actionTypes['user@update']
-);
+export const updateUserAction = createAction<iUser>(actionTypes['user@update']);

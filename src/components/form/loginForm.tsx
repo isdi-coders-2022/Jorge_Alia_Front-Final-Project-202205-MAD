@@ -19,7 +19,6 @@ export function LoginForm() {
         const loginUser: iUserWithToken = await new HttpStoreUser().loginUser(
             formData
         );
-        console.log(loginUser);
         if (loginUser.token) {
             dispatcher(loadUsersAction(loginUser));
             localStorage.setItem('token', loginUser.token);

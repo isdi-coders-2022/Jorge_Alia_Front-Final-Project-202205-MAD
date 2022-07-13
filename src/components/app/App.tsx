@@ -48,13 +48,13 @@ function App() {
             title: 'workouts',
         },
         {
-            path: 'mis selecciones',
+            path: 'selecciones',
             label: 'mis selecciones',
             page: <MySelectionPage />,
             title: 'Mis selecciones',
         },
         {
-            path: 'sobre mí',
+            path: 'sobremí',
             label: 'sobre mí',
             page: <AboutMePage />,
             title: 'Sobre mí',

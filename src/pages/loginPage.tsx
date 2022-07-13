@@ -8,7 +8,6 @@ import './loginPage.css';
 
 export function LoginPage() {
     const user = useSelector((store: iState) => store.users);
-    console.log(user);
     let template;
 
     if (user.token === '') {

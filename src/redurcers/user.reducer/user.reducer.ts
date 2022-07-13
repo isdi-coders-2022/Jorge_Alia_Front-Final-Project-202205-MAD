@@ -19,10 +19,11 @@ const initialState: iUserWithToken = {
 export const userReducer = createReducer(initialState, (builder) => {
     return builder
         .addCase(action.loadUsersAction, (state, action) => action.payload)
-        .addCase(
-            action.updateUserAction,
-            (state, action) => (state = action.payload)
-        )
-
+        .addCase(action.updateUserAction, (state, action) => {
+            return {
+                ...state,
+                user: action.payload,
+            };
+        })
         .addDefaultCase((state) => state);
 });
