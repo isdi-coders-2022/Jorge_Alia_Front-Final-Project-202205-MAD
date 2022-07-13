@@ -4,9 +4,16 @@ import LoginForm from '../components/form/loginForm';
 import ModifyForm from '../components/form/modifyForm';
 import { RegisterForm } from '../components/form/registerForm';
 import { iState } from '../store/store';
+import { useNavigate } from 'react-router-dom';
 import './loginPage.css';
 
 export function LoginPage() {
+    const navegate = useNavigate();
+    function handleSubmit() {
+        localStorage.clear();
+        navegate('/');
+        window.location.reload();
+    }
     const user = useSelector((store: iState) => store.users);
     let template;
 
@@ -33,7 +40,17 @@ export function LoginPage() {
     } else {
         template = (
             <>
-                <h2 className="titleLogin">MI CUENTA</h2>
+                <div className="wrapperMyCountButton">
+                    <div></div>
+                    <h2 className="titleLogin">MI CUENTA</h2>
+                    <button
+                        className="buttonLogout"
+                        onClick={() => handleSubmit()}
+                    >
+                        SALIR
+                    </button>
+                </div>
+
                 <div className="wrapperLogin">
                     <div>
                         <h3>Modifica tus datos</h3>
