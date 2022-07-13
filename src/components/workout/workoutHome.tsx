@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { iWorkout } from '../../models/workout.model';
-import './workout.css';
+import './workoutHome.css';
 
-export function Workout({ workout }: { workout: iWorkout }) {
+export function WorkoutHome({ workout }: { workout: iWorkout }) {
     const template = (
         <>
             <Link to={'/details/' + workout._id}>

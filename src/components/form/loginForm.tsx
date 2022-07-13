@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { iUserWithToken } from '../../models/user.model';
 import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
+import Swal from 'sweetalert2';
 import './loginForm.css';
 
 export function LoginForm() {
@@ -23,6 +24,13 @@ export function LoginForm() {
             dispatcher(loadUsersAction(loginUser));
             localStorage.setItem('token', loginUser.token);
             navegate('/');
+        } else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Email or password incorrect',
+                icon: 'error',
+                confirmButtonText: 'volver',
+            });
         }
     }
 

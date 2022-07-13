@@ -1,11 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { iWorkout } from '../../models/workout.model';
 import { updateUserAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
-import { iState } from '../../store/store';
 import './workoutDetails.css';
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
-    const user = useSelector((store: iState) => store.users);
     const dispatcher = useDispatch();
 
     function handleSubmit() {

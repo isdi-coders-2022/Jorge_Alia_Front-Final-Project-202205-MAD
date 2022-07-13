@@ -40,7 +40,7 @@ export class HttpStoreUser {
     deleteFavorites(id: string) {
         return fetch(this.url + `/deletefromfavorites/${id}`, {
             method: 'PATCH',
-            headers: { 'content-type': 'application/json' },
+            headers: { Authorization: `Bearer ${getToken()}` },
         }).then((resp) => resp.json());
     }
 

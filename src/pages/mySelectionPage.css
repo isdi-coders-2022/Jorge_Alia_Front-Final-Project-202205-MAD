@@ -1,0 +1,15 @@
+.wrapperInfo {
+    text-align: center;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.buttonGoToRegister {
+    cursor: pointer;
+    margin-top: 1rem;
+    font-family: 'MuseoModerno', cursive;
+    font-weight: bold;
+    background-color: #e2faa0;
+}

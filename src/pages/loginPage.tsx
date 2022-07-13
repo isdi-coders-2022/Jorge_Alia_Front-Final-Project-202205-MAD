@@ -4,15 +4,12 @@ import LoginForm from '../components/form/loginForm';
 import ModifyForm from '../components/form/modifyForm';
 import { RegisterForm } from '../components/form/registerForm';
 import { iState } from '../store/store';
-import { useNavigate } from 'react-router-dom';
 import './loginPage.css';
 
 export function LoginPage() {
-    const navegate = useNavigate();
     function handleSubmit() {
         localStorage.clear();
-        navegate('/');
-        window.location.reload();
+        window.location.href = 'http://localhost:3000';
     }
     const user = useSelector((store: iState) => store.users);
     let template;
