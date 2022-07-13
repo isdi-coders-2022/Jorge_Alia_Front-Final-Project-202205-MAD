@@ -1,0 +1,34 @@
+.containerDetails {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.containerDetails__description {
+    margin-left: 3rem;
+    font-weight: bold;
+}
+
+.containerDetails__video {
+    margin-left: 3rem;
+}
+
+.titleDescription {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.buttonAddFavorite {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #ede97c;
+    font-family: 'MuseoModerno', cursive;
+    font-weight: bold;
+    height: 4rem;
+    width: 11rem;
+    border: none;
+}
+
+.wrapperButtonAdd {
+    text-align: center;
+}

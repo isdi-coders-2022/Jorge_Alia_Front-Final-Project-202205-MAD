@@ -5,7 +5,7 @@ import { iState, store } from '../store/store';
 
 import HomePage from './homePage';
 import { iWorkout } from '../models/workout.model';
-import { iUser } from '../models/user.model';
+import { iUserWithToken } from '../models/user.model';
 
 jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'),
@@ -51,7 +51,7 @@ describe('Given the component Home', () => {
         test('Then it should render', () => {
             const preloadedState: iState = {
                 workouts: [] as Array<iWorkout>,
-                users: [] as Array<iUser>,
+                users: {} as iUserWithToken,
             };
             render(
                 <BrowserRouter>

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { DetailsWorkout } from '../components/workout/workout.details';
+import { DetailsWorkout } from '../components/workout/workoutDetails';
 import { iWorkout } from '../models/workout.model';
 
 import { iState } from '../store/store';

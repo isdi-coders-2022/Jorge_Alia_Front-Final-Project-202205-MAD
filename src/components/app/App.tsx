@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
+import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
 
 import { HttpStoreWorkouts } from '../../services/repository.workouts';
@@ -16,6 +17,10 @@ function App() {
         apiWorkout
             .getWorkouts()
             .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
+        const user = localStorage.getItem('loginUser');
+        if (user) {
+            dispatcher(loadUsersAction(JSON.parse(user)));
+        }
     }, [apiWorkout, dispatcher]);
 
     const HomePage = React.lazy(() => import('../../pages/homePage'));
@@ -29,7 +34,7 @@ function App() {
     const LoginPage = React.lazy(() => import('../../pages/loginPage'));
 
     const options: aMenuItems = [
-        { path: '', label: '', page: <HomePage /> },
+        { path: '', label: 'home', page: <HomePage />, title: 'Home' },
         {
             path: 'details/:id',
             label: '',

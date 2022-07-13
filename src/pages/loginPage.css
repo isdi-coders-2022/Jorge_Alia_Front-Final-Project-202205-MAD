@@ -1,0 +1,18 @@
+.wrapperLogin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.imageLogin {
+    margin-left: -5%;
+    height: 24rem;
+}
+
+.titleLogin {
+    text-align: center;
+}
+
+.titleRegister {
+    margin-top: 4rem;
+}

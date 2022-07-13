@@ -1,4 +1,5 @@
-import { iUser } from '../models/user.model';
+import { iUser, iUserWithToken } from '../models/user.model';
+import { getToken } from '../utils/token';
 
 export class HttpStoreUser {
     url: string;
@@ -21,7 +22,7 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    loginUser(user: Partial<iUser>): Promise<iUser> {
+    loginUser(user: Partial<iUser>): Promise<iUserWithToken> {
         return fetch(this.url + '/login', {
             method: 'POST',
             body: JSON.stringify(user),
@@ -32,7 +33,7 @@ export class HttpStoreUser {
     addToFavorites(id: string) {
         return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-            headers: { 'content-type': 'application/json' },
+            headers: { Authorization: `Bearer ${getToken()}` },
         }).then((resp) => resp.json());
     }
 
@@ -46,7 +47,6 @@ export class HttpStoreUser {
     addToDone(id: string) {
         return fetch(this.url + `/addtofavorites/${id}`, {
             method: 'PATCH',
-
             headers: { 'content-type': 'application/json' },
         }).then((resp) => resp.json());
     }
@@ -57,7 +57,7 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    updateUser(user: iUser): Promise<iUser> {
+    updateUser(user: Partial<iUser>): Promise<iUser> {
         return fetch(this.url + `/${user._id}`, {
             method: 'PATCH',
             body: JSON.stringify(user),
@@ -65,9 +65,10 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    deleteUser(user: iUser): Promise<number> {
-        return fetch(this.url + `/${user._id}`, {
+    deleteUser(token: string, id: string): Promise<number> {
+        return fetch(this.url + `/delete/${id}`, {
             method: 'DELETE',
-        }).then((resp) => resp.status);
+            headers: { authorization: `Bearer ` + { token } },
+        }).then((resp) => resp.json());
     }
 }
