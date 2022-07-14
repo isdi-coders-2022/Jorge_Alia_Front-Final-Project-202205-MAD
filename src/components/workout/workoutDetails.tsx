@@ -9,7 +9,9 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     function handleSubmit() {
         new HttpStoreUser()
             .addToFavorites(workout._id as string)
-            .then((data) => dispatcher(updateUserAction(data)));
+            .then((data) => {
+                dispatcher(updateUserAction(data));
+            });
     }
     const template = (
         <>

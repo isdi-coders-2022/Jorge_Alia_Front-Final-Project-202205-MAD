@@ -1,6 +1,11 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
 import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
@@ -70,6 +75,12 @@ function App() {
             label: 'Login',
             page: <LoginPage />,
             title: 'Login',
+        },
+        {
+            path: '*',
+            label: '',
+            page: <Navigate replace to="" />,
+            title: '',
         },
     ];
 

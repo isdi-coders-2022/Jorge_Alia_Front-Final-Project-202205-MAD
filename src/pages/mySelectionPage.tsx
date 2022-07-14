@@ -22,13 +22,7 @@ export function MySelectionPage() {
             </>
         );
     } else {
-        template = (
-            <>
-                {user.user.workouts && (
-                    <WorkoutList workouts={user.user.workouts}></WorkoutList>
-                )}
-            </>
-        );
+        template = <>{user.user.workouts && <WorkoutList></WorkoutList>}</>;
     }
 
     return template;

@@ -5,7 +5,8 @@ import { HttpStoreUser } from '../../services/repository.users';
 import { updateUserAction } from '../../redurcers/user.reducer/user.action.creators';
 import './workoutHome.css';
 
-export function Workout({ workout }: { workout: iWorkout }) {
+export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
+    console.log(workout._id, 'ID COMPONETE SELECIOOOON');
     const dispatcher = useDispatch();
     function handleSubmit() {
         new HttpStoreUser()
@@ -17,7 +18,7 @@ export function Workout({ workout }: { workout: iWorkout }) {
             <Link to={'/details/' + workout._id}>
                 <img className="image" src={workout.image} alt="" />
             </Link>
-            <button onClick={() => handleSubmit()}>Elimar</button>
+            <button onClick={() => handleSubmit()}>Elimiar</button>
         </>
     );
     return template;
