@@ -1,14 +1,42 @@
 import { useState } from 'react';
 import Filter from '../components/workout/workoutFilter';
 import './workoutsPage.css';
-
+let changeFilter = false;
 export function WorkoutPage() {
     const [properties, setProperties] = useState({
         category: '',
         complementaryMaterial: '',
     });
+
     function addFilter(filter: string) {
         setProperties({ ...properties, category: filter });
+        const imgBlack = document.getElementById('img');
+
+        if (changeFilter === false) {
+            (imgBlack as HTMLElement).classList.add('mystyle');
+            changeFilter = true;
+        }
+        // if (changeFilter === true) {
+        //     (imgBlack as HTMLElement).classList.remove('mystyle');
+        //     changeFilter = false;
+        // }
+
+        // let changeFilter = false;
+        // if ((changeFilter = false)) {
+        // }
+
+        // const tik = document.getElementById('tikYes');
+
+        // if ((changeFilter = false)) {
+
+        // (tik as HTMLElement).classList.add('tikYes');
+        // changeFilter = true;
+        // }
+        // if ((changeFilter = true)) {
+        //     (imgBlack as HTMLElement).classList.remove('mystyle');
+        //     (tik as HTMLElement).classList.add('tikYes');
+        //     changeFilter = false;
+        // }
     }
 
     function addFilterMaterial(filter: string) {
@@ -26,16 +54,25 @@ export function WorkoutPage() {
             </div>
 
             <section className="firstFilter">
-                <img
-                    role="button"
-                    className="imageFilter"
-                    src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/filtros%2Fbrazoyab.jpg?alt=media&token=8f2198be-f494-447c-b632-f95213a5c499"
-                    alt="Brazos y Abs"
-                    title="Brazos y Abs"
-                    onClick={() => {
-                        addFilter('Brazos y abs');
-                    }}
-                />
+                <div className="wrapperFilter">
+                    <img
+                        role="button"
+                        className="filterImage"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/filtros%2Fbrazoyab.jpg?alt=media&token=8f2198be-f494-447c-b632-f95213a5c499"
+                        alt="Brazos y Abs"
+                        title="Brazos y Abs"
+                        onClick={() => {
+                            addFilter('Brazos y abs');
+                        }}
+                        id="img"
+                    />
+                    <img
+                        id="tik tikYes"
+                        className="tik"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ftik.png?alt=media&token=ac88817c-857f-4ca4-9127-233dd6e530e9"
+                        alt=""
+                    />
+                </div>
 
                 <img
                     role="button"

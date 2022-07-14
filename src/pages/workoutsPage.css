@@ -16,6 +16,17 @@
     cursor: pointer;
     width: 18%;
 }
+.wrapperImageFilter {
+    width: 18%;
+    background-color: rgba(0, 0, 0, 0.785);
+    position: absolute;
+}
+.imageFilterPrueba {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: relative;
+}
 
 .imageFilter2 {
     cursor: pointer;
@@ -36,4 +47,26 @@
 
 .titleModality {
     font-size: 1.5em;
+}
+.mystyle {
+    filter: brightness(35%);
+}
+
+.tik {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    margin-left: -3%;
+    margin-top: 19%;
+    visibility: hidden;
+}
+.tikYes {
+    visibility: initial !important;
+}
+.wrapperFilter {
+    width: 18%;
+}
+.filterImage {
+    cursor: pointer;
+    width: 100%;
 }

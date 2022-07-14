@@ -109,8 +109,6 @@ describe('Given HttpStoreWorkouts', () => {
                     mockWorkoutFordelete.comments[0],
                     mockWorkoutFordelete._id
                 );
-                console.log(result);
-                console.log(mockWorkoutFordelete.comments[0], 'COMENTARIOOOO');
                 expect(fetch).toBeCalled();
                 expect(result.comments).toHaveLength(0);
             });

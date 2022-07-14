@@ -7,8 +7,11 @@ import { iState } from '../store/store';
 import './loginPage.css';
 
 export function LoginPage() {
+    function handleSubmit() {
+        localStorage.clear();
+        window.location.href = 'http://localhost:3000';
+    }
     const user = useSelector((store: iState) => store.users);
-    console.log(user);
     let template;
 
     if (user.token === '') {
@@ -34,7 +37,17 @@ export function LoginPage() {
     } else {
         template = (
             <>
-                <h2 className="titleLogin">MI CUENTA</h2>
+                <div className="wrapperMyCountButton">
+                    <div></div>
+                    <h2 className="titleLogin">MI CUENTA</h2>
+                    <button
+                        className="buttonLogout"
+                        onClick={() => handleSubmit()}
+                    >
+                        SALIR
+                    </button>
+                </div>
+
                 <div className="wrapperLogin">
                     <div>
                         <h3>Modifica tus datos</h3>

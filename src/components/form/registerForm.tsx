@@ -12,9 +12,7 @@ export function RegisterForm() {
     });
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        const newUser = await new HttpStoreUser().registerUser(formData);
-        console.log(formData);
-        console.log(newUser, 'NEWWW USEEEER');
+        await new HttpStoreUser().registerUser(formData);
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;

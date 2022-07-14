@@ -1,6 +1,5 @@
 import { iWorkout } from '../../models/workout.model';
-import { Workout } from './workout';
-import './listWorkouts.css';
+import { WorkoutHome } from './workoutHome';
 import { useState } from 'react';
 import './listWorkoutsThree.css';
 
@@ -49,7 +48,9 @@ export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
                                     className="workoutsList__workout"
                                     key={workout._id}
                                 >
-                                    <Workout workout={workout}></Workout>
+                                    <WorkoutHome
+                                        workout={workout}
+                                    ></WorkoutHome>
                                 </li>
                             )
                     )}
