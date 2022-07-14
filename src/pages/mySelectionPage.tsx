@@ -11,7 +11,7 @@ export function MySelectionPage() {
         template = (
             <>
                 <div className="wrapperInfo">
-                    <p>! Regístrate para crear tu propio entrenamiento !</p>
+                    <p>! Únete para crear tu propio entrenamiento !</p>
 
                     <Link to="/login">
                         <button className="buttonGoToRegister">

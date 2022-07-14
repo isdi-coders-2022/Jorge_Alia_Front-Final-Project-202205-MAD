@@ -59,7 +59,7 @@ export function Menu() {
                 {optionsMenu.map((item) => (
                     <li className="menu__item" key={item.label}>
                         <Link to={item.path} className="menu__link">
-                            <h3>{item.label}</h3>
+                            <h3 className="menu__title">{item.label}</h3>
                         </Link>
                     </li>
                 ))}

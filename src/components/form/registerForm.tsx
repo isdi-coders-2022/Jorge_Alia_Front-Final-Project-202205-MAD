@@ -1,5 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { HttpStoreUser } from '../../services/repository.users';
+import Swal from 'sweetalert2';
 
 export function RegisterForm() {
     const [formData, setFormData] = useState({
@@ -13,6 +14,12 @@ export function RegisterForm() {
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
         await new HttpStoreUser().registerUser(formData);
+        Swal.fire({
+            title: 'Usuario creado correctamente',
+            text: 'Ya puedes accerder, ! Entrena duro!',
+            icon: 'success',
+            confirmButtonText: 'continuar',
+        });
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;

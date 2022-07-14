@@ -8,6 +8,7 @@
     margin-bottom: 0;
 }
 .buttonLogin {
+    cursor: pointer;
     margin-top: 1rem;
     font-family: 'MuseoModerno', cursive;
     font-weight: bold;
