@@ -1,6 +1,5 @@
 import { iWorkout } from '../../models/workout.model';
 import { Workout } from './workoutMySelection';
-import './listWorkouts.css';
 
 export function WorkoutList({ workouts }: { workouts: Array<iWorkout> }) {
     const template = (

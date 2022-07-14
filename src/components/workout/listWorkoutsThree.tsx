@@ -1,6 +1,5 @@
 import { iWorkout } from '../../models/workout.model';
 import { WorkoutHome } from './workoutHome';
-import './listWorkouts.css';
 import { useState } from 'react';
 import './listWorkoutsThree.css';
 
