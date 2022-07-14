@@ -4,7 +4,7 @@ import Filter from '../components/workout/workoutFilter';
 import { iState } from '../store/store';
 import { Link } from 'react-router-dom';
 import './workoutsPage.css';
-let changeFilter = false;
+
 export function WorkoutPage() {
     const user = useSelector((store: iState) => store.users);
     let template;
@@ -13,35 +13,18 @@ export function WorkoutPage() {
         complementaryMaterial: '',
     });
 
-    function addFilter(filter: string) {
+    function addFilter(filter: string, id: string) {
         setProperties({ ...properties, category: filter });
-        const imgBlack = document.getElementById('img');
+        const imgBlackType = document.getElementById(id);
+        // const imgBlackMaterial = document.getElementById(id);
+        const allImages = document.querySelectorAll('.imageFilter');
+        allImages.forEach((item) => {
+            if (item.classList.contains('mystyle')) {
+                item.classList.remove('mystyle');
+            }
+        });
 
-        if (changeFilter === false) {
-            (imgBlack as HTMLElement).classList.add('mystyle');
-            changeFilter = true;
-        }
-        // if (changeFilter === true) {
-        //     (imgBlack as HTMLElement).classList.remove('mystyle');
-        //     changeFilter = false;
-        // }
-
-        // let changeFilter = false;
-        // if ((changeFilter = false)) {
-        // }
-
-        // const tik = document.getElementById('tikYes');
-
-        // if ((changeFilter = false)) {
-
-        // (tik as HTMLElement).classList.add('tikYes');
-        // changeFilter = true;
-        // }
-        // if ((changeFilter = true)) {
-        //     (imgBlack as HTMLElement).classList.remove('mystyle');
-        //     (tik as HTMLElement).classList.add('tikYes');
-        //     changeFilter = false;
-        // }
+        (imgBlackType as HTMLElement).classList.toggle('mystyle');
     }
 
     function addFilterMaterial(filter: string) {
@@ -59,25 +42,23 @@ export function WorkoutPage() {
                 </div>
 
                 <section className="firstFilter">
-                    <div className="wrapperFilter">
-                        <img
-                            role="button"
-                            className="filterImage"
-                            src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/filtros%2Fbrazoyab.jpg?alt=media&token=8f2198be-f494-447c-b632-f95213a5c499"
-                            alt="Brazos y Abs"
-                            title="Brazos y Abs"
-                            onClick={() => {
-                                addFilter('Brazos y abs');
-                            }}
-                            id="img"
-                        />
-                        <img
+                    <img
+                        role="button"
+                        className="imageFilter"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/filtros%2Fbrazoyab.jpg?alt=media&token=8f2198be-f494-447c-b632-f95213a5c499"
+                        alt="Brazos y Abs"
+                        title="Brazos y Abs"
+                        onClick={() => {
+                            addFilter('Brazos y abs', 'brazos-abs');
+                        }}
+                        id="brazos-abs"
+                    />
+                    {/* <img
                             id="tik tikYes"
                             className="tik"
                             src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ftik.png?alt=media&token=ac88817c-857f-4ca4-9127-233dd6e530e9"
                             alt=""
-                        />
-                    </div>
+                        /> */}
 
                     <img
                         role="button"
@@ -86,8 +67,9 @@ export function WorkoutPage() {
                         alt="Glúteos & Piernas"
                         title="Glúteos & Piernas"
                         onClick={() => {
-                            addFilter('Gluteos y piernas');
+                            addFilter('Gluteos y piernas', 'gluteos-piernas');
                         }}
+                        id="gluteos-piernas"
                     />
 
                     <img
@@ -97,8 +79,9 @@ export function WorkoutPage() {
                         alt="Total body"
                         title="Total body"
                         onClick={() => {
-                            addFilter('Total body');
+                            addFilter('Total body', 'total-body');
                         }}
+                        id="total-body"
                     />
                 </section>
                 <div className="wrapperTitleModality">

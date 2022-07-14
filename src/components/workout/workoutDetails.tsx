@@ -6,7 +6,7 @@ import './workoutDetails.css';
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     const dispatcher = useDispatch();
 
-    function handleSubmit() {
+    function handleFavorite() {
         new HttpStoreUser()
             .addToFavorites(workout._id as string)
             .then((data) => {
@@ -36,7 +36,7 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                         <button
                             className="buttonAddFavorite"
                             onClick={() => {
-                                handleSubmit();
+                                handleFavorite();
                             }}
                         >
                             AÑADIR A MI RUTINA
