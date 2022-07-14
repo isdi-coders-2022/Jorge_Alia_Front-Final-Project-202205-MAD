@@ -65,10 +65,10 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    deleteUser(token: string, id: string): Promise<number> {
+    deleteUser(id: string): Promise<number> {
         return fetch(this.url + `/delete/${id}`, {
             method: 'DELETE',
-            headers: { authorization: `Bearer ` + { token } },
+            headers: { authorization: `Bearer ${getToken()}` },
         }).then((resp) => resp.json());
     }
 }

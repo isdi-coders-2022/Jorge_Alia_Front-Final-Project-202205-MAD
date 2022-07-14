@@ -7,6 +7,7 @@ import './mySelectionPage.css';
 export function MySelectionPage() {
     const user = useSelector((store: iState) => store.users);
     let template;
+    console.log(user.user.workouts);
     if (user.token === '') {
         template = (
             <>
@@ -22,7 +23,24 @@ export function MySelectionPage() {
             </>
         );
     } else {
-        template = <>{user.user.workouts && <WorkoutList></WorkoutList>}</>;
+        if (user.user.workouts.length === 0 && user.token !== '') {
+            template = (
+                <>
+                    <main className="wrapperMain wrapperInfo">
+                        <p>Ningún entrenamiento añadido</p>
+                    </main>
+                    ;
+                </>
+            );
+        } else {
+            template = (
+                <>
+                    <main className="wrapperMain">
+                        {user.user.workouts && <WorkoutList></WorkoutList>}
+                    </main>
+                </>
+            );
+        }
     }
 
     return template;

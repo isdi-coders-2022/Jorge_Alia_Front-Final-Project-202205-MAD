@@ -11,7 +11,6 @@ export function EliminateForm() {
         ev.preventDefault();
         console.log(user.user._id);
         const deleteUser = await new HttpStoreUser().deleteUser(
-            user.token,
             user.user._id as string
         );
     }
