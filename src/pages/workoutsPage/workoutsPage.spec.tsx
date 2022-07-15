@@ -1,5 +1,4 @@
 import { BrowserRouter } from 'react-router-dom';
-import { iUser } from '../../models/user.model';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
 import { fireEvent, render, screen } from '../../utils/testutils';
@@ -10,7 +9,7 @@ const reducer = {
     users: userReducer,
 };
 
-describe('Given the component WorkPage', () => {
+describe('Given the component WorkoutPage', () => {
     describe('When calling it', () => {
         test('Then it should render', () => {
             const preloadedState = {
@@ -65,7 +64,6 @@ describe('Given the component WorkPage', () => {
                     reducer,
                 }
             );
-
             fireEvent.click(screen.getByAltText(/Brazos y Abs/));
             fireEvent.click(screen.getByAltText(/Glúteos & Piernas/));
             fireEvent.click(screen.getByAltText(/Total body/));
@@ -73,7 +71,6 @@ describe('Given the component WorkPage', () => {
             fireEvent.click(screen.getByAltText(/Goma/));
             fireEvent.click(screen.getByAltText(/Mancuernas/));
             fireEvent.click(screen.getByAltText(/Softball/));
-
             const newResult = screen.getByText(/Selecciona uso de material/i);
             expect(newResult).toBeInTheDocument();
         });
