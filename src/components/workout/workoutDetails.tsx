@@ -12,7 +12,6 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
             .addToFavorites(workout._id as string)
             .then((data) => {
                 dispatcher(updateUserAction(data));
-                console.log(data, 'dataaaa');
                 Swal.fire({
                     title: 'Hecho!',
                     text: 'Agregado correctament',
