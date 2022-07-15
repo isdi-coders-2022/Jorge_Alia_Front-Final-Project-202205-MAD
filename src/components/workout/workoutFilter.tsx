@@ -11,7 +11,6 @@ export function Filter({ properties }: { properties: iProperties }) {
             item.category === properties.category &&
             item.complementaryMaterial === properties.complementaryMaterial
     );
-    console.log(filterWorkout);
     const template = (
         <>
             <section className="ListImageFilter">

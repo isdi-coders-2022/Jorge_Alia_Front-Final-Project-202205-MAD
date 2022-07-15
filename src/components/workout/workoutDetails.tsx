@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
 import { iWorkout } from '../../models/workout.model';
 import { updateUserAction } from '../../redurcers/user.reducer/user.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
@@ -11,6 +12,21 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
             .addToFavorites(workout._id as string)
             .then((data) => {
                 dispatcher(updateUserAction(data));
+
+                Swal.fire({
+                    title: 'Hecho!',
+                    text: 'Agregado correctament',
+                    icon: 'success',
+                    confirmButtonText: 'aceptar',
+                });
+            })
+            .catch((error) => {
+                Swal.fire({
+                    title: 'error!',
+                    text: 'No se pudo agregar',
+                    icon: 'error',
+                    confirmButtonText: 'volver',
+                });
             });
     }
     const template = (

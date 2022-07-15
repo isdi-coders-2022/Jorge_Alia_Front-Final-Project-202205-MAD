@@ -6,7 +6,6 @@ import { updateUserAction } from '../../redurcers/user.reducer/user.action.creat
 import './workoutHome.css';
 
 export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
-    console.log(workout._id, 'ID COMPONETE SELECIOOOON');
     const dispatcher = useDispatch();
     function handleSubmit() {
         new HttpStoreUser()

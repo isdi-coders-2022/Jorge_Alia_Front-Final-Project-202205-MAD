@@ -27,9 +27,16 @@ export function WorkoutPage() {
         (imgBlackType as HTMLElement).classList.toggle('mystyle');
     }
 
-    function addFilterMaterial(filter: string) {
+    function addFilterMaterial(filter: string, id: string) {
         setProperties({ ...properties, complementaryMaterial: filter });
-        console.log(properties);
+        const imgBlackType = document.getElementById(id);
+        const allImages = document.querySelectorAll('.imageFilter2');
+        allImages.forEach((item) => {
+            if (item.classList.contains('mystyle')) {
+                item.classList.remove('mystyle');
+            }
+        });
+        (imgBlackType as HTMLElement).classList.toggle('mystyle');
     }
     if (user.token !== '') {
         template = (
@@ -54,11 +61,11 @@ export function WorkoutPage() {
                         id="brazos-abs"
                     />
                     {/* <img
-                            id="tik tikYes"
-                            className="tik"
-                            src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ftik.png?alt=media&token=ac88817c-857f-4ca4-9127-233dd6e530e9"
-                            alt=""
-                        /> */}
+                        id="tik tikYes"
+                        className="tik"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ftik.png?alt=media&token=ac88817c-857f-4ca4-9127-233dd6e530e9"
+                        alt=""
+                    /> */}
 
                     <img
                         role="button"
@@ -98,8 +105,9 @@ export function WorkoutPage() {
                         alt="Sin material"
                         title="Sin material"
                         onClick={() => {
-                            addFilterMaterial('Sin material');
+                            addFilterMaterial('Sin material', 'sin-material');
                         }}
+                        id="sin-material"
                     />
                     <img
                         role="button"
@@ -108,8 +116,9 @@ export function WorkoutPage() {
                         alt="Goma"
                         title="Goma"
                         onClick={() => {
-                            addFilterMaterial('Goma');
+                            addFilterMaterial('Goma', 'goma');
                         }}
+                        id="goma"
                     />
                 </div>
                 <div className="secondFilter2">
@@ -120,8 +129,9 @@ export function WorkoutPage() {
                         alt="Mancuernas"
                         title="Mancuernas"
                         onClick={() => {
-                            addFilterMaterial('Mancuernas');
+                            addFilterMaterial('Mancuernas', 'mancuernas');
                         }}
+                        id="mancuernas"
                     />
 
                     <img
@@ -131,8 +141,9 @@ export function WorkoutPage() {
                         alt="Softball"
                         title="Sofball"
                         onClick={() => {
-                            addFilterMaterial('Sofball');
+                            addFilterMaterial('Sofball', 'softball');
                         }}
+                        id="softball"
                     />
                 </div>
                 <div className="wrapperTitleModality">
