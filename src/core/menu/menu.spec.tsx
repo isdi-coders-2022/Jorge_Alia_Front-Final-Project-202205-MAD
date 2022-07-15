@@ -1,45 +1,17 @@
 import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { fireEvent, render, screen } from '../../utils/testutils';
-import WorkoutPage from './workoutsPage';
+import { render, screen } from '../../utils/testutils';
+import { Menu } from './menu';
 
 const reducer = {
     workouts: workoutReducer,
     users: userReducer,
 };
 
-describe('Given the component WorkoutPage', () => {
-    describe('When calling it', () => {
-        test('Then it should render', () => {
-            const preloadedState = {
-                workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
-                },
-            };
-            render(
-                <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
-                </BrowserRouter>,
-                {
-                    preloadedState,
-                    reducer,
-                }
-            );
-            const newResult = screen.getByText(/Únete/i);
-            expect(newResult).toBeInTheDocument();
-        });
-        test('Then it should render if I am logger', () => {
+describe('Given the component Menu', () => {
+    describe('When it is called', () => {
+        test('Then it should render the menu', () => {
             const preloadedState = {
                 workouts: [],
                 users: {
@@ -49,7 +21,11 @@ describe('Given the component WorkoutPage', () => {
                         name: '',
                         email: '',
                         passwd: '',
-                        workouts: [],
+                        workouts: [
+                            {
+                                id: '',
+                            },
+                        ],
                         done: [],
                         rol: '',
                     },
@@ -57,22 +33,49 @@ describe('Given the component WorkoutPage', () => {
             };
             render(
                 <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
+                    <Menu></Menu>
                 </BrowserRouter>,
+
                 {
                     preloadedState,
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByAltText(/Brazos y Abs/));
-            fireEvent.click(screen.getByAltText(/Glúteos & Piernas/));
-            fireEvent.click(screen.getByAltText(/Total body/));
-            fireEvent.click(screen.getByAltText(/Sin material/));
-            fireEvent.click(screen.getByAltText(/Goma/));
-            fireEvent.click(screen.getByAltText(/Mancuernas/));
-            fireEvent.click(screen.getByAltText(/Softball/));
-            const newResult = screen.getByText(/Selecciona uso de material/i);
-            expect(newResult).toBeInTheDocument();
+            const element = screen.getByText(/contacto/);
+            expect(element).toBeInTheDocument();
+        });
+        test('Then it should render the menu with login', () => {
+            const preloadedState = {
+                workouts: [],
+                users: {
+                    token: '',
+                    user: {
+                        _id: '',
+                        name: '',
+                        email: '',
+                        passwd: '',
+                        workouts: [
+                            {
+                                id: '',
+                            },
+                        ],
+                        done: [],
+                        rol: '',
+                    },
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <Menu></Menu>
+                </BrowserRouter>,
+
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const element = screen.getByText(/contacto/);
+            expect(element).toBeInTheDocument();
         });
     });
 });

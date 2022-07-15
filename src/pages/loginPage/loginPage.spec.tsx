@@ -2,16 +2,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
 import { fireEvent, render, screen } from '../../utils/testutils';
-import WorkoutPage from './workoutsPage';
+import LoginPage from './loginPage';
 
 const reducer = {
     workouts: workoutReducer,
     users: userReducer,
 };
-
-describe('Given the component WorkoutPage', () => {
-    describe('When calling it', () => {
-        test('Then it should render', () => {
+describe('Given the Login component', () => {
+    describe('When it is called', () => {
+        test('Then it should render the login page when i am not logged', async () => {
             const preloadedState = {
                 workouts: [],
                 users: {
@@ -29,7 +28,7 @@ describe('Given the component WorkoutPage', () => {
             };
             render(
                 <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
+                    <LoginPage></LoginPage>
                 </BrowserRouter>,
                 {
                     preloadedState,
@@ -39,7 +38,7 @@ describe('Given the component WorkoutPage', () => {
             const newResult = screen.getByText(/Únete/i);
             expect(newResult).toBeInTheDocument();
         });
-        test('Then it should render if I am logger', () => {
+        test('Then it shoul render the login page when i am logged', async () => {
             const preloadedState = {
                 workouts: [],
                 users: {
@@ -57,21 +56,15 @@ describe('Given the component WorkoutPage', () => {
             };
             render(
                 <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
+                    <LoginPage></LoginPage>
                 </BrowserRouter>,
                 {
                     preloadedState,
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByAltText(/Brazos y Abs/));
-            fireEvent.click(screen.getByAltText(/Glúteos & Piernas/));
-            fireEvent.click(screen.getByAltText(/Total body/));
-            fireEvent.click(screen.getByAltText(/Sin material/));
-            fireEvent.click(screen.getByAltText(/Goma/));
-            fireEvent.click(screen.getByAltText(/Mancuernas/));
-            fireEvent.click(screen.getByAltText(/Softball/));
-            const newResult = screen.getByText(/Selecciona uso de material/i);
+            fireEvent.click(screen.getByText(/SALIR/));
+            const newResult = screen.getByText(/Modifica tus datos/i);
             expect(newResult).toBeInTheDocument();
         });
     });

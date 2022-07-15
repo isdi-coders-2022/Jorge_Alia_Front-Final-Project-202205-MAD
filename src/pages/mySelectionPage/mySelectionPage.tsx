@@ -1,13 +1,12 @@
 import { useSelector } from 'react-redux';
-import { WorkoutList } from '../components/workout/listWorkouts';
-import { iState } from '../store/store';
+import { WorkoutList } from '../../components/workout/listWorkouts';
+import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import './mySelectionPage.css';
 
 export function MySelectionPage() {
     const user = useSelector((store: iState) => store.users);
     let template;
-    console.log(user.user.workouts, 'useeeer');
     if (user.token === '') {
         template = (
             <>
@@ -35,7 +34,7 @@ export function MySelectionPage() {
         } else {
             template = (
                 <>
-                    <main className="wrapperMain">
+                    <main className="wrapperMain" title="main">
                         {user.user.workouts && <WorkoutList></WorkoutList>}
                     </main>
                 </>

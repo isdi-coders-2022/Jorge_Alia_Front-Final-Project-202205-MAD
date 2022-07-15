@@ -35,7 +35,8 @@ export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
                     <img
                         className="iconBack"
                         src="./img/iconopicoparantesis.png"
-                        alt=""
+                        alt="Icono anterior"
+                        title="Icono anterior"
                     />
                 </div>
 
@@ -65,7 +66,7 @@ export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
                     <img
                         className="iconNext"
                         src="./img/iconopicoparantesis.png"
-                        alt=""
+                        alt="Icono siguiente"
                     />
                 </div>
             </section>

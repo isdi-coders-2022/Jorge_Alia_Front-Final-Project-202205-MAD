@@ -1,17 +1,17 @@
 import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { fireEvent, render, screen } from '../../utils/testutils';
-import WorkoutPage from './workoutsPage';
+import { render, screen } from '../../utils/testutils';
+import MySelectionPage from './mySelectionPage';
 
 const reducer = {
     workouts: workoutReducer,
     users: userReducer,
 };
 
-describe('Given the component WorkoutPage', () => {
+describe('Given the component MySelectionPage', () => {
     describe('When calling it', () => {
-        test('Then it should render', () => {
+        test('Then it should render if I am not logged', () => {
             const preloadedState = {
                 workouts: [],
                 users: {
@@ -29,7 +29,7 @@ describe('Given the component WorkoutPage', () => {
             };
             render(
                 <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
+                    <MySelectionPage></MySelectionPage>
                 </BrowserRouter>,
                 {
                     preloadedState,
@@ -39,7 +39,7 @@ describe('Given the component WorkoutPage', () => {
             const newResult = screen.getByText(/Únete/i);
             expect(newResult).toBeInTheDocument();
         });
-        test('Then it should render if I am logger', () => {
+        test('Then it should render if I am logged and workouts.length is 0', () => {
             const preloadedState = {
                 workouts: [],
                 users: {
@@ -57,22 +57,47 @@ describe('Given the component WorkoutPage', () => {
             };
             render(
                 <BrowserRouter>
-                    <WorkoutPage></WorkoutPage>
+                    <MySelectionPage></MySelectionPage>
                 </BrowserRouter>,
                 {
                     preloadedState,
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByAltText(/Brazos y Abs/));
-            fireEvent.click(screen.getByAltText(/Glúteos & Piernas/));
-            fireEvent.click(screen.getByAltText(/Total body/));
-            fireEvent.click(screen.getByAltText(/Sin material/));
-            fireEvent.click(screen.getByAltText(/Goma/));
-            fireEvent.click(screen.getByAltText(/Mancuernas/));
-            fireEvent.click(screen.getByAltText(/Softball/));
-            const newResult = screen.getByText(/Selecciona uso de material/i);
+            const newResult = screen.getByText(/Ningún/i);
             expect(newResult).toBeInTheDocument();
+        });
+        test('Then it should render if I am logged and workouts.length is different to 0', () => {
+            const preloadedState = {
+                workouts: [],
+                users: {
+                    token: 'test',
+                    user: {
+                        _id: '',
+                        name: '',
+                        email: '',
+                        passwd: '',
+                        workouts: [
+                            {
+                                id: '',
+                            },
+                        ],
+                        done: [],
+                        rol: '',
+                    },
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <MySelectionPage></MySelectionPage>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const result = screen.getByTitle(/main/i);
+            expect(result).toBeInTheDocument();
         });
     });
 });

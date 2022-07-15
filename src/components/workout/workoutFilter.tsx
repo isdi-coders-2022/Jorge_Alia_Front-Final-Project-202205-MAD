@@ -13,13 +13,13 @@ export function Filter({ properties }: { properties: iProperties }) {
     );
     const template = (
         <>
-            <section className="ListImageFilter">
+            <section className="ListImageFilter" title="ListImageFilter">
                 {filterWorkout.map((item) => (
                     <Link to={'/details/' + item._id}>
                         <img
                             className="filteredImage"
                             src={item.image}
-                            alt=""
+                            alt="imagen entrenamiento"
                         />
                     </Link>
                 ))}
