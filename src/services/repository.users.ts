@@ -57,18 +57,21 @@ export class HttpStoreUser {
         }).then((resp) => resp.json());
     }
 
-    updateUser(user: Partial<iUser>): Promise<iUser> {
-        return fetch(this.url + `/${user._id}`, {
+    updateUser(user: Partial<iUser>, id: string): Promise<iUser> {
+        return fetch(this.url + `/${id}`, {
             method: 'PATCH',
             body: JSON.stringify(user),
-            headers: { 'content-type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${getToken()}`,
+            },
         }).then((resp) => resp.json());
     }
 
-    deleteUser(token: string, id: string): Promise<number> {
+    deleteUser(id: string): Promise<number> {
         return fetch(this.url + `/delete/${id}`, {
             method: 'DELETE',
-            headers: { authorization: `Bearer ` + { token } },
+            headers: { authorization: `Bearer ${getToken()}` },
         }).then((resp) => resp.json());
     }
 }

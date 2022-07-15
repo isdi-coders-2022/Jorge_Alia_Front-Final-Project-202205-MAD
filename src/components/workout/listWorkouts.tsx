@@ -1,12 +1,15 @@
+import { useSelector } from 'react-redux';
 import { iWorkout } from '../../models/workout.model';
-import { Workout } from './workoutMySelection';
+import { iState } from '../../store/store';
+import { WorkoutMySelection } from './workoutMySelection';
 
-export function WorkoutList({ workouts }: { workouts: Array<iWorkout> }) {
+export function WorkoutList() {
+    const user = useSelector((store: iState) => store.users);
     const template = (
         <ul className="workoutsList">
-            {workouts.map((workout: iWorkout, index) => (
+            {user.user.workouts.map((workout: iWorkout, index) => (
                 <li className="workoutsList__workout" key={workout._id}>
-                    <Workout workout={workout}></Workout>
+                    <WorkoutMySelection workout={workout}></WorkoutMySelection>
                 </li>
             ))}
         </ul>

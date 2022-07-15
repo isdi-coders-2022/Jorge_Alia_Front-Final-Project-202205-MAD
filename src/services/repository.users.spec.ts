@@ -220,26 +220,25 @@ describe('Given HttpStoreUser', () => {
                         .fn()
                         .mockResolvedValue({ ...mockUser, name: 'test' }),
                 });
-                const result = await new HttpStoreUser().updateUser({
-                    ...mockUser,
-                    name: 'test',
-                });
+                const result = await new HttpStoreUser().updateUser(
+                    mockUser,
+                    'dj87dj4nsl8sd'
+                );
                 expect(fetch).toBeCalled();
                 expect(result).toEqual({ ...mockUser, name: 'test' });
             });
         });
-        // describe('And we use method deleteUser', () => {
-        //     test('should first', async () => {
-        //         global.fetch = jest.fn().mockResolvedValue({
-        //             json: jest.fn().mockResolvedValue({}),
-        //         });
-        //         const result = await new HttpStoreUser().deleteUser(
-        //             mockUser._id as string
-        //         );
-        //         console.log(result, 'ESTOY AQUIIIIII');
-        //         expect(fetch).toBeCalled();
-        //         expect(result).toEqual({});
-        //     });
-        // });
+        describe('And we use method deleteUser', () => {
+            test('should first', async () => {
+                global.fetch = jest.fn().mockResolvedValue({
+                    json: jest.fn().mockResolvedValue({}),
+                });
+                const result = await new HttpStoreUser().deleteUser(
+                    mockUser._id as string
+                );
+                expect(fetch).toBeCalled();
+                expect(result).toEqual({});
+            });
+        });
     });
 });

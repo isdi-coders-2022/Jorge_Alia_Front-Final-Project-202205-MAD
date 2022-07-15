@@ -5,7 +5,7 @@ import AboutMePage from '../../pages/aboutMePage';
 import ContactPage from '../../pages/contactPage';
 import LoginPage from '../../pages/loginPage';
 import MySelectionPage from '../../pages/mySelectionPage';
-import WorkoutsPage from '../../pages/workoutsPage';
+import WorkoutsPage from '../../pages/workoutsPage/workoutsPage';
 import { iState } from '../../store/store';
 import './menu.css';
 
@@ -59,7 +59,7 @@ export function Menu() {
                 {optionsMenu.map((item) => (
                     <li className="menu__item" key={item.label}>
                         <Link to={item.path} className="menu__link">
-                            <h3>{item.label}</h3>
+                            <h3 className="menu__title">{item.label}</h3>
                         </Link>
                     </li>
                 ))}

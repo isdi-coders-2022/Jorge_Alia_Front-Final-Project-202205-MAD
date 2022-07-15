@@ -58,7 +58,6 @@
     position: absolute;
     margin-left: -3%;
     margin-top: 19%;
-    visibility: hidden;
 }
 .tikYes {
     visibility: initial !important;

@@ -1,18 +1,13 @@
-import { useSelector } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { render, screen } from '../utils/testutils';
-import { iState, store } from '../store/store';
-
+import { iState } from '../store/store';
 import HomePage from './homePage';
 import { iWorkout } from '../models/workout.model';
 import { iUserWithToken } from '../models/user.model';
+import { workoutReducer } from '../redurcers/workout.reducer/workout.reducer';
+import { userReducer } from '../redurcers/user.reducer/user.reducer';
 
-jest.mock('react-redux', () => ({
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(),
-}));
-
-const mockRobots: Array<iWorkout> = [
+const mockWorkout: Array<iWorkout> = [
     {
         _id: '62c3fa970a6339f727766546',
         title: 'ABDOMEN & GLÚTEOS con softball',
@@ -45,19 +40,20 @@ const mockRobots: Array<iWorkout> = [
 
 describe('Given the component Home', () => {
     describe('When calling it', () => {
-        beforeEach(() => {
-            (useSelector as jest.Mock).mockImplementation(() => mockRobots);
-        });
         test('Then it should render', () => {
+            const reducer = {
+                workouts: workoutReducer,
+                users: userReducer,
+            };
             const preloadedState: iState = {
-                workouts: [] as Array<iWorkout>,
+                workouts: [mockWorkout[0]] as Array<iWorkout>,
                 users: {} as iUserWithToken,
             };
             render(
                 <BrowserRouter>
                     <HomePage></HomePage>
                 </BrowserRouter>,
-                { preloadedState, store }
+                { preloadedState, reducer }
             );
             const newResult = screen.getByText(/Entrena, disfruta, vive./i);
             expect(newResult).toBeInTheDocument();

@@ -7,11 +7,12 @@ import './mySelectionPage.css';
 export function MySelectionPage() {
     const user = useSelector((store: iState) => store.users);
     let template;
+    console.log(user.user.workouts, 'useeeer');
     if (user.token === '') {
         template = (
             <>
                 <div className="wrapperInfo">
-                    <p>! Regístrate para crear tu propio entrenamiento !</p>
+                    <p>! Únete para crear tu propio entrenamiento !</p>
 
                     <Link to="/login">
                         <button className="buttonGoToRegister">
@@ -22,13 +23,24 @@ export function MySelectionPage() {
             </>
         );
     } else {
-        template = (
-            <>
-                {user.user.workouts && (
-                    <WorkoutList workouts={user.user.workouts}></WorkoutList>
-                )}
-            </>
-        );
+        if (user.user.workouts.length === 0 && user.token !== '') {
+            template = (
+                <>
+                    <main className="wrapperMain wrapperInfo">
+                        <p>Ningún entrenamiento añadido</p>
+                    </main>
+                    ;
+                </>
+            );
+        } else {
+            template = (
+                <>
+                    <main className="wrapperMain">
+                        {user.user.workouts && <WorkoutList></WorkoutList>}
+                    </main>
+                </>
+            );
+        }
     }
 
     return template;
