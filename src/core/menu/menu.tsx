@@ -5,7 +5,7 @@ import AboutMePage from '../../pages/aboutMePage';
 import ContactPage from '../../pages/contactPage';
 import LoginPage from '../../pages/loginPage';
 import MySelectionPage from '../../pages/mySelectionPage';
-import WorkoutsPage from '../../pages/workoutsPage';
+import WorkoutsPage from '../../pages/workoutsPage/workoutsPage';
 import { iState } from '../../store/store';
 import './menu.css';
 

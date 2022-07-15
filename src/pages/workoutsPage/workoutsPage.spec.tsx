@@ -1,0 +1,72 @@
+import { BrowserRouter } from 'react-router-dom';
+import { iUser } from '../../models/user.model';
+import { userReducer } from '../../redurcers/user.reducer/user.reducer';
+import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
+import { fireEvent, render, screen } from '../../utils/testutils';
+import WorkoutPage from './workoutsPage';
+
+const reducer = {
+    workouts: workoutReducer,
+    users: userReducer,
+};
+
+describe('Given the component WorkPage', () => {
+    describe('When calling it', () => {
+        test('Then it should render', () => {
+            const preloadedState = {
+                workouts: [],
+                users: {
+                    token: '',
+                    user: {
+                        _id: '',
+                        name: '',
+                        email: '',
+                        passwd: '',
+                        workouts: [],
+                        done: [],
+                        rol: '',
+                    },
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <WorkoutPage></WorkoutPage>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const newResult = screen.getByText(/Únete/i);
+            expect(newResult).toBeInTheDocument();
+        });
+        // test('Then it should render if I am logger', () => {
+        //     const preloadedState = {
+        //         workouts: [],
+        //         users: {
+        //             token: 'test',
+        //             user: {
+        //                 _id: '',
+        //                 name: '',
+        //                 email: '',
+        //                 passwd: '',
+        //                 workouts: [],
+        //                 done: [],
+        //                 rol: '',
+        //             },
+        //         },
+        //     };
+        //     render(
+        //         <BrowserRouter>
+        //             <WorkoutPage></WorkoutPage>
+        //         </BrowserRouter>,
+        //         {
+        //             preloadedState,
+        //             reducer,
+        //         }
+        //     );
+        //     const result = fireEvent.click(screen.getByAltText(/Brazos y Abs/));
+        //     expect(result).toHaveBeenCalled();
+        // });
+    });
+});

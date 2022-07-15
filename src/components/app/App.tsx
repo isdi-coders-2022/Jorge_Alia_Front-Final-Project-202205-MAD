@@ -30,7 +30,9 @@ function App() {
 
     const HomePage = React.lazy(() => import('../../pages/homePage'));
     const DetailsPage = React.lazy(() => import('../../pages/detailsPage'));
-    const WorkoutsPage = React.lazy(() => import('../../pages/workoutsPage'));
+    const WorkoutsPage = React.lazy(
+        () => import('../../pages/workoutsPage/workoutsPage')
+    );
     const MySelectionPage = React.lazy(
         () => import('../../pages/mySelectionPage')
     );

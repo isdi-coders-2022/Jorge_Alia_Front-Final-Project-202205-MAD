@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import Filter from '../components/workout/workoutFilter';
-import { iState } from '../store/store';
+import Filter from '../../components/workout/workoutFilter';
+import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import './workoutsPage.css';
+import { AddFilter } from './helperAddFilterCategory';
+import { AddFilterMaterial } from './helperAddFilterMaterial';
 
 export function WorkoutPage() {
     const user = useSelector((store: iState) => store.users);
@@ -13,30 +15,6 @@ export function WorkoutPage() {
         complementaryMaterial: '',
     });
 
-    function addFilter(filter: string, id: string) {
-        setProperties({ ...properties, category: filter });
-        const imgBlackType = document.getElementById(id);
-        const allImages = document.querySelectorAll('.imageFilter');
-        allImages.forEach((item) => {
-            if (item.classList.contains('mystyle')) {
-                item.classList.remove('mystyle');
-            }
-        });
-
-        (imgBlackType as HTMLElement).classList.toggle('mystyle');
-    }
-
-    function addFilterMaterial(filter: string, id: string) {
-        setProperties({ ...properties, complementaryMaterial: filter });
-        const imgBlackType = document.getElementById(id);
-        const allImages = document.querySelectorAll('.imageFilter2');
-        allImages.forEach((item) => {
-            if (item.classList.contains('mystyle')) {
-                item.classList.remove('mystyle');
-            }
-        });
-        (imgBlackType as HTMLElement).classList.toggle('mystyle');
-    }
     if (user.token !== '') {
         template = (
             <>
@@ -55,7 +33,12 @@ export function WorkoutPage() {
                         alt="Brazos y Abs"
                         title="Brazos y Abs"
                         onClick={() => {
-                            addFilter('Brazos y abs', 'brazos-abs');
+                            AddFilter(
+                                'Brazos y abs',
+                                'brazos-abs',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="brazos-abs"
                     />
@@ -73,7 +56,12 @@ export function WorkoutPage() {
                         alt="Glúteos & Piernas"
                         title="Glúteos & Piernas"
                         onClick={() => {
-                            addFilter('Gluteos y piernas', 'gluteos-piernas');
+                            AddFilter(
+                                'Gluteos y piernas',
+                                'gluteos-piernas',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="gluteos-piernas"
                     />
@@ -85,7 +73,12 @@ export function WorkoutPage() {
                         alt="Total body"
                         title="Total body"
                         onClick={() => {
-                            addFilter('Total body', 'total-body');
+                            AddFilter(
+                                'Total body',
+                                'total-body',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="total-body"
                     />
@@ -104,7 +97,12 @@ export function WorkoutPage() {
                         alt="Sin material"
                         title="Sin material"
                         onClick={() => {
-                            addFilterMaterial('Sin material', 'sin-material');
+                            AddFilterMaterial(
+                                'Sin material',
+                                'sin-material',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="sin-material"
                     />
@@ -115,7 +113,12 @@ export function WorkoutPage() {
                         alt="Goma"
                         title="Goma"
                         onClick={() => {
-                            addFilterMaterial('Goma', 'goma');
+                            AddFilterMaterial(
+                                'Goma',
+                                'goma',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="goma"
                     />
@@ -128,7 +131,12 @@ export function WorkoutPage() {
                         alt="Mancuernas"
                         title="Mancuernas"
                         onClick={() => {
-                            addFilterMaterial('Mancuernas', 'mancuernas');
+                            AddFilterMaterial(
+                                'Mancuernas',
+                                'mancuernas',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="mancuernas"
                     />
@@ -140,7 +148,12 @@ export function WorkoutPage() {
                         alt="Softball"
                         title="Sofball"
                         onClick={() => {
-                            addFilterMaterial('Sofball', 'softball');
+                            AddFilterMaterial(
+                                'Sofball',
+                                'softball',
+                                setProperties,
+                                properties
+                            );
                         }}
                         id="softball"
                     />
