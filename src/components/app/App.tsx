@@ -96,7 +96,7 @@ function App() {
 
     return (
         <Router>
-            <Layout options={options}>
+            <Layout>
                 <React.Suspense>
                     <React.StrictMode>
                         <Routes>
