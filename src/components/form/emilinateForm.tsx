@@ -13,7 +13,6 @@ export function EliminateForm() {
         );
         if (ConfirmDelete == true) {
             ev.preventDefault();
-            console.log(user.user._id);
             await new HttpStoreUser().deleteUser(user.user._id as string);
             localStorage.clear();
             window.location.href = 'http://localhost:3000';

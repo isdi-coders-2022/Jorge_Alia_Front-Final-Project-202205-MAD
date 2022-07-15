@@ -1,19 +1,24 @@
 import { HttpStoreUser } from '../../services/repository.users';
 import { SyntheticEvent, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { iState } from '../../store/store';
 
 export function ModifyForm() {
+    const user = useSelector((store: iState) => store.users.user);
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
+        name: user.name,
+        email: user.email,
         passwd: '',
 
         rol: 'User',
     });
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        const updateUser = await new HttpStoreUser().updateUser(formData);
-        console.log(formData, 'FORMDATA');
-        console.log(updateUser, 'UPDATEUSER');
+        console.log(user._id);
+        const updateUser = await new HttpStoreUser().updateUser(
+            formData,
+            user._id as string
+        );
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
@@ -38,15 +43,6 @@ export function ModifyForm() {
                     type="text"
                     name="email"
                     value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <p className="titleInput">Nueva contraseña</p>
-                <input
-                    className="input"
-                    type="text"
-                    name="passwd"
-                    value={formData.passwd}
                     onChange={handleChange}
                     required
                 />
