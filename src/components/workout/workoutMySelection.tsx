@@ -15,9 +15,13 @@ export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
     const template = (
         <>
             <Link to={'/details/' + workout._id}>
-                <img className="image" src={workout.image} alt="" />
+                <img
+                    className="image"
+                    src={workout.image}
+                    alt="Imagen entrenamiento"
+                />
             </Link>
-            <button onClick={() => handleSubmit()}>Elimiar</button>
+            <button onClick={() => handleSubmit()}>Eliminar</button>
         </>
     );
     return template;
