@@ -16,7 +16,6 @@ export function WorkoutPage() {
     function addFilter(filter: string, id: string) {
         setProperties({ ...properties, category: filter });
         const imgBlackType = document.getElementById(id);
-        // const imgBlackMaterial = document.getElementById(id);
         const allImages = document.querySelectorAll('.imageFilter');
         allImages.forEach((item) => {
             if (item.classList.contains('mystyle')) {

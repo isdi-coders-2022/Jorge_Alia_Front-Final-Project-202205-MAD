@@ -220,10 +220,10 @@ describe('Given HttpStoreUser', () => {
                         .fn()
                         .mockResolvedValue({ ...mockUser, name: 'test' }),
                 });
-                const result = await new HttpStoreUser().updateUser({
-                    ...mockUser,
-                    name: 'test',
-                });
+                const result = await new HttpStoreUser().updateUser(
+                    mockUser,
+                    'dj87dj4nsl8sd'
+                );
                 expect(fetch).toBeCalled();
                 expect(result).toEqual({ ...mockUser, name: 'test' });
             });

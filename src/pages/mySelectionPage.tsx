@@ -7,7 +7,7 @@ import './mySelectionPage.css';
 export function MySelectionPage() {
     const user = useSelector((store: iState) => store.users);
     let template;
-    console.log(user.user.workouts);
+    console.log(user.user.workouts, 'useeeer');
     if (user.token === '') {
         template = (
             <>

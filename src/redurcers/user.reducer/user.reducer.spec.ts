@@ -5,12 +5,12 @@ import { iUserWithToken } from '../../models/user.model';
 
 describe('Given userReducer', () => {
     const mockUser: iUserWithToken = {
-        token: 'jmds8sds8jds8',
+        token: '',
         user: {
-            _id: '2',
-            name: 'Jorge',
-            email: 'jorge@gmail.com',
-            passwd: '12345',
+            _id: '',
+            name: '',
+            email: '',
+            passwd: '',
             workouts: [],
             done: [],
             rol: 'user',
@@ -36,15 +36,15 @@ describe('Given userReducer', () => {
         });
     });
 
-    // describe('When calling it with action update with the update User as payload', () => {
-    //     test('Then it should return a new state witch the user update', () => {
-    //         const initialState: iUserWithToken = mockUser;
-    //         const updatedUser = { ...mockUser, name: 'Alfonso' };
-    //         const actionToTest = action.updateUserAction(updatedUser);
-    //         const newState = userReducer(initialState, actionToTest);
-    //         expect(newState).toStrictEqual(updatedUser);
-    //     });
-    // });
+    describe('When calling it with action update with the update User as payload', () => {
+        test('Then it should return a new state witch the user update', () => {
+            const initialState: iUserWithToken = mockUser;
+            const updatedUser = { ...mockUser.user, name: 'Alfonso' };
+            const actionToTest = action.updateUserAction(updatedUser);
+            const newState = userReducer(initialState, actionToTest);
+            expect(newState.user).toEqual(updatedUser);
+        });
+    });
 
     describe('When calling it with none of the above', () => {
         test('Then it should return the same state', () => {
