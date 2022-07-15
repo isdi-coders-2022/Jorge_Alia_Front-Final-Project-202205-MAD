@@ -28,17 +28,25 @@ function App() {
         }
     }, [apiWorkout, dispatcher]);
 
-    const HomePage = React.lazy(() => import('../../pages/homePage'));
-    const DetailsPage = React.lazy(() => import('../../pages/detailsPage'));
+    const HomePage = React.lazy(() => import('../../pages/homePage/homePage'));
+    const DetailsPage = React.lazy(
+        () => import('../../pages/detailsPage/detailsPage')
+    );
     const WorkoutsPage = React.lazy(
         () => import('../../pages/workoutsPage/workoutsPage')
     );
     const MySelectionPage = React.lazy(
-        () => import('../../pages/mySelectionPage')
+        () => import('../../pages/mySelectionPage/mySelectionPage')
     );
-    const AboutMePage = React.lazy(() => import('../../pages/aboutMePage'));
-    const ContactPage = React.lazy(() => import('../../pages/contactPage'));
-    const LoginPage = React.lazy(() => import('../../pages/loginPage'));
+    const AboutMePage = React.lazy(
+        () => import('../../pages/aboutMePage/aboutMePage')
+    );
+    const ContactPage = React.lazy(
+        () => import('../../pages/contactPage/contactPage')
+    );
+    const LoginPage = React.lazy(
+        () => import('../../pages/loginPage/loginPage')
+    );
 
     const options: aMenuItems = [
         { path: '', label: 'home', page: <HomePage />, title: 'Home' },

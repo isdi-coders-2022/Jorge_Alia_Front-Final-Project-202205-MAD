@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { WorkoutListThree } from '../components/workout/listWorkoutsThree';
-import { iState } from '../store/store';
+import { WorkoutListThree } from '../../components/workout/listWorkoutsThree';
+import { iState } from '../../store/store';
 import './homePage.css';
 
 export function HomePage() {

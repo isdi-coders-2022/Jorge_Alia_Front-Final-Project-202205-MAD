@@ -40,33 +40,42 @@ describe('Given the component WorkPage', () => {
             const newResult = screen.getByText(/Únete/i);
             expect(newResult).toBeInTheDocument();
         });
-        // test('Then it should render if I am logger', () => {
-        //     const preloadedState = {
-        //         workouts: [],
-        //         users: {
-        //             token: 'test',
-        //             user: {
-        //                 _id: '',
-        //                 name: '',
-        //                 email: '',
-        //                 passwd: '',
-        //                 workouts: [],
-        //                 done: [],
-        //                 rol: '',
-        //             },
-        //         },
-        //     };
-        //     render(
-        //         <BrowserRouter>
-        //             <WorkoutPage></WorkoutPage>
-        //         </BrowserRouter>,
-        //         {
-        //             preloadedState,
-        //             reducer,
-        //         }
-        //     );
-        //     const result = fireEvent.click(screen.getByAltText(/Brazos y Abs/));
-        //     expect(result).toHaveBeenCalled();
-        // });
+        test('Then it should render if I am logger', () => {
+            const preloadedState = {
+                workouts: [],
+                users: {
+                    token: 'test',
+                    user: {
+                        _id: '',
+                        name: '',
+                        email: '',
+                        passwd: '',
+                        workouts: [],
+                        done: [],
+                        rol: '',
+                    },
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <WorkoutPage></WorkoutPage>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+
+            fireEvent.click(screen.getByAltText(/Brazos y Abs/));
+            fireEvent.click(screen.getByAltText(/Glúteos & Piernas/));
+            fireEvent.click(screen.getByAltText(/Total body/));
+            fireEvent.click(screen.getByAltText(/Sin material/));
+            fireEvent.click(screen.getByAltText(/Goma/));
+            fireEvent.click(screen.getByAltText(/Mancuernas/));
+            fireEvent.click(screen.getByAltText(/Softball/));
+
+            const newResult = screen.getByText(/Selecciona uso de material/i);
+            expect(newResult).toBeInTheDocument();
+        });
     });
 });

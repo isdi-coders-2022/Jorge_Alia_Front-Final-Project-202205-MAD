@@ -1,11 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen } from '../utils/testutils';
-import { iState } from '../store/store';
+import { render, screen } from '../../utils/testutils';
+import { iState } from '../../store/store';
 import HomePage from './homePage';
-import { iWorkout } from '../models/workout.model';
-import { iUserWithToken } from '../models/user.model';
-import { workoutReducer } from '../redurcers/workout.reducer/workout.reducer';
-import { userReducer } from '../redurcers/user.reducer/user.reducer';
+import { iWorkout } from '../../models/workout.model';
+import { iUserWithToken } from '../../models/user.model';
+import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
+import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 
 const mockWorkout: Array<iWorkout> = [
     {

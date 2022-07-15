@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import EliminateForm from '../components/form/emilinateForm';
-import LoginForm from '../components/form/loginForm';
-import ModifyForm from '../components/form/modifyForm';
-import { RegisterForm } from '../components/form/registerForm';
-import { iState } from '../store/store';
+import EliminateForm from '../../components/form/emilinateForm';
+import LoginForm from '../../components/form/loginForm';
+import ModifyForm from '../../components/form/modifyForm';
+import { RegisterForm } from '../../components/form/registerForm';
+import { iState } from '../../store/store';
 import './loginPage.css';
 
 export function LoginPage() {

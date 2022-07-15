@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { aMenuItems } from '../../models/menu.model';
-import AboutMePage from '../../pages/aboutMePage';
-import ContactPage from '../../pages/contactPage';
-import LoginPage from '../../pages/loginPage';
-import MySelectionPage from '../../pages/mySelectionPage';
+import AboutMePage from '../../pages/aboutMePage/aboutMePage';
+import ContactPage from '../../pages/contactPage/contactPage';
+import LoginPage from '../../pages/loginPage/loginPage';
+import MySelectionPage from '../../pages/mySelectionPage/mySelectionPage';
 import WorkoutsPage from '../../pages/workoutsPage/workoutsPage';
 import { iState } from '../../store/store';
 import './menu.css';
