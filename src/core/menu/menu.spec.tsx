@@ -1,7 +1,7 @@
-import { BrowserRouter, Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { fireEvent, render, screen } from '../../utils/testutils';
+import { render, screen } from '../../utils/testutils';
 import { Menu } from './menu';
 
 const reducer = {
