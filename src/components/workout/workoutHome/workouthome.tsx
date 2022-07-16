@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { iWorkout } from '../../models/workout.model';
+import { iWorkout } from '../../../models/workout.model';
 import './workoutHome.css';
 
 export function WorkoutHome({ workout }: { workout: iWorkout }) {

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { WorkoutList } from '../../components/workout/listWorkouts';
+import { WorkoutList } from '../../components/workout/listWorkouts/listWorkouts';
 import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import './mySelectionPage.css';

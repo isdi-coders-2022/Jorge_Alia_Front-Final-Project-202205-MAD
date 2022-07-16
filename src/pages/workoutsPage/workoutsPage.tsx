@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import Filter from '../../components/workout/workoutFilter';
+import Filter from '../../components/workout/workoutFilter/workoutFilter';
 import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import './workoutsPage.css';

@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
-import { render, screen } from '../../utils/testutils';
-import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { userReducer } from '../../redurcers/user.reducer/user.reducer';
+import { render, screen } from '../../../utils/testutils';
+import { workoutReducer } from '../../../redurcers/workout.reducer/workout.reducer';
+import { userReducer } from '../../../redurcers/user.reducer/user.reducer';
 import Filter from './workoutFilter';
 const reducer = {
     workouts: workoutReducer,

@@ -1,9 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { fireEvent, render, screen } from '../../utils/testutils';
-import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { userReducer } from '../../redurcers/user.reducer/user.reducer';
-import { HttpStoreUser } from '../../services/repository.users';
+import { fireEvent, render, screen } from '../../../utils/testutils';
+import { workoutReducer } from '../../../redurcers/workout.reducer/workout.reducer';
+import { userReducer } from '../../../redurcers/user.reducer/user.reducer';
+import { HttpStoreUser } from '../../../services/repository.users';
 import { WorkoutMySelection } from './workoutMySelection';
 
 const reducer = {

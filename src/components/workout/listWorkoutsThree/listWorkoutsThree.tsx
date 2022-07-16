@@ -1,5 +1,5 @@
-import { iWorkout } from '../../models/workout.model';
-import { WorkoutHome } from './workouthome';
+import { iWorkout } from '../../../models/workout.model';
+import { WorkoutHome } from '../workoutHome/workouthome';
 import { useState } from 'react';
 import './listWorkoutsThree.css';
 

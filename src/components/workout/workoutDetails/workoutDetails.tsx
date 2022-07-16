@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
-import { iWorkout } from '../../models/workout.model';
-import { updateUserAction } from '../../redurcers/user.reducer/user.action.creators';
-import { HttpStoreUser } from '../../services/repository.users';
+import { iWorkout } from '../../../models/workout.model';
+import { updateUserAction } from '../../../redurcers/user.reducer/user.action.creators';
+import { HttpStoreUser } from '../../../services/repository.users';
 import './workoutDetails.css';
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     const dispatcher = useDispatch();

@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { iWorkout } from '../../models/workout.model';
-import { HttpStoreUser } from '../../services/repository.users';
-import { updateUserAction } from '../../redurcers/user.reducer/user.action.creators';
-import './workoutHome.css';
+import { iWorkout } from '../../../models/workout.model';
+import { HttpStoreUser } from '../../../services/repository.users';
+import { updateUserAction } from '../../../redurcers/user.reducer/user.action.creators';
+import '../workoutHome/workoutHome.css';
 
 export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
     const dispatcher = useDispatch();
