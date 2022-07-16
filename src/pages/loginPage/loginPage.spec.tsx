@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
-import { fireEvent, render, screen } from '../../utils/testutils';
+import { render, screen } from '../../utils/testutils';
 import LoginPage from './loginPage';
 
 const reducer = {
@@ -63,8 +63,7 @@ describe('Given the Login component', () => {
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByText(/SALIR/));
-            const newResult = screen.getByText(/Modifica tus datos/i);
+            const newResult = screen.getByText(/Modificar mis datos/i);
             expect(newResult).toBeInTheDocument();
         });
     });
