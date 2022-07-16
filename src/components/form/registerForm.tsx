@@ -28,7 +28,7 @@ export function RegisterForm() {
     const template = (
         <>
             <form onSubmit={handleSubmit}>
-                <p className="titleInput">Nombre de usuario</p>
+                <p className="titleInput">Nombre de usuario *</p>
                 <input
                     className="input"
                     type="text"
@@ -37,7 +37,7 @@ export function RegisterForm() {
                     onChange={handleChange}
                     required
                 />
-                <p className="titleInput">Correo electrónico</p>
+                <p className="titleInput">Correo electrónico *</p>
                 <input
                     className="input"
                     type="text"
@@ -46,7 +46,7 @@ export function RegisterForm() {
                     onChange={handleChange}
                     required
                 />
-                <p className="titleInput">Contraseña</p>
+                <p className="titleInput">Contraseña *</p>
                 <input
                     className="input"
                     type="password"

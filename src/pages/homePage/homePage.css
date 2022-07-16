@@ -1,12 +1,14 @@
 .wrapper__image {
     display: flex;
+    justify-content: space-around;
     margin-left: -2%;
 }
-.image__mar {
-    width: 65%;
+.image__frame {
+    height: 400px;
+    margin-right: -25%;
 }
 .image__ana {
-    width: 37%;
+    height: 400px;
 }
 
 .wrapper__text {
@@ -57,4 +59,8 @@ h2 {
     font-weight: bold;
     text-align: center;
     font-size: 2em;
+}
+
+.workoutsRecent {
+    margin-bottom: 6rem;
 }

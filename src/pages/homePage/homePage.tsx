@@ -9,16 +9,9 @@ export function HomePage() {
         <>
             <main>
                 <div className="wrapper__image">
-                    <img
-                        className="image__mar"
-                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/portada%2Fmar.jpg?alt=media&token=a7c3043c-59a1-4782-b9e1-7b1cd767e52d"
-                        alt="Imagen mar tranquilo"
-                    />
-                    <img
-                        className="image__ana"
-                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/portada%2Fportada.jpg?alt=media&token=6dc9e07f-6642-453d-9e46-94105aa20a91"
-                        alt="Imagen estirando"
-                    />
+                    <video autoPlay loop muted width="100%" height="auto">
+                        <source src="./img/video.mp4" />
+                    </video>
                 </div>
                 <div className="wrapper__text">
                     <div className="wrapper__text1">
@@ -37,8 +30,23 @@ export function HomePage() {
                         es para ti.
                     </p>
                 </div>
-                <p className="titleSection">Workouts recientes</p>
-                <WorkoutListThree workouts={workouts}></WorkoutListThree>
+                <div className="workoutsRecent">
+                    <p className="titleSection">Workouts recientes</p>
+                    <WorkoutListThree workouts={workouts}></WorkoutListThree>
+                </div>
+
+                <div className="wrapper__image">
+                    <img
+                        className="image__frame"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/home%2Fcuadro.png?alt=media&token=47182ecb-96ee-426a-8a65-ecd6917b3cca"
+                        alt="Imagen mar tranquilo"
+                    />
+                    <img
+                        className="image__ana"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/portada%2Fportada.jpg?alt=media&token=6dc9e07f-6642-453d-9e46-94105aa20a91"
+                        alt="Imagen estirando"
+                    />
+                </div>
                 <p className="titleSection">Testimonios</p>
                 <section className="testimonials">
                     <p className="testimonials__item">

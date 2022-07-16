@@ -5,12 +5,13 @@
     margin-bottom: 3rem;
 }
 .imageLogin {
-    margin-left: -5%;
+    margin-left: -22%;
     height: 24rem;
 }
 
 .titleLogin {
     text-align: center;
+    font-size: 2.5em;
 }
 
 .titleRegister {
