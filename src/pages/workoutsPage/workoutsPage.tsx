@@ -19,7 +19,7 @@ export function WorkoutPage() {
         template = (
             <>
                 <div className="wrapperTitleWorkout">
-                    <h2 className="titleWorkout">DISEÑA TU WORKOUT</h2>
+                    <h2 className="titleWorkout">Diseña tu workout</h2>
                 </div>
                 <div className="wrapperTitleModality">
                     <h3 className="titleModality">Selecciona modalidad</h3>

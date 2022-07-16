@@ -33,7 +33,7 @@ export function LoginPage() {
     } else {
         template = (
             <>
-                <h2 className="titleLogin">MI CUENTA</h2>
+                <h2 className="titleLogin">Mi cuenta</h2>
                 <div className="wrapperLogin">
                     <div>
                         <h3>Modifica tus datos</h3>
