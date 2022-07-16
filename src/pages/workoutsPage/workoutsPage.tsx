@@ -149,7 +149,7 @@ export function WorkoutPage() {
                         title="Sofball"
                         onClick={() => {
                             AddFilterMaterial(
-                                'Sofball',
+                                'Softball',
                                 'softball',
                                 setProperties,
                                 properties
