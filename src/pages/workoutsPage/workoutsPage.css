@@ -46,7 +46,29 @@
 }
 
 .titleModality {
-    font-size: 1.5em;
+    font-size: 2em;
+    margin-top: -50px;
+}
+.titleModalitySecond {
+    font-size: 1.7em;
+    margin-top: -30px;
+}
+.titleModalitySecondItalics {
+    margin-left: 0.5rem;
+    font-size: 1.7em;
+    margin-top: -30px;
+    font-style: italic;
+}
+.wrapper__titleModalitySecond {
+    display: flex;
+    justify-content: center;
+}
+.titleModality2 {
+    margin-top: 65px;
+}
+.titleModality3 {
+    margin-top: 20px;
+    font-size: 2em;
 }
 .mystyle {
     filter: brightness(35%);
@@ -68,4 +90,12 @@
 .filterImage {
     cursor: pointer;
     width: 100%;
+}
+.arrow {
+    font-size: 4em;
+    margin-top: -20px;
+}
+
+.containerWorkoutPage {
+    color: rgb(70, 70, 70);
 }

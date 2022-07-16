@@ -1,16 +1,19 @@
 .wrapper__image {
     display: flex;
+    justify-content: space-around;
     margin-left: -2%;
 }
-.image__mar {
-    width: 65%;
+.image__frame {
+    height: 400px;
+    margin-right: -25%;
 }
 .image__ana {
-    width: 37%;
+    height: 400px;
 }
 
 .wrapper__text {
     display: flex;
+    color: rgba(0, 0, 0, 0.574);
     justify-content: center;
     align-items: center;
     font-weight: bold;
@@ -28,6 +31,9 @@ h2 {
 }
 .wrapper__text2 {
     width: 50%;
+}
+.wrapper__textTitle {
+    font-size: 3rem;
 }
 .testimonials {
     display: flex;
@@ -53,4 +59,8 @@ h2 {
     font-weight: bold;
     text-align: center;
     font-size: 2em;
+}
+
+.workoutsRecent {
+    margin-bottom: 6rem;
 }

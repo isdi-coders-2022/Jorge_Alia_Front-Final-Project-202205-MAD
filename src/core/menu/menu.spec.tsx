@@ -41,7 +41,7 @@ describe('Given the component Menu', () => {
                     reducer,
                 }
             );
-            const element = screen.getByText(/contacto/);
+            const element = screen.getByText(/Contacto/);
             expect(element).toBeInTheDocument();
         });
         test('Then it should render the menu with login', () => {
@@ -74,7 +74,7 @@ describe('Given the component Menu', () => {
                     reducer,
                 }
             );
-            const element = screen.getByText(/contacto/);
+            const element = screen.getByText(/Contacto/);
             expect(element).toBeInTheDocument();
         });
     });

@@ -12,5 +12,14 @@
     margin-top: 1rem;
     font-family: 'MuseoModerno', cursive;
     font-weight: bold;
-    background-color: #e2faa0;
+    background-color: #bbed33;
+    border: none;
+    width: 7rem;
+    height: 2rem;
+    margin-left: 5rem;
+    border-radius: 15px;
+}
+
+.buttonLogin:hover {
+    background-color: rgb(193, 193, 193);
 }

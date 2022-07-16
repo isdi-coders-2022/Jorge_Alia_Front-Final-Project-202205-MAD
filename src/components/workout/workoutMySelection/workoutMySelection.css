@@ -1,0 +1,18 @@
+.image {
+    width: 90%;
+}
+.buttonRemove {
+    cursor: pointer;
+    margin-top: 1rem;
+    font-family: 'MuseoModerno', cursive;
+    font-weight: bold;
+    background-color: #7f2339;
+    color: white;
+    border: none;
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 15px;
+}
+.buttonRemove:hover {
+    background-color: gray;
+}

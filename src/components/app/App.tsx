@@ -69,7 +69,7 @@ function App() {
             title: 'Mis selecciones',
         },
         {
-            path: 'sobremí',
+            path: 'sobremi',
             label: 'sobre mí',
             page: <AboutMePage />,
             title: 'Sobre mí',

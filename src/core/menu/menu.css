@@ -5,9 +5,12 @@
 }
 .menu__title {
     font-size: 0.45cm;
-    color: rgba(0, 0, 0, 0.707);
+    color: rgba(0, 0, 0, 0.367);
 }
-
+.menu__title:hover {
+    color: #000000;
+    font-weight: bold;
+}
 .menu__link {
     text-decoration: none;
 }

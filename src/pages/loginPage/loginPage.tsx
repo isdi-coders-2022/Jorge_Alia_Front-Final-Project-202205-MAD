@@ -7,17 +7,13 @@ import { iState } from '../../store/store';
 import './loginPage.css';
 
 export function LoginPage() {
-    function handleSubmit() {
-        localStorage.clear();
-        window.location.href = 'http://localhost:3000';
-    }
     const user = useSelector((store: iState) => store.users);
     let template;
 
     if (user.token === '') {
         template = (
             <>
-                <h2 className="titleLogin">¡ÚNETE A ENTRENAR CONMIGO!</h2>
+                <h2 className="titleLogin">¡ Únete a entrenar conmigo !</h2>
                 <div className="wrapperLogin">
                     <div>
                         <h3>Acceder</h3>
@@ -37,31 +33,25 @@ export function LoginPage() {
     } else {
         template = (
             <>
-                <div className="wrapperMyCountButton">
-                    <div></div>
-                    <h2 className="titleLogin">MI CUENTA</h2>
-                    <button
-                        className="buttonLogout"
-                        onClick={() => handleSubmit()}
-                    >
-                        SALIR
-                    </button>
-                </div>
+                <main>
+                    <h2 className="titleLogin">Mi cuenta</h2>
+                    <div className="wrapperLogin">
+                        <div>
+                            <h3>Modificar mis datos</h3>
+                            <ModifyForm></ModifyForm>
+                            <div className="wrapper__eliminateForm">
+                                <h3 className="">Baja de cuenta</h3>
+                                <EliminateForm></EliminateForm>
+                            </div>
+                        </div>
 
-                <div className="wrapperLogin">
-                    <div>
-                        <h3>Modifica tus datos</h3>
-                        <ModifyForm></ModifyForm>
-                        <h3 className="">Baja de cuenta</h3>
-                        <EliminateForm></EliminateForm>
+                        <img
+                            className="imageLogin"
+                            src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/Login%2Fmicuenta.jpg?alt=media&token=3ed9a8dd-6a5f-434c-a973-a1401df60c1c"
+                            alt="Imagen inspiración manos"
+                        />
                     </div>
-
-                    <img
-                        className="imageLogin"
-                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/Login%2Fmicuenta.jpg?alt=media&token=3ed9a8dd-6a5f-434c-a973-a1401df60c1c"
-                        alt="Imagen inspiración manos"
-                    />
-                </div>
+                </main>
             </>
         );
     }

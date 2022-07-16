@@ -41,7 +41,7 @@ export function LoginForm() {
     const template = (
         <>
             <form onSubmit={handleSubmit}>
-                <p className="titleInput">Correo electrónico</p>
+                <p className="titleInput">Correo electrónico *</p>
                 <input
                     className="input"
                     type="text"
@@ -50,7 +50,7 @@ export function LoginForm() {
                     onChange={handleChange}
                     required
                 />
-                <p className="titleInput">Contraseña</p>
+                <p className="titleInput">Contraseña *</p>
                 <input
                     className="input"
                     type="password"
