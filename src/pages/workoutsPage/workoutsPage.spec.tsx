@@ -11,7 +11,7 @@ const reducer = {
 
 describe('Given the component WorkoutPage', () => {
     describe('When calling it', () => {
-        test('Then it should render', () => {
+        test('Then it should render if I am not logged in', () => {
             const preloadedState = {
                 workouts: [],
                 users: {
