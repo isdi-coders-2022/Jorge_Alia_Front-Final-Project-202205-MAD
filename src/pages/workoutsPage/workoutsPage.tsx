@@ -14,7 +14,7 @@ export function WorkoutPage() {
         category: '',
         complementaryMaterial: '',
     });
-
+    console.log(user.token, 'useeeeer tokeeeeen');
     if (user.token !== '') {
         template = (
             <>
