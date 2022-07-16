@@ -14,11 +14,7 @@ export function ModifyForm() {
     });
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        console.log(user._id);
-        const updateUser = await new HttpStoreUser().updateUser(
-            formData,
-            user._id as string
-        );
+        await new HttpStoreUser().updateUser(formData, user._id as string);
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;

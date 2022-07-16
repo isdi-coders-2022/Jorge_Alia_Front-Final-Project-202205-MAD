@@ -7,10 +7,6 @@ import { iState } from '../../store/store';
 import './loginPage.css';
 
 export function LoginPage() {
-    function handleSubmit() {
-        localStorage.clear();
-        window.location.href = 'http://localhost:3000';
-    }
     const user = useSelector((store: iState) => store.users);
     let template;
 
@@ -37,23 +33,15 @@ export function LoginPage() {
     } else {
         template = (
             <>
-                <div className="wrapperMyCountButton">
-                    <div></div>
-                    <h2 className="titleLogin">MI CUENTA</h2>
-                    <button
-                        className="buttonLogout"
-                        onClick={() => handleSubmit()}
-                    >
-                        SALIR
-                    </button>
-                </div>
-
+                <h2 className="titleLogin">MI CUENTA</h2>
                 <div className="wrapperLogin">
                     <div>
                         <h3>Modifica tus datos</h3>
                         <ModifyForm></ModifyForm>
-                        <h3 className="">Baja de cuenta</h3>
-                        <EliminateForm></EliminateForm>
+                        <div className="wrapper__eliminateForm">
+                            <h3 className="">Baja de cuenta</h3>
+                            <EliminateForm></EliminateForm>
+                        </div>
                     </div>
 
                     <img

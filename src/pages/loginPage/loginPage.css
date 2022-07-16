@@ -22,11 +22,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.buttonLogout {
-    cursor: pointer;
-    height: 2rem;
-    font-family: 'MuseoModerno', cursive;
-    font-weight: bold;
-    background-color: #e2faa0;
+.wrapper__eliminateForm {
+    margin-top: 5rem;
 }

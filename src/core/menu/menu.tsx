@@ -12,32 +12,32 @@ import './menu.css';
 const optionsMenu: aMenuItems = [
     {
         path: 'workouts',
-        label: 'workouts',
+        label: 'Workouts',
         page: <WorkoutsPage />,
         title: 'workouts',
     },
     {
         path: 'selecciones',
-        label: 'mis selecciones',
+        label: 'Mis selecciones',
         page: <MySelectionPage />,
         title: 'Mis selecciones',
     },
     {
-        path: 'sobremí',
-        label: 'sobre mí',
+        path: 'sobremi',
+        label: 'Sobre mí',
         page: <AboutMePage />,
         title: 'Sobre mí',
     },
     {
         path: 'contacto',
-        label: 'contacto',
+        label: 'Contacto',
         page: <ContactPage />,
         title: 'Contacto',
     },
 
     {
         path: 'login',
-        label: 'login',
+        label: 'Login',
         page: <LoginPage />,
         title: 'Login',
     },

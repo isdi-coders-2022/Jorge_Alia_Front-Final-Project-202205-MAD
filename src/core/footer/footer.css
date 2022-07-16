@@ -1,8 +1,8 @@
 footer {
     background-color: #908f8fb9;
-    width: 100vw;
-    margin-left: -0.7%;
+    width: 101.6%;
     margin-bottom: -3%;
+    margin-left: -1%;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -35,7 +35,7 @@ footer {
 }
 
 .instagram {
-    margin-left: 17rem;
+    margin-left: 14rem;
 }
 .warapperInstagram {
     text-decoration: none;
