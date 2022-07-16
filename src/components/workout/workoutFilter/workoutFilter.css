@@ -2,6 +2,10 @@
     width: 30%;
     margin: 1rem;
 }
+.filteredImage:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
 .ListImageFilter {
     text-align: center;
 }

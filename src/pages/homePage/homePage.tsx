@@ -23,7 +23,9 @@ export function HomePage() {
                 <div className="wrapper__text">
                     <div className="wrapper__text1">
                         <p>Entrena, disfruta, vive.</p>
-                        <h2>Diseña tu propio entrenamiento</h2>
+                        <h2 className="wrapper__textTitle">
+                            DISEÑA TU PROPIO ENTRENAMIENTO
+                        </h2>
                     </div>
                     <p className="wrapper__text2">
                         Si quieres transformar la manera de comunicarte con tu

@@ -35,6 +35,9 @@ export function MySelectionPage() {
             template = (
                 <>
                     <main className="wrapperMain" title="main">
+                        <h3 className="titlePageMySelection">
+                            Mi propuesta de entrenamiento
+                        </h3>
                         {user.user.workouts && <WorkoutList></WorkoutList>}
                     </main>
                 </>

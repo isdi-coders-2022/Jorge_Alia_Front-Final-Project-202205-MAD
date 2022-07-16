@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { iWorkout } from '../../../models/workout.model';
 import { HttpStoreUser } from '../../../services/repository.users';
 import { updateUserAction } from '../../../redurcers/user.reducer/user.action.creators';
-import '../workoutHome/workoutHome.css';
+import './workoutMySelection.css';
 
 export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
     const dispatcher = useDispatch();
@@ -21,7 +21,9 @@ export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
                     alt="Imagen entrenamiento"
                 />
             </Link>
-            <button onClick={() => handleSubmit()}>Eliminar</button>
+            <button className="buttonRemove" onClick={() => handleSubmit()}>
+                Eliminar
+            </button>
         </>
     );
     return template;

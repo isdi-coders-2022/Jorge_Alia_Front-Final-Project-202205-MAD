@@ -14,17 +14,17 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                 dispatcher(updateUserAction(data));
                 Swal.fire({
                     title: 'Hecho!',
-                    text: 'Agregado correctament',
+                    text: 'Añadido a tu entrenamiento',
                     icon: 'success',
-                    confirmButtonText: 'aceptar',
+                    confirmButtonText: 'Aceptar',
                 });
             })
             .catch((error) => {
                 Swal.fire({
-                    title: 'error!',
+                    title: 'Error',
                     text: 'No se pudo agregar',
                     icon: 'error',
-                    confirmButtonText: 'volver',
+                    confirmButtonText: 'Volver',
                 });
             });
     }
