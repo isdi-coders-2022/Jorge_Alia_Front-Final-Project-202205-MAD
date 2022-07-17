@@ -8,11 +8,9 @@ import './workoutDetails.css';
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     let template;
     const user = useSelector((store: iState) => store.users);
-    console.log(user);
+    console.log(user.user.workouts, ' user.user.workoutsSSSSSSSSSSSS');
     if (
-        user.user.workouts.some(
-            (item: any) => item._id.toString() === workout._id
-        )
+        user.user.workouts.some((item) => (item._id as String) === workout._id)
     ) {
         template = (
             <>

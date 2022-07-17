@@ -25,6 +25,12 @@
 
 .titlePageMySelection {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
+}
+
+.container__infoMySelection {
+    /* border: 1px solid rgb(170, 168, 168); */
+    text-align: center;
+    margin-bottom: 2rem;
 }
