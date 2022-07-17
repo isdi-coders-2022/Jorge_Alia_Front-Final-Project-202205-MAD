@@ -12,13 +12,13 @@ import './menu.css';
 const optionsMenu: aMenuItems = [
     {
         path: 'workouts',
-        label: 'Workouts',
+        label: 'Diseña',
         page: <WorkoutsPage />,
         title: 'workouts',
     },
     {
         path: 'selecciones',
-        label: 'Mis selecciones',
+        label: 'Entrena',
         page: <MySelectionPage />,
         title: 'Mis selecciones',
     },

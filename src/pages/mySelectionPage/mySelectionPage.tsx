@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { WorkoutList } from '../../components/workout/listWorkouts/listWorkouts';
 import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
+import { WorkoutList } from '../../components/workout/listWorkouts/listWorkouts';
 import './mySelectionPage.css';
 
 export function MySelectionPage() {
@@ -37,7 +37,7 @@ export function MySelectionPage() {
                 <>
                     <main className="wrapperMain" title="main">
                         <h3 className="titlePageMySelection">
-                            Mi propuesta de entrenamiento
+                            MI PROPUESTA DE ENTRENAMIENTO
                         </h3>
                         {user.user.workouts && <WorkoutList></WorkoutList>}
                     </main>

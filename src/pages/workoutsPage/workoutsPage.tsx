@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import Filter from '../../components/workout/workoutFilter/workoutFilter';
 import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import './workoutsPage.css';
 import { AddFilter } from './helperAddFilterCategory';
 import { AddFilterMaterial } from './helperAddFilterMaterial';
+import Filter from '../../components/workout/workoutFilter/workoutFilter';
 
 export function WorkoutPage() {
     const user = useSelector((store: iState) => store.users);
@@ -14,7 +14,6 @@ export function WorkoutPage() {
         category: '',
         complementaryMaterial: '',
     });
-    console.log(user.token, 'useeeeer tokeeeeen');
     if (user.token !== '') {
         template = (
             <>
