@@ -44,7 +44,7 @@ export function MySelectionPage() {
                 <>
                     <main className="wrapperMain" title="main">
                         <h3 className="titlePageMySelection">
-                            MI PROPUESTA DE ENTRENAMIENTO
+                            Mi propuesta de entrenamiento
                         </h3>
                         <div className="container__infoMySelection">
                             <p>Tiempo total = {time} minutos</p>

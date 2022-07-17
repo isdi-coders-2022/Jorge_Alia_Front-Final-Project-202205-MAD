@@ -13,7 +13,7 @@ export function ButtonRemoveToMyWorkout({ workout }: { workout: iWorkout }) {
 
     const template = (
         <button className="buttonRemove" onClick={() => handleSubmit()}>
-            Eliminar de mi rutina
+            Eliminar rutina
         </button>
     );
 

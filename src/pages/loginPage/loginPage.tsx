@@ -40,7 +40,6 @@ export function LoginPage() {
                             <h3>Modificar mis datos</h3>
                             <ModifyForm></ModifyForm>
                             <div className="wrapper__eliminateForm">
-                                <h3 className="">Baja de cuenta</h3>
                                 <EliminateForm></EliminateForm>
                             </div>
                         </div>

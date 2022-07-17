@@ -21,7 +21,7 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
             })
             .catch((error) => {
                 Swal.fire({
-                    title: 'Error',
+                    title: 'Regístrese',
                     text: 'No se pudo agregar',
                     icon: 'error',
                     confirmButtonText: 'Volver',
@@ -36,7 +36,7 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
                     handleFavorite();
                 }}
             >
-                AÑADIR A MI RUTINA
+                Añadir rutina
             </button>
         </>
     );

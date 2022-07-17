@@ -32,7 +32,7 @@ export function HomePage() {
                 <div className="wrapper__text">
                     <div className="wrapper__text1">
                         <h2 className="wrapper__textTitle">
-                            DISEÑA TU PROPIO ENTRENAMIENTO
+                            Diseña tu propio entrenamiento
                         </h2>
                     </div>
                     <p className="wrapper__text2">
@@ -50,7 +50,7 @@ export function HomePage() {
                     <WorkoutListThree workouts={workouts}></WorkoutListThree>
                 </div>
 
-                <p className="titleSection">Testimonios</p>
+                <p className="titleSection">Feedbacks</p>
                 <section className="testimonials">
                     <p className="testimonials__item">
                         "BIENESTAR en toda la amplitud de la palabra"

@@ -40,17 +40,21 @@
 
 .titleWorkout {
     font-size: 2.5em;
+    margin-bottom: 5rem;
+    color: black;
 }
 .wrapperTitleModality {
     text-align: center;
 }
 
 .titleModality {
-    font-size: 2em;
+    font-size: 1.5em;
+    color: black;
     margin-top: -50px;
 }
 .titleModalitySecond {
-    font-size: 1.7em;
+    color: black;
+    font-size: 1.5em;
     margin-top: -30px;
 }
 .titleModalitySecondItalics {
@@ -68,7 +72,7 @@
 }
 .titleModality3 {
     margin-top: 20px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .mystyle {
     filter: brightness(35%);
@@ -97,5 +101,5 @@
 }
 
 .containerWorkoutPage {
-    color: rgb(70, 70, 70);
+    color: rgb(0, 0, 0);
 }

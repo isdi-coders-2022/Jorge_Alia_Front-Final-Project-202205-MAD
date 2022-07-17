@@ -30,12 +30,15 @@ h2 {
     width: 50%;
 }
 .wrapper__text2 {
+    color: black;
     width: 50%;
     text-align: justify;
     margin-left: -6rem;
 }
 .wrapper__textTitle {
+    color: black;
     font-size: 3rem;
+    font-weight: bold;
 }
 .testimonials {
     display: flex;
@@ -49,9 +52,8 @@ h2 {
 
 .testimonials__item {
     text-align: center;
-    border: 1px solid black;
     width: 23%;
-    height: 12rem;
+    height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;

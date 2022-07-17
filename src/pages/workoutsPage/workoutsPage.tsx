@@ -20,16 +20,15 @@ export function WorkoutPage() {
                 <main className="containerWorkoutPage">
                     <div className="wrapperTitleWorkout">
                         <h2 className="titleWorkout">
-                            ¡ DISEÑA TU ENTRENAMIENTO !
+                            Diseña tu entrenamiento
                         </h2>
-                        <h3 className="arrow">⬇</h3>
                     </div>
                     <div className="wrapperTitleModality">
-                        <h3 className="titleModality">PASO 1 /</h3>
+                        <h3 className="titleModality">PASO 1</h3>
                         <div className="wrapper__titleModalitySecond">
-                            <h3 className="titleModalitySecond">
+                            <p className="titleModalitySecond">
                                 Selecciona <i>modalidad</i>
-                            </h3>
+                            </p>
                         </div>
                     </div>
 
@@ -92,13 +91,11 @@ export function WorkoutPage() {
                         />
                     </section>
                     <div className="wrapperTitleModality">
-                        <h3 className="titleModality titleModality2">
-                            PASO 2 /
-                        </h3>
+                        <h3 className="titleModality titleModality2">PASO 2</h3>
                         <div className="wrapper__titleModalitySecond">
-                            <h3 className="titleModalitySecond">
+                            <p className="titleModalitySecond">
                                 Selecciona uso de <i>material</i>
-                            </h3>
+                            </p>
                         </div>
                     </div>
 
@@ -172,10 +169,10 @@ export function WorkoutPage() {
                         />
                     </div>
                     <div className="wrapperTitleModality">
-                        <h3 className="titleModality3">PASO 3 /</h3>
-                        <h3 className="titleModalitySecond">
+                        <h3 className="titleModality3">PASO 3</h3>
+                        <p className="titleModalitySecond">
                             Selecciona tu <i>workout</i> y . . . ¡A ENTRENAR!
-                        </h3>
+                        </p>
                     </div>
                     <Filter properties={properties}></Filter>
                 </main>

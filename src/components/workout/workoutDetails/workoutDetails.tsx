@@ -14,9 +14,9 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     ) {
         template = (
             <>
-                <p className="titleDescription">
+                <h2 className="titleDescription">
                     Entrenamiento de {workout.title}
-                </p>
+                </h2>
                 <div className="containerDetails">
                     <div className="containerDetails__video">
                         <iframe
@@ -31,17 +31,17 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                     </div>
                     <div className="containerDetails__description">
                         <p>Intensidad: {workout.intensity}</p>
-                        <p>Duración: {workout.duration}</p>
+                        <p>Duración: {workout.duration} minutos</p>
                         <p>
                             Material necesario: {workout.complementaryMaterial}
                         </p>
+
+                        <p>{workout.description}</p>
                         <div className="wrapperButtonAdd">
                             <ButtonRemoveToMyWorkout
                                 workout={workout}
                             ></ButtonRemoveToMyWorkout>
                         </div>
-
-                        <p>{workout.description}</p>
                     </div>
                 </div>
             </>
@@ -66,17 +66,17 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                     </div>
                     <div className="containerDetails__description">
                         <p>Intensidad: {workout.intensity}</p>
-                        <p>Duración: {workout.duration}</p>
+                        <p>Duración: {workout.duration} minutos</p>
                         <p>
                             Material necesario: {workout.complementaryMaterial}
                         </p>
+
+                        <p>{workout.description}</p>
                         <div className="wrapperButtonAdd">
                             <ButtonAddToMyWorkout
                                 workout={workout}
                             ></ButtonAddToMyWorkout>
                         </div>
-
-                        <p>{workout.description}</p>
                     </div>
                 </div>
             </>

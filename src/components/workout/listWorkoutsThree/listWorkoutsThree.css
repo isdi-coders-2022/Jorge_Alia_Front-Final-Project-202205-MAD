@@ -1,5 +1,9 @@
 .workoutsList {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -35px;
 }
 
 .workoutsList__workout {
@@ -7,7 +11,7 @@
     list-style: none;
 }
 .iconBack {
-    width: 2rem;
+    width: 1.5rem;
 }
 .wrapperIconBack {
     cursor: pointer;
@@ -21,5 +25,5 @@
 }
 .iconNext {
     transform: rotate(-180deg);
-    width: 2rem;
+    width: 1.5rem;
 }
