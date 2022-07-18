@@ -41,6 +41,7 @@ export function RegisterForm() {
                 <input
                     className="input"
                     type="text"
+                    alt="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
