@@ -26,3 +26,18 @@
 .wrapper__eliminateForm {
     margin-top: 5rem;
 }
+.buttonElimination {
+    cursor: pointer;
+    margin-top: -19rem;
+    margin-bottom: 5rem;
+    background-color: #7f2339;
+    color: white;
+    border: none;
+    width: 7rem;
+    height: 2rem;
+    margin-left: 5rem;
+    border-radius: 90px;
+}
+.buttonElimination:hover {
+    background-color: rgb(142, 142, 142);
+}

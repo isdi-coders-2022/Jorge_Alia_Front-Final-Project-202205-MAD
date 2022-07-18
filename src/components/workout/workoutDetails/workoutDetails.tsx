@@ -1,67 +1,87 @@
-import { useDispatch } from 'react-redux';
-import Swal from 'sweetalert2';
+import { useSelector } from 'react-redux';
 import { iWorkout } from '../../../models/workout.model';
-import { updateUserAction } from '../../../redurcers/user.reducer/user.action.creators';
-import { HttpStoreUser } from '../../../services/repository.users';
+import { iState } from '../../../store/store';
+import { ButtonAddToMyWorkout } from '../../buttons/buttonAddToMyWorkout';
+import { ButtonRemoveToMyWorkout } from '../../buttons/buttonRemoveToMyWorkout';
 import './workoutDetails.css';
+
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
-    const dispatcher = useDispatch();
-
-    function handleFavorite() {
-        new HttpStoreUser()
-            .addToFavorites(workout._id as string)
-            .then((data) => {
-                dispatcher(updateUserAction(data));
-                Swal.fire({
-                    title: 'Hecho!',
-                    text: 'Añadido a tu entrenamiento',
-                    icon: 'success',
-                    confirmButtonText: 'Aceptar',
-                });
-            })
-            .catch((error) => {
-                Swal.fire({
-                    title: 'Error',
-                    text: 'No se pudo agregar',
-                    icon: 'error',
-                    confirmButtonText: 'Volver',
-                });
-            });
-    }
-    const template = (
-        <>
-            <p className="titleDescription">Entrenamiento de {workout.title}</p>
-            <div className="containerDetails">
-                <div className="containerDetails__video">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={workout.video + '?showinfo=0&rel=0&'}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
-                <div className="containerDetails__description">
-                    <p>Intensidad: {workout.intensity}</p>
-                    <p>Duración: {workout.duration}</p>
-                    <p>Material necesario: {workout.complementaryMaterial}</p>
-                    <div className="wrapperButtonAdd">
-                        <button
-                            className="buttonAddFavorite"
-                            onClick={() => {
-                                handleFavorite();
-                            }}
-                        >
-                            AÑADIR A MI RUTINA
-                        </button>
+    let template;
+    const user = useSelector((store: iState) => store.users);
+    console.log(user.user.workouts, ' user.user.workoutsSSSSSSSSSSSS');
+    if (
+        user.user.workouts.some((item) => (item._id as String) === workout._id)
+    ) {
+        template = (
+            <>
+                <h2 className="titleDescription">
+                    Entrenamiento de {workout.title}
+                </h2>
+                <div className="containerDetails">
+                    <div className="containerDetails__video">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={workout.video + '?showinfo=0&rel=0&'}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
                     </div>
+                    <div className="containerDetails__description">
+                        <p>Intensidad: {workout.intensity}</p>
+                        <p>Duración: {workout.duration} minutos</p>
+                        <p>
+                            Material necesario: {workout.complementaryMaterial}
+                        </p>
 
-                    <p>{workout.description}</p>
+                        <p>{workout.description}</p>
+                        <div className="wrapperButtonAdd">
+                            <ButtonRemoveToMyWorkout
+                                workout={workout}
+                            ></ButtonRemoveToMyWorkout>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </>
-    );
+            </>
+        );
+    } else {
+        template = (
+            <>
+                <p className="titleDescription">
+                    Entrenamiento de {workout.title}
+                </p>
+                <div className="containerDetails">
+                    <div className="containerDetails__video">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={workout.video + '?showinfo=0&rel=0&'}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                    <div className="containerDetails__description">
+                        <p>Intensidad: {workout.intensity}</p>
+                        <p>Duración: {workout.duration} minutos</p>
+                        <p>
+                            Material necesario: {workout.complementaryMaterial}
+                        </p>
+
+                        <p>{workout.description}</p>
+                        <div className="wrapperButtonAdd">
+                            <ButtonAddToMyWorkout
+                                workout={workout}
+                            ></ButtonAddToMyWorkout>
+                        </div>
+                    </div>
+                </div>
+            </>
+        );
+    }
+
     return template;
 }

@@ -9,15 +9,13 @@
 }
 .buttonLogin {
     cursor: pointer;
-    margin-top: 1rem;
-    font-family: 'MuseoModerno', cursive;
-    font-weight: bold;
+    margin-top: 3rem;
     background-color: #bbed33;
     border: none;
     width: 7rem;
     height: 2rem;
     margin-left: 5rem;
-    border-radius: 15px;
+    border-radius: 90px;
 }
 
 .buttonLogin:hover {

@@ -1,0 +1,11 @@
+.wrapper__workoutsListWorkout {
+    text-align: center;
+    display: grid;
+    justify-items: center;
+}
+.workoutsListWorkout {
+    text-align: center;
+    list-style: none;
+    width: 50%;
+    margin-bottom: 2rem;
+}

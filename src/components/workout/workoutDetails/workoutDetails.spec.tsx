@@ -10,7 +10,7 @@ const reducer = {
     users: userReducer,
 };
 const mockWorkout = {
-    _id: 'h34h3n34n',
+    _id: '62c3fa970a6339f727766546',
     title: ' SECUENCIA LATERAL DE PIERNAS con softball',
     image: ' piernasgluteossoftball.png',
     video: ' https://www.youtube.com/embed/gZghpARZK3Y',
@@ -75,7 +75,7 @@ describe('Given the component DetailsWorkout', () => {
                         passwd: '',
                         workouts: [
                             {
-                                id: '',
+                                id: '62c3fa970a6339f727766546',
                             },
                         ],
                         done: [],
@@ -95,7 +95,6 @@ describe('Given the component DetailsWorkout', () => {
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByText(/AÑADIR A MI RUTINA/));
             const result = screen.getByText(/Entrenamiento de pierna/i);
             expect(result).toBeInTheDocument();
         });
@@ -131,7 +130,6 @@ describe('Given the component DetailsWorkout', () => {
                     reducer,
                 }
             );
-            fireEvent.click(screen.getByText(/AÑADIR A MI RUTINA/));
             const result = screen.getByText(/Entrenamiento de pierna/i);
             expect(result).toBeInTheDocument();
         });

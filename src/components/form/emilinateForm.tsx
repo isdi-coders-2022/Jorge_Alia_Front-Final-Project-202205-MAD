@@ -25,8 +25,8 @@ export function EliminateForm() {
         <>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <button className="buttonLogin" type="submit">
-                        Baja de cuenta
+                    <button className="buttonElimination" type="submit">
+                        Eliminar cuenta
                     </button>
                 </div>
             </form>

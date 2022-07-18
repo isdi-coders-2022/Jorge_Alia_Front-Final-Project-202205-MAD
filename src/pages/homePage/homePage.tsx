@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { WorkoutListThree } from '../../components/workout/listWorkoutsThree/listWorkoutsThree';
 import { iState } from '../../store/store';
+
 import './homePage.css';
 
 export function HomePage() {
@@ -13,28 +14,9 @@ export function HomePage() {
                         <source src="./img/video.mp4" />
                     </video>
                 </div>
-                <div className="wrapper__text">
-                    <div className="wrapper__text1">
-                        <p>Entrena, disfruta, vive.</p>
-                        <h2 className="wrapper__textTitle">
-                            DISEÑA TU PROPIO ENTRENAMIENTO
-                        </h2>
-                    </div>
-                    <p className="wrapper__text2">
-                        Si quieres transformar la manera de comunicarte con tu
-                        cuerpo y empezar a escucharlo de una forma más
-                        consciente. Si te gustaría fortalecer o tonificar la
-                        musculatura de forma analítica, respetando los límites
-                        de tu cuerpo. Si sufres dolores de espalda y te gustaría
-                        equilibrar tu postura a través del pilates, este espacio
-                        es para ti.
-                    </p>
-                </div>
-                <div className="workoutsRecent">
-                    <p className="titleSection">Workouts recientes</p>
-                    <WorkoutListThree workouts={workouts}></WorkoutListThree>
-                </div>
-
+                <p className="paragraph__train">
+                    <i> Entrena & Conecta</i> con el placer de cuidarte.
+                </p>
                 <div className="wrapper__image">
                     <img
                         className="image__frame"
@@ -47,7 +29,28 @@ export function HomePage() {
                         alt="Imagen estirando"
                     />
                 </div>
-                <p className="titleSection">Testimonios</p>
+                <div className="wrapper__text">
+                    <div className="wrapper__text1">
+                        <h2 className="wrapper__textTitle">
+                            Diseña tu propio entrenamiento
+                        </h2>
+                    </div>
+                    <p className="wrapper__text2">
+                        Te ofrecemos las herramientas que necesitas para crear
+                        el entrenamiento con el que siempre habias soñado, aquel
+                        que se adapta a tu objetivo, cualidades, prioridades y
+                        preferencias. Gracias a esta web conseguiras que tu
+                        entrenamiento se convierta en tu rutina de autocuidado.
+                        Conviertete en tu propio instructor. ¿Entrenamos?
+                    </p>
+                </div>
+
+                <div className="workoutsRecent">
+                    <p className="titleSection">Workouts recientes</p>
+                    <WorkoutListThree workouts={workouts}></WorkoutListThree>
+                </div>
+
+                <p className="titleSection">Feedbacks</p>
                 <section className="testimonials">
                     <p className="testimonials__item">
                         "BIENESTAR en toda la amplitud de la palabra"
