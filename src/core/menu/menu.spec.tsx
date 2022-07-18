@@ -6,7 +6,7 @@ import { Menu } from './menu';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component Menu', () => {
@@ -14,21 +14,18 @@ describe('Given the component Menu', () => {
         test('Then it should render the menu', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -47,21 +44,18 @@ describe('Given the component Menu', () => {
         test('Then it should render the menu with login', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
