@@ -16,17 +16,14 @@ describe('Given the component header', () => {
         test('Render header when I am not Logged in', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -46,17 +43,14 @@ describe('Given the component header', () => {
         test('Render header when I am Logged in', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(

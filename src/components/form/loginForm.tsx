@@ -21,7 +21,7 @@ export function LoginForm() {
             formData
         );
         if (loginUser.token) {
-            dispatcher(loadUsersAction(loginUser));
+            dispatcher(loadUsersAction(loginUser.user));
             localStorage.setItem('token', loginUser.token);
             navegate('/');
         } else {

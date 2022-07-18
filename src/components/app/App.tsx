@@ -8,8 +8,12 @@ import {
 } from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
-import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
+import {
+    loadUsersAction,
+    updateUserAction,
+} from '../../redurcers/user.reducer/user.action.creators';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
+import { HttpStoreUser } from '../../services/repository.users';
 
 import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import './App.css';
@@ -22,9 +26,11 @@ function App() {
         apiWorkout
             .getWorkouts()
             .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
-        const user = localStorage.getItem('loginUser');
-        if (user) {
-            dispatcher(loadUsersAction(JSON.parse(user)));
+        const token = localStorage.getItem('token');
+        if (token) {
+            new HttpStoreUser().getUserByToken().then((data) => {
+                dispatcher(loadUsersAction(data));
+            });
         }
     }, [apiWorkout, dispatcher]);
 

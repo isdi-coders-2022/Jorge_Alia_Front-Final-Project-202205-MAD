@@ -7,11 +7,8 @@ import './workoutDetails.css';
 
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     let template;
-    const user = useSelector((store: iState) => store.users);
-    console.log(user.user.workouts, ' user.user.workoutsSSSSSSSSSSSS');
-    if (
-        user.user.workouts.some((item) => (item._id as String) === workout._id)
-    ) {
+    const user = useSelector((store: iState) => store.user);
+    if (user.workouts.some((item) => (item._id as String) === workout._id)) {
         template = (
             <>
                 <h2 className="titleDescription">

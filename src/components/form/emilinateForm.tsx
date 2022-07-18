@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { iState } from '../../store/store';
 
 export function EliminateForm() {
-    const user = useSelector((store: iState) => store.users);
+    const user = useSelector((store: iState) => store.user);
 
     async function handleSubmit(ev: SyntheticEvent) {
         // eslint-disable-next-line no-restricted-globals
@@ -13,7 +13,7 @@ export function EliminateForm() {
         );
         if (ConfirmDelete == true) {
             ev.preventDefault();
-            await new HttpStoreUser().deleteUser(user.user._id as string);
+            await new HttpStoreUser().deleteUser(user._id as string);
             localStorage.clear();
             window.location.href = 'http://localhost:3000';
         } else {

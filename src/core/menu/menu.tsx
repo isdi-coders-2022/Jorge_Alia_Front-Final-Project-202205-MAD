@@ -44,8 +44,8 @@ const optionsMenu: aMenuItems = [
 ];
 
 export function Menu() {
-    const user = useSelector((store: iState) => store.users);
-    if (user.token !== '') {
+    const user = useSelector((store: iState) => store.user);
+    if (user.name !== '') {
         optionsMenu[4] = {
             path: 'login',
             label: 'Mi cuenta',

@@ -5,10 +5,10 @@ import { WorkoutMySelection } from '../workoutMySelection/workoutMySelection';
 import './listWorkouts.css';
 
 export function WorkoutList() {
-    const user = useSelector((store: iState) => store.users);
+    const user = useSelector((store: iState) => store.user);
     const template = (
         <ul className="wrapper__workoutsListWorkout">
-            {user.user.workouts.map((workout: iWorkout, index) => (
+            {user.workouts.map((workout: iWorkout, index) => (
                 <li className="workoutsListWorkout" key={workout._id}>
                     <WorkoutMySelection workout={workout}></WorkoutMySelection>
                 </li>

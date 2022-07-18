@@ -3,12 +3,12 @@ import { iState } from '../../store/store';
 import { Link } from 'react-router-dom';
 import { WorkoutList } from '../../components/workout/listWorkouts/listWorkouts';
 import './mySelectionPage.css';
-import { timeLog } from 'console';
 
 export function MySelectionPage() {
-    const user = useSelector((store: iState) => store.users);
+    const materials = new Set();
+    const user = useSelector((store: iState) => store.user);
     let template;
-    if (user.token === '') {
+    if (user.name === '') {
         template = (
             <>
                 <main>
@@ -25,7 +25,7 @@ export function MySelectionPage() {
             </>
         );
     } else {
-        if (user.user.workouts.length === 0 && user.token !== '') {
+        if (user.workouts.length === 0 && user) {
             template = (
                 <>
                     <main className="wrapperMain wrapperInfo">
@@ -35,11 +35,22 @@ export function MySelectionPage() {
             );
         } else {
             let time = 0;
-            let material = ' - ';
-            user.user.workouts.forEach((item) => {
+            let material = '  ';
+
+            user.workouts.forEach((item) => {
+                if (item.complementaryMaterial !== 'Sin material')
+                    materials.add(item.complementaryMaterial);
                 time = item.duration + time;
-                material = material + item.complementaryMaterial + ' - ';
             });
+            const materialArray = Array.from(materials);
+            materialArray.forEach((item) => {
+                material = material + ' - ' + item;
+            });
+            let intensity: any = [];
+            user.workouts.map((item) => {
+                intensity.push(item.intensity);
+            });
+            console.log(intensity);
             template = (
                 <>
                     <main className="wrapperMain" title="main">
@@ -48,11 +59,14 @@ export function MySelectionPage() {
                         </h3>
                         <div className="container__infoMySelection">
                             <p>Tiempo total: {time} minutos</p>
-                            <p>Material necesario: {material}</p>
+                            <p>
+                                Material necesario:{' '}
+                                {material ? material : 'Sin material'}
+                            </p>
                             <p>Intensidad media: Alta</p>
                         </div>
 
-                        {user.user.workouts && <WorkoutList></WorkoutList>}
+                        {user.workouts && <WorkoutList></WorkoutList>}
                     </main>
                 </>
             );

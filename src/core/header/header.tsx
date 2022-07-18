@@ -5,13 +5,13 @@ import { Menu } from '../menu/menu';
 import './header.css';
 
 export function Header() {
-    const user = useSelector((store: iState) => store.users);
+    const user = useSelector((store: iState) => store.user);
     let template;
     function handleSubmit() {
         localStorage.clear();
         window.location.href = 'http://localhost:3000';
     }
-    if (user.token !== '') {
+    if (user.name !== '') {
         template = (
             <>
                 <div className="header">

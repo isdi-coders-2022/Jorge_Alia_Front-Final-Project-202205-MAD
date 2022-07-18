@@ -1,19 +1,16 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { iUserWithToken } from '../../models/user.model';
+import { iUser } from '../../models/user.model';
 
 import * as action from './user.action.creators';
 
-const initialState: iUserWithToken = {
-    token: '',
-    user: {
-        _id: '',
-        name: '',
-        email: '',
-        passwd: '',
-        workouts: [],
-        done: [],
-        rol: '',
-    },
+const initialState: iUser = {
+    _id: '',
+    name: '',
+    email: '',
+    passwd: '',
+    workouts: [],
+    done: [],
+    rol: '',
 };
 
 export const userReducer = createReducer(initialState, (builder) => {

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { iState } from '../../store/store';
 
 export function ModifyForm() {
-    const user = useSelector((store: iState) => store.users.user);
+    const user = useSelector((store: iState) => store.user);
     const [formData, setFormData] = useState({
         name: user.name,
         email: user.email,

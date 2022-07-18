@@ -3,7 +3,7 @@ import { render, screen } from '../../utils/testutils';
 import { iState } from '../../store/store';
 import HomePage from './homePage';
 import { iWorkout } from '../../models/workout.model';
-import { iUserWithToken } from '../../models/user.model';
+import { iUser } from '../../models/user.model';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 
@@ -47,7 +47,7 @@ describe('Given the component Home', () => {
             };
             const preloadedState: iState = {
                 workouts: [mockWorkout[0]] as Array<iWorkout>,
-                users: {} as iUserWithToken,
+                user: {} as iUser,
             };
             render(
                 <BrowserRouter>
