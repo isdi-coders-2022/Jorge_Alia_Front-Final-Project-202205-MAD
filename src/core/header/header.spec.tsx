@@ -8,7 +8,7 @@ import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component header', () => {
@@ -45,7 +45,7 @@ describe('Given the component header', () => {
                 workouts: [],
                 user: {
                     _id: '',
-                    name: '',
+                    name: 'test',
                     email: '',
                     passwd: '',
                     workouts: [],
