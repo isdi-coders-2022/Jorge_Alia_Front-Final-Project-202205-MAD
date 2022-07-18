@@ -14,6 +14,17 @@ export class HttpStoreUser {
         return fetch(this.url + `/${user._id}`).then((resp) => resp.json());
     }
 
+    getUserByToken(): Promise<iUser> {
+        return fetch('http://localhost:3500/user/loginWithToken', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${getToken()}`,
+            },
+        }).then((resp) => resp.json());
+    }
+
     registerUser(user: iUser): Promise<iUser> {
         return fetch(this.url + '/register', {
             method: 'POST',

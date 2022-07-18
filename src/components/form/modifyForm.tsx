@@ -4,12 +4,10 @@ import { useSelector } from 'react-redux';
 import { iState } from '../../store/store';
 
 export function ModifyForm() {
-    const user = useSelector((store: iState) => store.users.user);
+    const user = useSelector((store: iState) => store.user);
     const [formData, setFormData] = useState({
         name: user.name,
         email: user.email,
-        passwd: '',
-
         rol: 'User',
     });
     async function handleSubmit(ev: SyntheticEvent) {
@@ -37,6 +35,7 @@ export function ModifyForm() {
                 <input
                     className="input"
                     type="text"
+                    alt="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}

@@ -41,6 +41,19 @@ describe('Given HttpStoreUser', () => {
                 expect(result._id).toBe('dj87dj4nsl8sd');
             });
         });
+
+        describe('And we use method getUserByToken', () => {
+            test('Then should return a  user with token', async () => {
+                const user = { userName: 'test', password: '1234' };
+                global.fetch = jest.fn().mockResolvedValue({
+                    json: jest.fn().mockResolvedValue(user),
+                });
+                await new HttpStoreUser().getUserByToken();
+
+                expect(fetch).toBeCalled();
+                expect(user.userName).toBe('test');
+            });
+        });
         describe('And we use method registerUser', () => {
             test('Then it should result to Equal to new User', async () => {
                 global.fetch = jest.fn().mockResolvedValue({

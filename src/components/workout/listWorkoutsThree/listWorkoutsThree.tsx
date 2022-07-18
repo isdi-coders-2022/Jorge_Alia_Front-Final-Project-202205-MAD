@@ -34,7 +34,7 @@ export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
                 >
                     <img
                         className="iconBack"
-                        src="./img/iconopicoparantesis.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ficonopicoparantesisreves.png?alt=media&token=bd2a346c-8c7a-4a8d-9fe4-9de462af9ad7"
                         alt="Icono anterior"
                         title="Icono anterior"
                     />
@@ -65,7 +65,7 @@ export function WorkoutListThree({ workouts }: { workouts: Array<iWorkout> }) {
                 >
                     <img
                         className="iconNext"
-                        src="./img/iconopicoparantesis.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ficonopicoparantesisreves.png?alt=media&token=bd2a346c-8c7a-4a8d-9fe4-9de462af9ad7"
                         alt="Icono siguiente"
                     />
                 </div>

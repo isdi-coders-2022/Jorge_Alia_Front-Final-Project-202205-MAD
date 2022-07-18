@@ -6,10 +6,11 @@ import {
     Route,
     Navigate,
 } from 'react-router-dom';
-import { Layout } from '../../core/layout';
+import { Layout } from '../../core/layout/layout';
 import { aMenuItems } from '../../models/menu.model';
 import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
+import { HttpStoreUser } from '../../services/repository.users';
 
 import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import './App.css';
@@ -17,16 +18,19 @@ import './App.css';
 function App() {
     const dispatcher = useDispatch();
     const apiWorkout = useMemo(() => new HttpStoreWorkouts(), []);
+    const apiUser = useMemo(() => new HttpStoreUser(), []);
 
     useEffect(() => {
         apiWorkout
             .getWorkouts()
             .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
-        const user = localStorage.getItem('loginUser');
-        if (user) {
-            dispatcher(loadUsersAction(JSON.parse(user)));
+        const token = localStorage.getItem('token');
+        if (token) {
+            apiUser.getUserByToken().then((data) => {
+                dispatcher(loadUsersAction(data));
+            });
         }
-    }, [apiWorkout, dispatcher]);
+    }, [apiWorkout, dispatcher, apiUser]);
 
     const HomePage = React.lazy(() => import('../../pages/homePage/homePage'));
     const DetailsPage = React.lazy(
@@ -57,16 +61,16 @@ function App() {
             title: '',
         },
         {
-            path: 'workouts',
-            label: 'workouts',
+            path: 'disena',
+            label: 'Diseña',
             page: <WorkoutsPage />,
-            title: 'workouts',
+            title: 'Diseña',
         },
         {
-            path: 'selecciones',
-            label: 'mis selecciones',
+            path: 'entrena',
+            label: 'Entrena',
             page: <MySelectionPage />,
-            title: 'Mis selecciones',
+            title: 'Entrena',
         },
         {
             path: 'sobremi',

@@ -8,13 +8,13 @@ import { AddFilterMaterial } from './helperAddFilterMaterial';
 import Filter from '../../components/workout/workoutFilter/workoutFilter';
 
 export function WorkoutPage() {
-    const user = useSelector((store: iState) => store.users);
+    const user = useSelector((store: iState) => store.user);
     let template;
     const [properties, setProperties] = useState({
         category: '',
         complementaryMaterial: '',
     });
-    if (user.token !== '') {
+    if (user.name !== '') {
         template = (
             <>
                 <main className="containerWorkoutPage">
@@ -49,13 +49,6 @@ export function WorkoutPage() {
                             }}
                             id="brazos-abs"
                         />
-                        {/* <img
-                        id="tik tikYes"
-                        className="tik"
-                        src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/iconos%2Ftik.png?alt=media&token=ac88817c-857f-4ca4-9127-233dd6e530e9"
-                        alt=""
-                    /> */}
-
                         <img
                             role="button"
                             className="imageFilter"
@@ -182,7 +175,7 @@ export function WorkoutPage() {
         template = (
             <>
                 <div className="wrapperInfo">
-                    <p>! Únete para poder ver todos los entrenamientos !</p>
+                    <p>! Únete para diseñar tu entrenamiento !</p>
 
                     <Link to="/login">
                         <button className="buttonGoToRegister">

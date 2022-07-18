@@ -21,10 +21,7 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
             })
             .catch((error) => {
                 Swal.fire({
-                    title: 'Regístrese',
-                    text: 'No se pudo agregar',
-                    icon: 'error',
-                    confirmButtonText: 'Volver',
+                    text: 'Para añadir por favor regístrese',
                 });
             });
     }

@@ -6,7 +6,7 @@ import MySelectionPage from './mySelectionPage';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component MySelectionPage', () => {
@@ -14,17 +14,14 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am not logged', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [{}],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -42,17 +39,14 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am logged and workouts.length is 0', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -70,21 +64,104 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am logged and workouts.length is different to 0', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            _id: 'h34h3n34n',
+                            title: ' SECUENCIA LATERAL DE PIERNAS con softball',
+                            image: ' piernasgluteossoftball.png',
+                            video: ' https://www.youtube.com/embed/gZghpARZK3Y',
+                            description:
+                                'Entrenamiento de pierna y glúteo con intensidad alta enfocada en el trabajo de pierna en postura lateral.',
+                            category: 'Gluteos y piernas',
+                            complementaryMaterial: 'Softball',
+                            duration: 12,
+                            intensity: 'Alta',
+                            comments: [],
+                        },
+                    ],
+                    done: [],
+                    rol: '',
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <MySelectionPage></MySelectionPage>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const result = screen.getByTitle(/main/i);
+            expect(result).toBeInTheDocument();
+        });
+        test('Then it should render when the intensity is "media"', () => {
+            const preloadedState = {
+                workouts: [],
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            _id: 'h34h3n34n',
+                            title: ' ',
+                            image: ' ',
+                            video: ' ',
+                            description: '',
+                            category: 'Gluteos y piernas',
+                            complementaryMaterial: 'Softball',
+                            duration: 12,
+                            intensity: 'Media',
+                            comments: [],
+                        },
+                    ],
+                    done: [],
+                    rol: '',
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <MySelectionPage></MySelectionPage>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const result = screen.getByTitle(/main/i);
+            expect(result).toBeInTheDocument();
+        });
+        test('Then it should render when the intensity is "Baja"', () => {
+            const preloadedState = {
+                workouts: [],
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            _id: '',
+                            title: ' ',
+                            image: '',
+                            video: ' ',
+                            description: '',
+                            category: 'Gluteos y piernas',
+                            complementaryMaterial: 'Sin material',
+                            duration: 12,
+                            intensity: 'Baja',
+                            comments: [],
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             render(

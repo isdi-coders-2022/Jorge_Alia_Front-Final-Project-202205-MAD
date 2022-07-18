@@ -1,13 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import { DetailsWorkout } from './workoutDetails';
-import { fireEvent, render, screen } from '../../../utils/testutils';
+import { render, screen } from '../../../utils/testutils';
 import { workoutReducer } from '../../../redurcers/workout.reducer/workout.reducer';
 import { userReducer } from '../../../redurcers/user.reducer/user.reducer';
 import { HttpStoreUser } from '../../../services/repository.users';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 const mockWorkout = {
     _id: '62c3fa970a6339f727766546',
@@ -34,21 +34,18 @@ describe('Given the component DetailsWorkout', () => {
         test('Then it should render', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -66,21 +63,18 @@ describe('Given the component DetailsWorkout', () => {
         test('Then it should render when click in the button favorite and response is ok', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '62c3fa970a6339f727766546',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            _id: '62c3fa970a6339f727766546',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             HttpStoreUser.prototype.addToFavorites = jest
@@ -101,21 +95,18 @@ describe('Given the component DetailsWorkout', () => {
         test('Then it should render when click in the button favorite and response is not ok', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             HttpStoreUser.prototype.addToFavorites = jest

@@ -6,7 +6,7 @@ import WorkoutPage from './workoutsPage';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component WorkoutPage', () => {
@@ -14,17 +14,14 @@ describe('Given the component WorkoutPage', () => {
         test('Then it should render if I am not logged in', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -42,17 +39,14 @@ describe('Given the component WorkoutPage', () => {
         test('Then it should render if I am logger', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(

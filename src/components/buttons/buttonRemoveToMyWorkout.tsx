@@ -8,7 +8,9 @@ export function ButtonRemoveToMyWorkout({ workout }: { workout: iWorkout }) {
     function handleSubmit() {
         new HttpStoreUser()
             .deleteFavorites(workout._id as string)
-            .then((data) => dispatcher(updateUserAction(data)));
+            .then((data) => {
+                dispatcher(updateUserAction(data));
+            });
     }
 
     const template = (

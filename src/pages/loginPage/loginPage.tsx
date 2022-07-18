@@ -7,10 +7,10 @@ import { iState } from '../../store/store';
 import './loginPage.css';
 
 export function LoginPage() {
-    const user = useSelector((store: iState) => store.users);
+    const user = useSelector((store: iState) => store.user);
     let template;
 
-    if (user.token === '') {
+    if (user.name === '') {
         template = (
             <>
                 <h2 className="titleLogin">¡ Únete a entrenar conmigo !</h2>
