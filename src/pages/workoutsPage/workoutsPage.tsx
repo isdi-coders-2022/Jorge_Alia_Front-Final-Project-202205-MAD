@@ -14,8 +14,6 @@ export function WorkoutPage() {
         category: '',
         complementaryMaterial: '',
     });
-    console.log(user, 'USEEEEEEEEEEEEEEEEEEEEER');
-    console.log(user.name, 'USER NAMEEEEEEE');
     if (user.name !== '') {
         template = (
             <>

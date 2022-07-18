@@ -6,7 +6,7 @@ import AboutMePage from './aboutMePage';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component AboutMePage', () => {
@@ -14,17 +14,14 @@ describe('Given the component AboutMePage', () => {
         test('Then it should render', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -36,7 +33,7 @@ describe('Given the component AboutMePage', () => {
                     reducer,
                 }
             );
-            const result = screen.getByText(/Para cualquier duda/i);
+            const result = screen.getByText(/Soy Ana Aguado,/i);
             expect(result).toBeInTheDocument();
         });
     });
