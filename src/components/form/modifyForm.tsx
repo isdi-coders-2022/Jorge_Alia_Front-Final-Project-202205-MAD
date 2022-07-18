@@ -35,6 +35,7 @@ export function ModifyForm() {
                 <input
                     className="input"
                     type="text"
+                    alt="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
