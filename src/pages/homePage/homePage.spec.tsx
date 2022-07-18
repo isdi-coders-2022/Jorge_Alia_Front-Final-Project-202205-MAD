@@ -55,7 +55,9 @@ describe('Given the component Home', () => {
                 </BrowserRouter>,
                 { preloadedState, reducer }
             );
-            const newResult = screen.getByText(/Entrena, disfruta, vive./i);
+            const newResult = screen.getByText(
+                /Diseña tu propio entrenamiento/i
+            );
             expect(newResult).toBeInTheDocument();
         });
     });
