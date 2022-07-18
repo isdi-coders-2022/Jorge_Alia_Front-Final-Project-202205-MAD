@@ -57,16 +57,16 @@ function App() {
             title: '',
         },
         {
-            path: 'workouts',
-            label: 'workouts',
+            path: 'disena',
+            label: 'Diseña',
             page: <WorkoutsPage />,
-            title: 'workouts',
+            title: 'Diseña',
         },
         {
-            path: 'selecciones',
-            label: 'mis selecciones',
+            path: 'entrena',
+            label: 'Entrena',
             page: <MySelectionPage />,
-            title: 'Mis selecciones',
+            title: 'Entrena',
         },
         {
             path: 'sobremi',

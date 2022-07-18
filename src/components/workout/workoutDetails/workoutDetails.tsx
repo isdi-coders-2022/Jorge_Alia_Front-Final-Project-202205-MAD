@@ -36,7 +36,9 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                             Material necesario: {workout.complementaryMaterial}
                         </p>
 
-                        <p>{workout.description}</p>
+                        <p className="paragraph__description">
+                            {workout.description}
+                        </p>
                         <div className="wrapperButtonAdd">
                             <ButtonRemoveToMyWorkout
                                 workout={workout}
@@ -49,9 +51,9 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
     } else {
         template = (
             <>
-                <p className="titleDescription">
+                <h2 className="titleDescription">
                     Entrenamiento de {workout.title}
-                </p>
+                </h2>
                 <div className="containerDetails">
                     <div className="containerDetails__video">
                         <iframe
@@ -71,7 +73,9 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                             Material necesario: {workout.complementaryMaterial}
                         </p>
 
-                        <p>{workout.description}</p>
+                        <p className="paragraph__description">
+                            {workout.description}
+                        </p>
                         <div className="wrapperButtonAdd">
                             <ButtonAddToMyWorkout
                                 workout={workout}

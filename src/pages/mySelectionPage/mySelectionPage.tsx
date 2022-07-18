@@ -35,10 +35,10 @@ export function MySelectionPage() {
             );
         } else {
             let time = 0;
-            let material = '';
+            let material = ' - ';
             user.user.workouts.forEach((item) => {
                 time = item.duration + time;
-                material = item.complementaryMaterial + ' y ' + material;
+                material = material + item.complementaryMaterial + ' - ';
             });
             template = (
                 <>
@@ -47,9 +47,9 @@ export function MySelectionPage() {
                             Mi propuesta de entrenamiento
                         </h3>
                         <div className="container__infoMySelection">
-                            <p>Tiempo total = {time} minutos</p>
-                            <p>Material necesario = {material}</p>
-                            <p>Intensidad media = </p>
+                            <p>Tiempo total: {time} minutos</p>
+                            <p>Material necesario: {material}</p>
+                            <p>Intensidad media: Alta</p>
                         </div>
 
                         {user.user.workouts && <WorkoutList></WorkoutList>}

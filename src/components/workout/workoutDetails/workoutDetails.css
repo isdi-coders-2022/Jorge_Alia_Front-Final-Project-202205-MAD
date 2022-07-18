@@ -5,6 +5,8 @@
 .containerDetails__description {
     margin-left: 3rem;
     font-weight: bold;
+    text-align: justify;
+    margin-right: 2rem;
 }
 
 .containerDetails__video {
@@ -34,4 +36,9 @@
 
 .wrapperButtonAdd {
     text-align: center;
+}
+
+.paragraph__description {
+    font-weight: lighter;
+    margin-top: 3rem;
 }
