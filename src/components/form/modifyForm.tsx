@@ -8,8 +8,6 @@ export function ModifyForm() {
     const [formData, setFormData] = useState({
         name: user.name,
         email: user.email,
-        passwd: '',
-
         rol: 'User',
     });
     async function handleSubmit(ev: SyntheticEvent) {
