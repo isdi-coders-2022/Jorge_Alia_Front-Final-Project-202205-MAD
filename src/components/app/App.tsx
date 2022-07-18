@@ -6,7 +6,7 @@ import {
     Route,
     Navigate,
 } from 'react-router-dom';
-import { Layout } from '../../core/layout';
+import { Layout } from '../../core/layout/layout';
 import { aMenuItems } from '../../models/menu.model';
 import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';

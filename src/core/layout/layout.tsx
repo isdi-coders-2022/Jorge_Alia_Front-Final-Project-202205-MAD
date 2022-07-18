@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { Footer } from './footer/footer';
-import { Header } from './header/header';
+import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
 
 export function Layout({ children }: { children: ReactElement }) {
     return (
