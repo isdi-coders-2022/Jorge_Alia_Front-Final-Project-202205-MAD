@@ -11,7 +11,7 @@ export function HomePage() {
             <main>
                 <div className="wrapper__image">
                     <video autoPlay loop muted width="100%" height="auto">
-                        <source src="./img/video.mp4" />
+                        <source src="https://firebasestorage.googleapis.com/v0/b/aguado-pilates.appspot.com/o/home%2Fvideo.mp4?alt=media&token=480a6828-57dd-4ff2-bddb-e78209a788b1" />
                     </video>
                 </div>
                 <p className="paragraph__train">
