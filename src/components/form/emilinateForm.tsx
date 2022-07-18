@@ -11,7 +11,7 @@ export function EliminateForm() {
         const ConfirmDelete = confirm(
             'Estás seguro que deseas eliminar el usuario?'
         );
-        if (ConfirmDelete == true) {
+        if (ConfirmDelete === true) {
             ev.preventDefault();
             await new HttpStoreUser().deleteUser(user._id as string);
             localStorage.clear();
