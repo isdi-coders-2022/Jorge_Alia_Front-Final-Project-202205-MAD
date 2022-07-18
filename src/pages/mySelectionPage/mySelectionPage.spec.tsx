@@ -6,7 +6,7 @@ import MySelectionPage from './mySelectionPage';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 describe('Given the component MySelectionPage', () => {
@@ -14,17 +14,14 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am not logged', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: '',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -42,17 +39,14 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am logged and workouts.length is 0', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
@@ -70,21 +64,18 @@ describe('Given the component MySelectionPage', () => {
         test('Then it should render if I am logged and workouts.length is different to 0', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: 'test',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
             render(
