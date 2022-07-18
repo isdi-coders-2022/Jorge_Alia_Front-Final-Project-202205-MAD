@@ -8,10 +8,7 @@ import {
 } from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu.model';
-import {
-    loadUsersAction,
-    updateUserAction,
-} from '../../redurcers/user.reducer/user.action.creators';
+import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 import { loadWorkoutsAction } from '../../redurcers/workout.reducer/workout.action.creators';
 import { HttpStoreUser } from '../../services/repository.users';
 
