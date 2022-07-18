@@ -21,6 +21,7 @@ import './App.css';
 function App() {
     const dispatcher = useDispatch();
     const apiWorkout = useMemo(() => new HttpStoreWorkouts(), []);
+    const apiUser = useMemo(() => new HttpStoreUser(), []);
 
     useEffect(() => {
         apiWorkout
@@ -28,11 +29,11 @@ function App() {
             .then((workouts) => dispatcher(loadWorkoutsAction(workouts)));
         const token = localStorage.getItem('token');
         if (token) {
-            new HttpStoreUser().getUserByToken().then((data) => {
+            apiUser.getUserByToken().then((data) => {
                 dispatcher(loadUsersAction(data));
             });
         }
-    }, [apiWorkout, dispatcher]);
+    }, [apiWorkout, dispatcher, apiUser]);
 
     const HomePage = React.lazy(() => import('../../pages/homePage/homePage'));
     const DetailsPage = React.lazy(
