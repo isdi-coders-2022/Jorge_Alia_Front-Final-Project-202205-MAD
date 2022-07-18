@@ -50,7 +50,7 @@ export function MySelectionPage() {
             user.workouts.map((item) => {
                 intensity.push(item.intensity);
             });
-            console.log(intensity);
+            // console.log(intensity);
             template = (
                 <>
                     <main className="wrapperMain" title="main">
