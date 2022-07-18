@@ -6,12 +6,12 @@ import { WorkoutListThree } from './listWorkoutsThree';
 
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 
 const mockWorkoutList = [
     {
-        _id: 'h34h3n34n',
+        _id: '62c3fa970a6339f727766546',
         title: ' SECUENCIA LATERAL DE PIERNAS con softball',
         image: ' piernasgluteossoftball.png',
         video: ' https://www.youtube.com/embed/gZghpARZK3Y',
@@ -31,21 +31,18 @@ describe('Given the component WorkoutListThree', () => {
         test('Then it should render', () => {
             const preloadedState = {
                 workouts: [],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
 
@@ -61,6 +58,74 @@ describe('Given the component WorkoutListThree', () => {
                 }
             );
             fireEvent.click(screen.getByAltText(/Icono anterior/));
+            fireEvent.click(screen.getByAltText(/Icono siguiente/));
+            const result = screen.getByTitle(/Icono anterior/i);
+            expect(result).toBeInTheDocument();
+        });
+        test('Then it should render when indexMarker  is  different to 9', () => {
+            const preloadedState = {
+                workouts: [],
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <WorkoutListThree
+                        workouts={mockWorkoutList}
+                    ></WorkoutListThree>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            fireEvent.click(screen.getByAltText(/Icono anterior/));
+            fireEvent.click(screen.getByAltText(/Icono anterior/));
+            fireEvent.click(screen.getByAltText(/Icono anterior/));
+            const result = screen.getByTitle(/Icono anterior/i);
+            expect(result).toBeInTheDocument();
+        });
+        test('Then it should render when indexMarker  is  different to 0', () => {
+            const preloadedState = {
+                workouts: [],
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
+                },
+            };
+            render(
+                <BrowserRouter>
+                    <WorkoutListThree
+                        workouts={mockWorkoutList}
+                    ></WorkoutListThree>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            fireEvent.click(screen.getByAltText(/Icono siguiente/));
+            fireEvent.click(screen.getByAltText(/Icono siguiente/));
             fireEvent.click(screen.getByAltText(/Icono siguiente/));
             const result = screen.getByTitle(/Icono anterior/i);
             expect(result).toBeInTheDocument();

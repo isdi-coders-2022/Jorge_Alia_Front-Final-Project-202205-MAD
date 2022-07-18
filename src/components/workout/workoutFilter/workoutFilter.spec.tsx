@@ -5,11 +5,11 @@ import { userReducer } from '../../../redurcers/user.reducer/user.reducer';
 import Filter from './workoutFilter';
 const reducer = {
     workouts: workoutReducer,
-    users: userReducer,
+    user: userReducer,
 };
 const properties = {
-    category: '',
-    complementaryMaterial: '',
+    category: 'Gluteos y piernas',
+    complementaryMaterial: 'Softball',
 };
 
 describe('Given the component WorkoutListThree', () => {
@@ -18,7 +18,7 @@ describe('Given the component WorkoutListThree', () => {
             const preloadedState = {
                 workouts: [
                     {
-                        _id: 'h34h3n34n',
+                        _id: '62c3fa970a6339f727766546',
                         title: ' SECUENCIA LATERAL DE PIERNAS con softball',
                         image: ' piernasgluteossoftball.png',
                         video: ' https://www.youtube.com/embed/gZghpARZK3Y',
@@ -32,21 +32,18 @@ describe('Given the component WorkoutListThree', () => {
                         favorite: false,
                     },
                 ],
-                users: {
-                    token: 'test',
-                    user: {
-                        _id: '',
-                        name: '',
-                        email: '',
-                        passwd: '',
-                        workouts: [
-                            {
-                                id: '',
-                            },
-                        ],
-                        done: [],
-                        rol: '',
-                    },
+                user: {
+                    _id: '',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            _id: '62c3fa970a6339f727766546',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
                 },
             };
 

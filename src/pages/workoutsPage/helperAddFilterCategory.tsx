@@ -12,6 +12,5 @@ export function AddFilter(
             item.classList.remove('mystyle');
         }
     });
-    console.log(properties);
     (imgBlackType as HTMLElement).classList.toggle('mystyle');
 }
