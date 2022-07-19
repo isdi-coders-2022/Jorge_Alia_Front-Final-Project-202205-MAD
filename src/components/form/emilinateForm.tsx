@@ -26,7 +26,7 @@ export function EliminateForm() {
                 Swal.fire('Tu cuenta ha sido eliminada', '', 'success');
                 localStorage.clear();
                 window.location.href = 'http://localhost:3000';
-            } else if (result.isDenied) {
+            } else {
                 Swal.fire('Los cambios no se guardaron');
                 return;
             }

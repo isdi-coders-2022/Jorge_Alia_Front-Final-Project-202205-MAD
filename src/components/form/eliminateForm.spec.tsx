@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { userReducer } from '../../redurcers/user.reducer/user.reducer';
 import { workoutReducer } from '../../redurcers/workout.reducer/workout.reducer';
+import { HttpStoreUser } from '../../services/repository.users';
 import { fireEvent, render, screen } from '../../utils/testutils';
 import EliminateForm from './emilinateForm';
 
@@ -37,12 +38,13 @@ describe('Given the component EliminateForm', () => {
                     reducer,
                 }
             );
-
+            HttpStoreUser.prototype.deleteUser = jest
+                .fn()
+                .mockResolvedValue({});
             const button = screen.getByRole('button');
             fireEvent.click(button);
             const isConfirmed = screen.getByText('Sí');
             fireEvent.click(isConfirmed);
-            localStorage.clear = jest.fn();
             expect(button).toBeInTheDocument();
         });
         test('It should render the button when I click no eliminate', () => {
