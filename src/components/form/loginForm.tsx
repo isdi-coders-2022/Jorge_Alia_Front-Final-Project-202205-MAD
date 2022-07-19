@@ -23,6 +23,7 @@ export function LoginForm() {
         if (loginUser.token) {
             dispatcher(loadUsersAction(loginUser.user));
             localStorage.setItem('token', loginUser.token);
+            localStorage.setItem('id', loginUser.user._id as string);
             navegate('/');
         } else {
             Swal.fire({
