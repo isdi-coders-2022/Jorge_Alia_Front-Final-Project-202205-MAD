@@ -8,7 +8,6 @@ import { iState } from '../../store/store';
 export function DetailsPage() {
     const workouts = useSelector((store: iState) => store.workouts);
     const params = useParams();
-    console.log(params, workouts);
 
     const template = (
         <>
