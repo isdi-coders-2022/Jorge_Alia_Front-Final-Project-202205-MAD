@@ -1,6 +1,9 @@
 export interface iComment {
-    _id: string;
+    _id?: string;
     text: string;
-    user: string;
+    user?: {
+        name: string;
+        _id: string;
+    };
     score: number;
 }
