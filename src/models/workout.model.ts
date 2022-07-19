@@ -1,3 +1,5 @@
+import { iComment } from './comment.model';
+
 export interface iWorkout {
     _id?: string;
     title: string;
@@ -9,10 +11,5 @@ export interface iWorkout {
     favorite: boolean;
     duration: number;
     intensity: string;
-    comments: Array<{
-        text: string;
-        user: string;
-        score: number;
-        _id?: string;
-    }>;
+    comments: Array<iComment>;
 }
