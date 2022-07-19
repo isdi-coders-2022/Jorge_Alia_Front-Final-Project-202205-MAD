@@ -6,7 +6,6 @@ import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import { getId } from '../../utils/token';
 
 export function Comment({ comment, id }: { comment: iComment; id: string }) {
-    console.log(comment.user, 'COMENT USSEEEEER');
     const commentsID = {
         commentId: comment._id,
     };
@@ -14,7 +13,6 @@ export function Comment({ comment, id }: { comment: iComment; id: string }) {
     let template;
     function handelChange(ev: SyntheticEvent) {
         new HttpStoreWorkouts().deleteComment(commentsID, id).then((data) => {
-            console.log(data);
             dispatcher(updateWorkoutAction(data));
         });
     }
