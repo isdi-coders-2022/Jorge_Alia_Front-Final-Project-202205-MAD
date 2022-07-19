@@ -13,3 +13,5 @@ export function Layout({ children }: { children: ReactElement }) {
     );
     return template;
 }
+
+export default Layout;
