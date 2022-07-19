@@ -27,7 +27,7 @@ export function RegisterForm() {
     }
     const template = (
         <>
-            <form onSubmit={handleSubmit}>
+            <form autoComplete="off" onSubmit={handleSubmit}>
                 <p className="titleInput">Nombre de usuario *</p>
                 <input
                     className="input"

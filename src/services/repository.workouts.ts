@@ -1,5 +1,6 @@
 import { iComment } from '../models/comment.model';
 import { iWorkout } from '../models/workout.model';
+import { getToken } from '../utils/token';
 
 export class HttpStoreWorkouts {
     url: string;
@@ -21,15 +22,17 @@ export class HttpStoreWorkouts {
             body: JSON.stringify(comment),
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${getToken()}`,
             },
         }).then((resp) => resp.json());
     }
-    deleteComment(comment: iComment, id: string): Promise<iWorkout> {
+    deleteComment(commentsID: object, id: string): Promise<iWorkout> {
         return fetch(this.url + `/deletecomment/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(comment),
+            body: JSON.stringify(commentsID),
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${getToken()}`,
             },
         }).then((resp) => resp.json());
     }

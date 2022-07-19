@@ -23,6 +23,7 @@ export function LoginForm() {
         if (loginUser.token) {
             dispatcher(loadUsersAction(loginUser.user));
             localStorage.setItem('token', loginUser.token);
+            localStorage.setItem('id', loginUser.user._id as string);
             navegate('/');
         } else {
             Swal.fire({
@@ -40,7 +41,7 @@ export function LoginForm() {
     }
     const template = (
         <>
-            <form onSubmit={handleSubmit}>
+            <form autoComplete="off" onSubmit={handleSubmit}>
                 <p className="titleInput">Correo electrónico *</p>
                 <input
                     className="input"

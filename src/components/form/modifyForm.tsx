@@ -1,9 +1,12 @@
 import { HttpStoreUser } from '../../services/repository.users';
 import { SyntheticEvent, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { iState } from '../../store/store';
+import Swal from 'sweetalert2';
+import { loadUsersAction } from '../../redurcers/user.reducer/user.action.creators';
 
 export function ModifyForm() {
+    const dispatcher = useDispatch();
     const user = useSelector((store: iState) => store.user);
     const [formData, setFormData] = useState({
         name: user.name,
@@ -12,7 +15,10 @@ export function ModifyForm() {
     });
     async function handleSubmit(ev: SyntheticEvent) {
         ev.preventDefault();
-        await new HttpStoreUser().updateUser(formData, user._id as string);
+        await new HttpStoreUser()
+            .updateUser(formData, user._id as string)
+            .then((data) => dispatcher(loadUsersAction(data)));
+        Swal.fire('Tus datos han sido modificados');
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;

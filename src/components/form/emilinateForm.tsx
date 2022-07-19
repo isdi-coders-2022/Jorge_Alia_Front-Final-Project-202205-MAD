@@ -9,7 +9,7 @@ export function EliminateForm() {
 
     async function handleSubmit(ev: SyntheticEvent) {
         Swal.fire({
-            title: '¿Estás seguro de eliminar la cuenta?',
+            title: '¿Estás seguro que desea eliminar la cuenta?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Sí',
@@ -22,26 +22,27 @@ export function EliminateForm() {
             },
         }).then(async (result) => {
             if (result.isConfirmed) {
-                Swal.fire('Saved!', '', 'success');
-                ev.preventDefault();
                 await new HttpStoreUser().deleteUser(user._id as string);
+                Swal.fire('Tu cuenta ha sido eliminada', '', 'success');
                 localStorage.clear();
                 window.location.href = 'http://localhost:3000';
-            } else if (result.isDenied) {
-                Swal.fire('Changes are not saved', '', 'info');
+            } else {
+                Swal.fire('Los cambios no se guardaron');
                 return;
             }
         });
     }
     const template = (
         <>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <button className="buttonElimination" type="submit">
-                        Eliminar cuenta
-                    </button>
-                </div>
-            </form>
+            <div>
+                <button
+                    className="buttonElimination"
+                    type="submit"
+                    onClick={handleSubmit}
+                >
+                    Eliminar cuenta
+                </button>
+            </div>
         </>
     );
     return template;
