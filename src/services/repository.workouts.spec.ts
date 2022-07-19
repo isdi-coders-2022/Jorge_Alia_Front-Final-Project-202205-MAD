@@ -55,7 +55,10 @@ describe('Given HttpStoreWorkouts', () => {
                 const mockComment = {
                     _id: '1',
                     text: 'Buen entrenamiento',
-                    user: 'ds45dfs54gve45r',
+                    user: {
+                        _id: '2',
+                        name: 'Jorge',
+                    },
                     score: 9,
                 };
 
