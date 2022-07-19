@@ -40,7 +40,7 @@ export function LoginForm() {
     }
     const template = (
         <>
-            <form onSubmit={handleSubmit}>
+            <form autoComplete="off" onSubmit={handleSubmit}>
                 <p className="titleInput">Correo electrónico *</p>
                 <input
                     className="input"
