@@ -65,10 +65,45 @@ describe('Given the component ListComments', () => {
                 }
             );
 
+            const input = screen.getByAltText(/text/i) as HTMLFormElement;
+            fireEvent.change(input, { target: { value: 'text' } });
+
             const button = screen.getByRole('button');
             fireEvent.click(button);
             expect(button).toBeInTheDocument();
             expect(HttpStoreWorkouts.prototype.addComment).toHaveBeenCalled();
+        });
+        test('It should render if name is ""', () => {
+            const preloadedState = {
+                workouts: [],
+                user: {
+                    _id: '62d12c8b177dca139940a29e',
+                    name: '',
+                    email: '',
+                    passwd: '',
+                    workouts: [
+                        {
+                            id: '',
+                        },
+                    ],
+                    done: [],
+                    rol: '',
+                },
+            };
+            HttpStoreWorkouts.prototype.addComment = jest
+                .fn()
+                .mockResolvedValue({ text: 'test', score: 3 });
+            render(
+                <BrowserRouter>
+                    <ListComments workout={mockWorkout}></ListComments>
+                </BrowserRouter>,
+                {
+                    preloadedState,
+                    reducer,
+                }
+            );
+            const result = screen.getByText(/test/i);
+            expect(result).toBeInTheDocument();
         });
     });
 });
