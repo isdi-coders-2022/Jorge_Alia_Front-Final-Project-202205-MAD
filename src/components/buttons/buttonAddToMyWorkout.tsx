@@ -25,7 +25,7 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
                 });
             });
     }
-    const template = (
+    return (
         <>
             <button
                 className="buttonAddFavorite"
@@ -37,5 +37,4 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
             </button>
         </>
     );
-    return template;
 }

@@ -1,6 +1,6 @@
 import './contactPage.css';
 export function ContactPage() {
-    const template = (
+    return (
         <>
             <main className="containerContactPage">
                 <h2 className="title__contact">¿Hablamos?</h2>
@@ -46,7 +46,6 @@ export function ContactPage() {
             </main>
         </>
     );
-    return template;
 }
 
 export default ContactPage;

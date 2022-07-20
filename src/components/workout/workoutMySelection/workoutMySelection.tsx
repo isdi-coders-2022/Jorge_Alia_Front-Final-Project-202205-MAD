@@ -4,7 +4,7 @@ import './workoutMySelection.css';
 import { ButtonRemoveToMyWorkout } from '../../buttons/buttonRemoveToMyWorkout';
 
 export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
-    const template = (
+    return (
         <>
             <Link to={'/details/' + workout._id}>
                 <img
@@ -18,5 +18,4 @@ export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
             ></ButtonRemoveToMyWorkout>
         </>
     );
-    return template;
 }

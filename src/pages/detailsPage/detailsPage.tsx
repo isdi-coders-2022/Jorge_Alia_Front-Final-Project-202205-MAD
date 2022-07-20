@@ -9,7 +9,7 @@ export function DetailsPage() {
     const workouts = useSelector((store: iState) => store.workouts);
     const params = useParams();
 
-    const template = (
+    return (
         <>
             <DetailsWorkout
                 workout={
@@ -18,8 +18,6 @@ export function DetailsPage() {
             />
         </>
     );
-
-    return template;
 }
 
 export default DetailsPage;

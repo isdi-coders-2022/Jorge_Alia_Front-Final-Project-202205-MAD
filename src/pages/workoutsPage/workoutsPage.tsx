@@ -9,13 +9,12 @@ import Filter from '../../components/workout/workoutFilter/workoutFilter';
 
 export function WorkoutPage() {
     const user = useSelector((store: iState) => store.user);
-    let template;
     const [properties, setProperties] = useState({
         category: '',
         complementaryMaterial: '',
     });
     if (user.name !== '') {
-        template = (
+        return (
             <>
                 <main className="containerWorkoutPage">
                     <div className="wrapperTitleWorkout">
@@ -172,7 +171,7 @@ export function WorkoutPage() {
             </>
         );
     } else {
-        template = (
+        return (
             <>
                 <div className="wrapperInfo">
                     <p>! Únete para diseñar tu entrenamiento !</p>
@@ -186,8 +185,6 @@ export function WorkoutPage() {
             </>
         );
     }
-
-    return template;
 }
 
 export default WorkoutPage;

@@ -8,10 +8,9 @@ import './loginPage.css';
 
 export function LoginPage() {
     const user = useSelector((store: iState) => store.user);
-    let template;
 
     if (user.name === '') {
-        template = (
+        return (
             <>
                 <h2 className="titleLogin">¡ Únete a entrenar conmigo !</h2>
                 <div className="wrapperLogin">
@@ -31,7 +30,7 @@ export function LoginPage() {
             </>
         );
     } else {
-        template = (
+        return (
             <>
                 <main>
                     <h2 className="titleLogin">Mi cuenta</h2>
@@ -54,8 +53,6 @@ export function LoginPage() {
             </>
         );
     }
-
-    return template;
 }
 
 export default LoginPage;
