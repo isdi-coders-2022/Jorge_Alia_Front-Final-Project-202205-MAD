@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { iUser, iUserWithToken } from '../../models/user.model';
+import { iUser } from '../../models/user.model';
 
 import { actionTypes } from './user.action.types';
 
