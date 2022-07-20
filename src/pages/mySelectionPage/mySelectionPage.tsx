@@ -8,9 +8,8 @@ import { intensityObj } from '../../models/intensity.model';
 export function MySelectionPage() {
     const materials = new Set();
     const user = useSelector((store: iState) => store.user);
-    let template;
     if (user.name === '') {
-        template = (
+        return (
             <>
                 <main>
                     <div className="wrapperInfo">
@@ -27,7 +26,7 @@ export function MySelectionPage() {
         );
     } else {
         if (user.workouts.length === 0 && user) {
-            template = (
+            return (
                 <>
                     <main className="wrapperMain wrapperInfo">
                         <p>Ningún entrenamiento añadido</p>
@@ -48,7 +47,7 @@ export function MySelectionPage() {
                 material = material + ' - ' + item;
             });
             let intensityArray: any = [];
-            user.workouts.map((item) =>
+            user.workouts.forEach((item) =>
                 intensityArray.push(
                     intensityObj[item.intensity as 'Baja' | 'Media' | 'Alta']
                 )
@@ -71,7 +70,7 @@ export function MySelectionPage() {
                     break;
             }
 
-            template = (
+            return (
                 <>
                     <main className="wrapperMain" title="main">
                         <h3 className="titlePageMySelection">
@@ -97,8 +96,6 @@ export function MySelectionPage() {
             );
         }
     }
-
-    return template;
 }
 
 export default MySelectionPage;

@@ -13,11 +13,9 @@ export function ButtonRemoveToMyWorkout({ workout }: { workout: iWorkout }) {
             });
     }
 
-    const template = (
+    return (
         <button className="buttonRemove" onClick={() => handleSubmit()}>
             Eliminar rutina
         </button>
     );
-
-    return template;
 }

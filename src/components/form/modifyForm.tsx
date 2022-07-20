@@ -25,7 +25,7 @@ export function ModifyForm() {
         setFormData({ ...formData, [element.name]: element.value });
     }
 
-    const template = (
+    return (
         <>
             <form onSubmit={handleSubmit}>
                 <p className="titleInput">Nuevo nombre de usuario</p>
@@ -55,7 +55,5 @@ export function ModifyForm() {
             </form>
         </>
     );
-
-    return template;
 }
 export default ModifyForm;

@@ -39,7 +39,7 @@ export function LoginForm() {
         const element = ev.target as HTMLFormElement;
         setFormData({ ...formData, [element.name]: element.value });
     }
-    const template = (
+    return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <p className="titleInput">Correo electrónico *</p>
@@ -69,6 +69,5 @@ export function LoginForm() {
             </form>
         </>
     );
-    return template;
 }
 export default LoginForm;

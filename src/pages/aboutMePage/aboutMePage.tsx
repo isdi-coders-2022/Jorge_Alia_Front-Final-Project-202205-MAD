@@ -1,6 +1,6 @@
 import './aboutMePage.css';
 export function AboutMePage() {
-    const template = (
+    return (
         <>
             <main className="containerAboutMe">
                 <h2 className="title__aboutMe">Hola, bienvenido</h2>
@@ -63,7 +63,6 @@ export function AboutMePage() {
             </main>
         </>
     );
-    return template;
 }
 
 export default AboutMePage;

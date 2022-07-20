@@ -7,10 +7,9 @@ import Comments from '../../comments/comments';
 import './workoutDetails.css';
 
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
-    let template;
     const user = useSelector((store: iState) => store.user);
     if (user.workouts.some((item) => (item._id as String) === workout._id)) {
-        template = (
+        return (
             <>
                 <h2 className="titleDescription">
                     Entrenamiento de {workout.title}
@@ -48,7 +47,7 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
             </>
         );
     } else {
-        template = (
+        return (
             <>
                 <h2 className="titleDescription">
                     Entrenamiento de {workout.title}
@@ -86,6 +85,4 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
             </>
         );
     }
-
-    return template;
 }

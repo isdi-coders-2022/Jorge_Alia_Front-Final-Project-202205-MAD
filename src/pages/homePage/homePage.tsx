@@ -6,7 +6,7 @@ import './homePage.css';
 
 export function HomePage() {
     const workouts = useSelector((store: iState) => store.workouts);
-    const template = (
+    return (
         <>
             <main>
                 <div className="wrapper__image">
@@ -67,8 +67,6 @@ export function HomePage() {
             </main>
         </>
     );
-
-    return template;
 }
 
 export default HomePage;

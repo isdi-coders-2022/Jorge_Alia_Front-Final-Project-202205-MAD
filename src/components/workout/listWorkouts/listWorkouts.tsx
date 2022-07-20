@@ -6,7 +6,7 @@ import './listWorkouts.css';
 
 export function WorkoutList() {
     const user = useSelector((store: iState) => store.user);
-    const template = (
+    return (
         <ul className="wrapper__workoutsListWorkout">
             {user.workouts.map((workout: iWorkout, index) => (
                 <li className="workoutsListWorkout" key={workout._id}>
@@ -15,6 +15,4 @@ export function WorkoutList() {
             ))}
         </ul>
     );
-
-    return template;
 }

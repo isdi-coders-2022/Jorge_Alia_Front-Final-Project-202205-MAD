@@ -25,7 +25,7 @@ export function RegisterForm() {
         const element = ev.target as HTMLFormElement;
         setFormData({ ...formData, [element.name]: element.value });
     }
-    const template = (
+    return (
         <>
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <p className="titleInput">Nombre de usuario *</p>
@@ -64,6 +64,5 @@ export function RegisterForm() {
             </form>
         </>
     );
-    return template;
 }
 export default RegisterForm;
