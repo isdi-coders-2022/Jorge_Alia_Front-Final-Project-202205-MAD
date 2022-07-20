@@ -3,7 +3,6 @@ import { iWorkout } from '../../../models/workout.model';
 import { iState } from '../../../store/store';
 import { ButtonAddToMyWorkout } from '../../buttons/buttonAddToMyWorkout';
 import { ButtonRemoveToMyWorkout } from '../../buttons/buttonRemoveToMyWorkout';
-import ListComments from '../../comments/listComments';
 import './workoutDetails.css';
 
 export function DetailsWorkout({ workout }: { workout: iWorkout }) {
@@ -48,7 +47,6 @@ export function DetailsWorkout({ workout }: { workout: iWorkout }) {
                     </div>
                 </div>
             </div>
-            <ListComments workout={workout}></ListComments>
         </>
     );
 }
