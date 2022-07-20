@@ -12,6 +12,7 @@ export function RegisterForm() {
         rol: 'User',
     });
     async function handleSubmit(ev: SyntheticEvent) {
+        window.scrollTo(0, 0);
         ev.preventDefault();
         await new HttpStoreUser().registerUser(formData);
         Swal.fire({

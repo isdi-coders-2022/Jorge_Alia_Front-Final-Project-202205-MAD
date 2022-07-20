@@ -1,0 +1,24 @@
+.inputComment {
+    border: none;
+    background-color: #ffffff;
+    width: 18rem;
+    height: 1.5rem;
+}
+
+.container__comment {
+    margin-bottom: 2rem;
+    background-color: #c3c3c3;
+}
+
+.buttonSend {
+    cursor: pointer;
+    background-color: #bbed33;
+    border: none;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 90px;
+}
+
+.buttonSend:hover {
+    background-color: rgb(193, 193, 193);
+}

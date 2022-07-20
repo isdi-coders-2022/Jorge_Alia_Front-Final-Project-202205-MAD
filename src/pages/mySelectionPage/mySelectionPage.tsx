@@ -60,13 +60,13 @@ export function MySelectionPage() {
             let newIntensity = '';
             switch (intensity) {
                 case (intensity = 0):
-                    newIntensity = 'baja';
+                    newIntensity = 'Baja';
                     break;
                 case (intensity = 1):
-                    newIntensity = 'media';
+                    newIntensity = 'Bedia';
                     break;
                 case (intensity = 2):
-                    newIntensity = 'alta';
+                    newIntensity = 'Alta';
                     break;
             }
 

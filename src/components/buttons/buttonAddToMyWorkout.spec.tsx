@@ -96,7 +96,7 @@ describe('Given the component ButtonAddToMyWorkout', () => {
             );
             const result = (HttpStoreUser.prototype.addToFavorites = jest
                 .fn()
-                .mockResolvedValue(Error));
+                .mockRejectedValue(Error));
             fireEvent.click(screen.getByRole('button'));
 
             expect(result).toHaveBeenCalled();

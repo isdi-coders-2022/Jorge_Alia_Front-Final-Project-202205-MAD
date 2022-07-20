@@ -6,6 +6,7 @@ import { updateWorkoutAction } from '../../redurcers/workout.reducer/workout.act
 import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import { iState } from '../../store/store';
 import Comment from './comment';
+import './listComments.css';
 
 export function ListComments({ workout }: { workout: iWorkout }) {
     const user = useSelector((store: iState) => store.user);
@@ -24,39 +25,47 @@ export function ListComments({ workout }: { workout: iWorkout }) {
         new HttpStoreWorkouts()
             .addComment(formData, workout._id as string)
             .then((data) => {
+                console.log(data);
                 dispatcher(updateWorkoutAction(data));
             });
     }
 
     template = (
         <>
-            <div>
-                <ul>
-                    {workout.comments.map((comment: iComment) => (
-                        <li>
-                            <Comment
-                                comment={comment}
-                                id={workout._id as string}
-                            ></Comment>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            {user.name !== '' ? (
-                <form onSubmit={handleComment}>
-                    <label>Comment</label>
-                    <input
-                        type="text"
-                        name="text"
-                        value={formData.text}
-                        onChange={handleChange}
-                    ></input>
+            <div className="container__comment">
+                <h3> COMENTARIOS</h3>
+                <div>
+                    <ul>
+                        {workout.comments.map((comment: iComment) => (
+                            <li>
+                                <Comment
+                                    comment={comment}
+                                    id={workout._id as string}
+                                ></Comment>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                {user.name !== '' ? (
+                    <form onSubmit={handleComment}>
+                        <label>Comment</label>
+                        <input
+                            className="inputComment"
+                            type="text"
+                            name="text"
+                            alt="text"
+                            value={formData.text}
+                            onChange={handleChange}
+                        ></input>
 
-                    <button type="submit">Enviar</button>
-                </form>
-            ) : (
-                ''
-            )}
+                        <button className="buttonSend" type="submit">
+                            Enviar
+                        </button>
+                    </form>
+                ) : (
+                    ''
+                )}
+            </div>
         </>
     );
     return template;
