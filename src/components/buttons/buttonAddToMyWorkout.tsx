@@ -11,6 +11,7 @@ export function ButtonAddToMyWorkout({ workout }: { workout: iWorkout }) {
         new HttpStoreUser()
             .addToFavorites(workout._id as string)
             .then((data) => {
+                console.log(data);
                 dispatcher(updateUserAction(data));
                 Swal.fire({
                     title: 'Hecho!',
