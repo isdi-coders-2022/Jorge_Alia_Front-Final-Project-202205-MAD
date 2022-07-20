@@ -1,4 +1,3 @@
-import { SyntheticEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { iComment } from '../../models/comment.model';
 import { updateWorkoutAction } from '../../redurcers/workout.reducer/workout.action.creators';
@@ -11,7 +10,7 @@ export function Comment({ comment, id }: { comment: iComment; id: string }) {
     };
     const dispatcher = useDispatch();
     let template;
-    function handelChange(ev: SyntheticEvent) {
+    function handelChange() {
         new HttpStoreWorkouts().deleteComment(commentsID, id).then((data) => {
             dispatcher(updateWorkoutAction(data));
         });
