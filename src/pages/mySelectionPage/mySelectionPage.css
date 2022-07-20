@@ -1,11 +1,13 @@
 .wrapperInfo {
     text-align: center;
     margin-top: 9%;
-    margin-bottom: 9%;
+    margin-bottom: 10.1%;
     font-weight: bold;
     font-size: 2em;
 }
-
+.wrapperMain {
+    min-height: 8.5rem;
+}
 .buttonGoToRegister {
     cursor: pointer;
     margin-top: 1rem;

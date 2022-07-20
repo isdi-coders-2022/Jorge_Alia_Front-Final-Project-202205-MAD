@@ -5,7 +5,7 @@ import { iWorkout } from '../../models/workout.model';
 import { updateWorkoutAction } from '../../redurcers/workout.reducer/workout.action.creators';
 import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import { iState } from '../../store/store';
-import Comment from './coment';
+import Comment from './comment';
 
 export function Comments({ workout }: { workout: iWorkout }) {
     const user = useSelector((store: iState) => store.user);

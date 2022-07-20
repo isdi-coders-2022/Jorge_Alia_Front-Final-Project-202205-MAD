@@ -24,8 +24,9 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "test": "react-scripts test --collect-coverage --watchAll",
+        "eject": "react-scripts eject",
+        "test:sonar": "react-scripts test --watchAll --collect-coverage --ci --silent --watchAll=false"
     },
     "eslintConfig": {
         "extends": [
