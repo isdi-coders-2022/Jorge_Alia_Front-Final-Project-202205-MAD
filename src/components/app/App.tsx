@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import {

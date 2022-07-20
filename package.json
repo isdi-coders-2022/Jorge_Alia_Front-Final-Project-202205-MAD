@@ -52,5 +52,15 @@
     },
     "devDependencies": {
         "husky": "^8.0.1"
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx}",
+            "!src/index.tsx",
+            "!src/components/app/App.tsx",
+            "!src/models/*.ts",
+            "!src/redurcers/user.reducer/user.action.types.ts",
+            "!src/redurcers/workout.reducer/workout.action.types.ts"
+        ]
     }
 }
