@@ -7,7 +7,7 @@ import { HttpStoreWorkouts } from '../../services/repository.workouts';
 import { iState } from '../../store/store';
 import Comment from './comment';
 
-export function Comments({ workout }: { workout: iWorkout }) {
+export function ListComments({ workout }: { workout: iWorkout }) {
     const user = useSelector((store: iState) => store.user);
     const dispatcher = useDispatch();
     let template;
@@ -52,7 +52,7 @@ export function Comments({ workout }: { workout: iWorkout }) {
                         onChange={handleChange}
                     ></input>
 
-                    <button type="submit">Send</button>
+                    <button type="submit">Enviar</button>
                 </form>
             ) : (
                 ''
@@ -62,4 +62,4 @@ export function Comments({ workout }: { workout: iWorkout }) {
     return template;
 }
 
-export default Comments;
+export default ListComments;

@@ -9,14 +9,14 @@ export function Comment({ comment, id }: { comment: iComment; id: string }) {
         commentId: comment._id,
     };
     const dispatcher = useDispatch();
-    let template;
+
     function handelChange() {
         new HttpStoreWorkouts().deleteComment(commentsID, id).then((data) => {
             dispatcher(updateWorkoutAction(data));
         });
     }
     const idUserLocalStore = getId();
-    template = (
+    return (
         <>
             <p>{comment.text}</p>
             <p>{comment.user?.name}</p>
@@ -27,8 +27,6 @@ export function Comment({ comment, id }: { comment: iComment; id: string }) {
             )}
         </>
     );
-
-    return template;
 }
 
 export default Comment;

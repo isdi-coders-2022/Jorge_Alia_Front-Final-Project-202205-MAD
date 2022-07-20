@@ -6,13 +6,12 @@ import './header.css';
 
 export function Header() {
     const user = useSelector((store: iState) => store.user);
-    let template;
     function handleSubmit() {
         localStorage.clear();
         window.location.href = 'http://localhost:3000';
     }
     if (user.name !== '') {
-        template = (
+        return (
             <>
                 <div className="header">
                     <Link to="">
@@ -38,7 +37,7 @@ export function Header() {
             </>
         );
     } else {
-        template = (
+        return (
             <>
                 <div className="header">
                     <Link to="">
@@ -56,6 +55,4 @@ export function Header() {
             </>
         );
     }
-
-    return template;
 }

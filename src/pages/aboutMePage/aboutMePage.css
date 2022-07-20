@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 .containerAboutMe {
     margin-top: 2rem;
@@ -44,10 +45,6 @@
     margin-left: 6rem;
 
     margin-top: -10%;
-}
-
-.wrapperAbout {
-    margin-bottom: 4rem;
 }
 
 .paragraph__fourth {

@@ -1,7 +1,7 @@
 import './footer.css';
 
 export function Footer() {
-    const template = (
+    return (
         <>
             <footer>
                 <img
@@ -28,6 +28,4 @@ export function Footer() {
             </footer>
         </>
     );
-
-    return template;
 }
