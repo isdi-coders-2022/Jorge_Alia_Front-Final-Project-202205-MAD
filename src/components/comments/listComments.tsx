@@ -25,7 +25,6 @@ export function ListComments({ workout }: { workout: iWorkout }) {
         new HttpStoreWorkouts()
             .addComment(formData, workout._id as string)
             .then((data) => {
-                console.log(data);
                 dispatcher(updateWorkoutAction(data));
             });
     }

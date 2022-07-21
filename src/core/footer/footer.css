@@ -27,6 +27,11 @@ footer {
     margin-top: 0;
     margin-bottom: 0;
     font-style: italic;
+    cursor: pointer;
+}
+.copyright__cookies:hover {
+    color: rgb(62, 62, 62);
+    font-weight: bold;
 }
 
 .copyright__ap {
