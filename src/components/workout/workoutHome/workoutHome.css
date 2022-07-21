@@ -2,6 +2,6 @@
     width: 90%;
 }
 .image:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
     transition: 0.5s;
 }

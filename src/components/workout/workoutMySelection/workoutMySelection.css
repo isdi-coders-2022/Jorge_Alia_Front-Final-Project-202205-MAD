@@ -1,6 +1,12 @@
-.image {
+.imageWorkout {
     width: 90%;
 }
+
+.imageWorkout:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .buttonRemove {
     cursor: pointer;
     margin-top: 1.5rem;
