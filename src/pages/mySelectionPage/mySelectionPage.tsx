@@ -72,7 +72,7 @@ export function MySelectionPage() {
 
             return (
                 <>
-                    <main className="wrapperMain" title="main">
+                    <main className="wrapperMain">
                         <h3 className="titlePageMySelection">
                             Mi propuesta de entrenamiento
                         </h3>

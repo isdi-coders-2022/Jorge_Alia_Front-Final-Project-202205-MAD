@@ -97,7 +97,7 @@ describe('Given the component MySelectionPage', () => {
                     reducer,
                 }
             );
-            const result = screen.getByTitle(/main/i);
+            const result = screen.getByText(/Mi propuesta/i);
             expect(result).toBeInTheDocument();
         });
         test('Then it should render when the intensity is "media"', () => {
@@ -135,7 +135,7 @@ describe('Given the component MySelectionPage', () => {
                     reducer,
                 }
             );
-            const result = screen.getByTitle(/main/i);
+            const result = screen.getByText(/Mi propuesta/i);
             expect(result).toBeInTheDocument();
         });
         test('Then it should render when the intensity is "Baja"', () => {
@@ -173,7 +173,7 @@ describe('Given the component MySelectionPage', () => {
                     reducer,
                 }
             );
-            const result = screen.getByTitle(/main/i);
+            const result = screen.getByText(/Mi propuesta/i);
             expect(result).toBeInTheDocument();
         });
     });
