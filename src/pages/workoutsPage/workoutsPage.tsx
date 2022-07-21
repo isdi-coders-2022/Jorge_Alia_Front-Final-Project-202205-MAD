@@ -174,11 +174,11 @@ export function WorkoutPage() {
         return (
             <>
                 <div className="wrapperInfo">
-                    <p>! Únete para diseñar tu entrenamiento !</p>
+                    <p>¡ Únete para diseñar tu entrenamiento !</p>
 
                     <Link to="/login">
                         <button className="buttonGoToRegister">
-                            !REGÍSTRATE AQUÍ!
+                            ¡REGÍSTRATE AQUÍ!
                         </button>
                     </Link>
                 </div>
