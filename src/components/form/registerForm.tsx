@@ -21,6 +21,14 @@ export function RegisterForm() {
             icon: 'success',
             confirmButtonText: 'continuar',
         });
+        setFormData({
+            name: '',
+            email: '',
+            passwd: '',
+            workouts: [],
+            done: [],
+            rol: 'User',
+        });
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;
