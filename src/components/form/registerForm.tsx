@@ -12,7 +12,6 @@ export function RegisterForm() {
         rol: 'User',
     });
     async function handleSubmit(ev: SyntheticEvent) {
-        window.scrollTo(0, 0);
         ev.preventDefault();
         await new HttpStoreUser().registerUser(formData);
         Swal.fire({
@@ -28,6 +27,12 @@ export function RegisterForm() {
             workouts: [],
             done: [],
             rol: 'User',
+        });
+        const continuar = document.querySelector('.swal2-confirm');
+        continuar?.addEventListener('click', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 300);
         });
     }
     function handleChange(ev: SyntheticEvent) {
