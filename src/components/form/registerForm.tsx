@@ -28,12 +28,6 @@ export function RegisterForm() {
             done: [],
             rol: 'User',
         });
-        const continuar = document.querySelector('.swal2-confirm');
-        continuar?.addEventListener('click', () => {
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 300);
-        });
     }
     function handleChange(ev: SyntheticEvent) {
         const element = ev.target as HTMLFormElement;

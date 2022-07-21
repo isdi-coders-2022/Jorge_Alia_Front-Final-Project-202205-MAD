@@ -13,11 +13,11 @@ export function MySelectionPage() {
             <>
                 <main>
                     <div className="wrapperInfo">
-                        <p>! Únete para crear tu propio entrenamiento !</p>
+                        <p>¡ Únete para crear tu propio entrenamiento !</p>
 
                         <Link to="/login">
                             <button className="buttonGoToRegister">
-                                !REGÍSTRATE AQUÍ!
+                                ¡REGÍSTRATE AQUÍ!
                             </button>
                         </Link>
                     </div>
@@ -85,8 +85,7 @@ export function MySelectionPage() {
                                 {material ? material : 'Sin material'}
                             </p>
                             <p>
-                                {' '}
-                                <b> Intensidad media ➜ </b> {newIntensity}
+                                <b> Intensidad ➜ </b> {newIntensity}
                             </p>
                         </div>
 
