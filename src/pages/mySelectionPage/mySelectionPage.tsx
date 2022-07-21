@@ -63,7 +63,7 @@ export function MySelectionPage() {
                     newIntensity = 'Baja';
                     break;
                 case (intensity = 1):
-                    newIntensity = 'Bedia';
+                    newIntensity = 'Media';
                     break;
                 case (intensity = 2):
                     newIntensity = 'Alta';

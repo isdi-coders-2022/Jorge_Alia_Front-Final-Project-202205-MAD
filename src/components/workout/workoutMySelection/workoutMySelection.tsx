@@ -8,7 +8,7 @@ export function WorkoutMySelection({ workout }: { workout: iWorkout }) {
         <>
             <Link to={'/details/' + workout._id}>
                 <img
-                    className="image"
+                    className="imageWorkout"
                     src={workout.image}
                     alt="Imagen entrenamiento"
                 />
